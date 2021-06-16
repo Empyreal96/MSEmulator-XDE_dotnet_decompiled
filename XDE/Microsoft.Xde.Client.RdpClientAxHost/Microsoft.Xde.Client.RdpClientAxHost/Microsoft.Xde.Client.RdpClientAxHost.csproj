@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{381A90D5-66CE-40A6-90ED-8856D65F49B9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>AxMicrosoft.Xde.Client.RdpClientInterop</RootNamespace>
+    <AssemblyName>Microsoft.Xde.Client.RdpClientAxHost</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Xde.Client.RdpClientInterop">
+      <HintPath>Q:\Microsoft.MicrosoftEmulator_1.1.1081.0_x64__8wekyb3d8bbwe\XdeManager\Microsoft.Xde.Client.RdpClientInterop.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AxMsRdpClient.cs" />
+    <Compile Include="AxMsRdpClient2.cs" />
+    <Compile Include="AxMsRdpClient2a.cs" />
+    <Compile Include="AxMsRdpClient2aEventMulticaster.cs" />
+    <Compile Include="AxMsRdpClient2EventMulticaster.cs" />
+    <Compile Include="AxMsRdpClient2NotSafeForScripting.cs" />
+    <Compile Include="AxMsRdpClient2NotSafeForScriptingEventMulticaster.cs" />
+    <Compile Include="AxMsRdpClient3.cs" />
+    <Compile Include="AxMsRdpClient3a.cs" />
+    <Compile Include="AxMsRdpClient3aEventMulticaster.cs" />
+    <Compile Include="AxMsRdpClient3EventMulticaster.cs" />
+    <Compile Include="AxMsRdpClient3NotSafeForScripting.cs" />
+    <Compile Include="AxMsRdpClient3NotSafeForScriptingEventMulticaster.cs" />
+    <Compile Include="AxMsRdpClient4.cs" />
+    <Compile Include="AxMsRdpClient4a.cs" />
+    <Compile Include="AxMsRdpClient4aEventMulticaster.cs" />
+    <Compile Include="AxMsRdpClient4EventMulticaster.cs" />
+    <Compile Include="AxMsRdpClient4NotSafeForScripting.cs" />
+    <Compile Include="AxMsRdpClient4NotSafeForScriptingEventMulticaster.cs" />
+    <Compile Include="AxMsRdpClient5.cs" />
+    <Compile Include="AxMsRdpClient5EventMulticaster.cs" />
+    <Compile Include="AxMsRdpClient5NotSafeForScripting.cs" />
+    <Compile Include="AxMsRdpClient5NotSafeForScriptingEventMulticaster.cs" />
+    <Compile Include="AxMsRdpClient6.cs" />
+    <Compile Include="AxMsRdpClient6EventMulticaster.cs" />
+    <Compile Include="AxMsRdpClient6NotSafeForScripting.cs" />
+    <Compile Include="AxMsRdpClient6NotSafeForScriptingEventMulticaster.cs" />
+    <Compile Include="AxMsRdpClient7.cs" />
+    <Compile Include="AxMsRdpClient7EventMulticaster.cs" />
+    <Compile Include="AxMsRdpClient7NotSafeForScripting.cs" />
+    <Compile Include="AxMsRdpClient7NotSafeForScriptingEventMulticaster.cs" />
+    <Compile Include="AxMsRdpClient8.cs" />
+    <Compile Include="AxMsRdpClient8EventMulticaster.cs" />
+    <Compile Include="AxMsRdpClient8NotSafeForScripting.cs" />
+    <Compile Include="AxMsRdpClient8NotSafeForScriptingEventMulticaster.cs" />
+    <Compile Include="AxMsRdpClientEventMulticaster.cs" />
+    <Compile Include="AxMsRdpClientNotSafeForScripting.cs" />
+    <Compile Include="AxMsRdpClientNotSafeForScriptingEventMulticaster.cs" />
+    <Compile Include="AxMsTscAx.cs" />
+    <Compile Include="AxMsTscAxEventMulticaster.cs" />
+    <Compile Include="AxMsTscAxNotSafeForScripting.cs" />
+    <Compile Include="AxMsTscAxNotSafeForScriptingEventMulticaster.cs" />
+    <Compile Include="AxRemoteDesktopClient.cs" />
+    <Compile Include="AxRemoteDesktopClientEventMulticaster.cs" />
+    <Compile Include="IMsTscAxEvents_OnAutoReconnectingEvent.cs" />
+    <Compile Include="IMsTscAxEvents_OnAutoReconnectingEventHandler.cs" />
+    <Compile Include="IMsTscAxEvents_OnChannelReceivedDataEvent.cs" />
+    <Compile Include="IMsTscAxEvents_OnChannelReceivedDataEventHandler.cs" />
+    <Compile Include="IMsTscAxEvents_OnConfirmCloseEvent.cs" />
+    <Compile Include="IMsTscAxEvents_OnConfirmCloseEventHandler.cs" />
+    <Compile Include="IMsTscAxEvents_OnDisconnectedEvent.cs" />
+    <Compile Include="IMsTscAxEvents_OnDisconnectedEventHandler.cs" />
+    <Compile Include="IMsTscAxEvents_OnFatalErrorEvent.cs" />
+    <Compile Include="IMsTscAxEvents_OnFatalErrorEventHandler.cs" />
+    <Compile Include="IMsTscAxEvents_OnFocusReleasedEvent.cs" />
+    <Compile Include="IMsTscAxEvents_OnFocusReleasedEventHandler.cs" />
+    <Compile Include="IMsTscAxEvents_OnLogonErrorEvent.cs" />
+    <Compile Include="IMsTscAxEvents_OnLogonErrorEventHandler.cs" />
+    <Compile Include="IMsTscAxEvents_OnMouseInputModeChangedEvent.cs" />
+    <Compile Include="IMsTscAxEvents_OnMouseInputModeChangedEventHandler.cs" />
+    <Compile Include="IMsTscAxEvents_OnNetworkBandwidthChangedEvent.cs" />
+    <Compile Include="IMsTscAxEvents_OnNetworkBandwidthChangedEventHandler.cs" />
+    <Compile Include="IMsTscAxEvents_OnReceivedTSPublicKeyEvent.cs" />
+    <Compile Include="IMsTscAxEvents_OnReceivedTSPublicKeyEventHandler.cs" />
+    <Compile Include="IMsTscAxEvents_OnRemoteDesktopSizeChangeEvent.cs" />
+    <Compile Include="IMsTscAxEvents_OnRemoteDesktopSizeChangeEventHandler.cs" />
+    <Compile Include="IMsTscAxEvents_OnRemoteProgramDisplayedEvent.cs" />
+    <Compile Include="IMsTscAxEvents_OnRemoteProgramDisplayedEventHandler.cs" />
+    <Compile Include="IMsTscAxEvents_OnRemoteProgramResultEvent.cs" />
+    <Compile Include="IMsTscAxEvents_OnRemoteProgramResultEventHandler.cs" />
+    <Compile Include="IMsTscAxEvents_OnRemoteWindowDisplayedEvent.cs" />
+    <Compile Include="IMsTscAxEvents_OnRemoteWindowDisplayedEventHandler.cs" />
+    <Compile Include="IMsTscAxEvents_OnServiceMessageReceivedEvent.cs" />
+    <Compile Include="IMsTscAxEvents_OnServiceMessageReceivedEventHandler.cs" />
+    <Compile Include="IMsTscAxEvents_OnUserNameAcquiredEvent.cs" />
+    <Compile Include="IMsTscAxEvents_OnUserNameAcquiredEventHandler.cs" />
+    <Compile Include="IMsTscAxEvents_OnWarningEvent.cs" />
+    <Compile Include="IMsTscAxEvents_OnWarningEventHandler.cs" />
+    <Compile Include="IRemoteDesktopClientEvents_OnAdminMessageReceivedEvent.cs" />
+    <Compile Include="IRemoteDesktopClientEvents_OnAdminMessageReceivedEventHandle.cs" />
+    <Compile Include="IRemoteDesktopClientEvents_OnAutoReconnectingEvent.cs" />
+    <Compile Include="IRemoteDesktopClientEvents_OnAutoReconnectingEventHandler.cs" />
+    <Compile Include="IRemoteDesktopClientEvents_OnDisconnectedEvent.cs" />
+    <Compile Include="IRemoteDesktopClientEvents_OnDisconnectedEventHandler.cs" />
+    <Compile Include="IRemoteDesktopClientEvents_OnKeyCombinationPressedEvent.cs" />
+    <Compile Include="IRemoteDesktopClientEvents_OnKeyCombinationPressedEventHandl.cs" />
+    <Compile Include="IRemoteDesktopClientEvents_OnNetworkBandwidthChangedEvent.cs" />
+    <Compile Include="IRemoteDesktopClientEvents_OnNetworkBandwidthChangedEventHan.cs" />
+    <Compile Include="IRemoteDesktopClientEvents_OnRemoteDesktopSizeChangedEvent.cs" />
+    <Compile Include="IRemoteDesktopClientEvents_OnRemoteDesktopSizeChangedEventHa.cs" />
+    <Compile Include="IRemoteDesktopClientEvents_OnStatusChangedEvent.cs" />
+    <Compile Include="IRemoteDesktopClientEvents_OnStatusChangedEventHandler.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

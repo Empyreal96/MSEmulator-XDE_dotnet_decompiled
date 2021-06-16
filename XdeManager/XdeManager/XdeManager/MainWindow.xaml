@@ -1,0 +1,169 @@
+<Window
+	x:Class="XdeManager.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:XdeManager" xmlns:ViewModels="clr-namespace:XdeManager.ViewModel"
+	Height="542"
+	Width="928"
+	Title="{Binding Title}">
+	<UIElement.InputBindings>
+		<KeyBinding
+			Key="F5"
+			Command="{Binding RefreshCommand}" />
+	</UIElement.InputBindings>
+	<FrameworkElement.Resources>
+		<ResourceDictionary>
+			<Style
+				TargetType="{x:Type TextBlock}"
+				x:Key="ItemHeading">
+				<Setter
+					Property="FontSize"
+					Value="20" />
+				<Setter
+					Property="FontWeight"
+					Value="Bold" />
+			</Style>
+			<Style
+				TargetType="{x:Type TextBlock}"
+				x:Key="ItemProp">
+				<Setter
+					Property="FontSize"
+					Value="12" />
+			</Style>
+			<Style
+				TargetType="{x:Type Button}"
+				x:Key="ItemButton">
+				<Setter
+					Property="Padding"
+					Value="5" />
+				<Setter
+					Property="Height"
+					Value="30" />
+				<Setter
+					Property="Margin"
+					Value="5" />
+				<Setter
+					Property="Width"
+					Value="60" />
+			</Style>
+		</ResourceDictionary>
+	</FrameworkElement.Resources>
+	<Grid
+		Margin="5">
+		<Grid.RowDefinitions>
+			<RowDefinition
+				Height="Auto" />
+			<RowDefinition
+				Height="*" />
+		</Grid.RowDefinitions>
+		<Menu
+			Name="MainMenu"
+			IsMainMenu="True">
+			<MenuItem
+				Header="_File">
+				<MenuItem
+					Header="_New device..."
+					Command="{Binding NewDeviceCommand}" />
+				<MenuItem
+					Header="_Download emulator images..."
+					Command="{Binding DownloadEmulatorImagesCommand}" />
+				<Separator />
+				<MenuItem
+					Header="_Refresh"
+					InputGestureText="F5"
+					Command="{Binding RefreshCommand}" />
+				<Separator />
+				<MenuItem
+					Header="_Exit"
+					Command="{Binding ExitCommand}"
+					Click="Exit_Click" />
+			</MenuItem>
+			<MenuItem
+				Header="_Tools">
+				<MenuItem
+					Header="_Options..."
+					Command="{Binding OptionsCommand}" />
+				<Separator />
+				<MenuItem
+					Header="_Clean Visual Studio device dropdown..."
+					Command="{Binding CleanCoreconCommand}" />
+			</MenuItem>
+			<MenuItem
+				Header="_Help">
+				<MenuItem
+					Header="_Send Feedback">
+					<MenuItem
+						Header="Report a _problem..."
+						Command="{Binding SendFeedbackProblemCommand}" />
+					<MenuItem
+						Header="Suggest a _feature..."
+						Command="{Binding SendFeedbackSuggestionCommand}" />
+				</MenuItem>
+			</MenuItem>
+		</Menu>
+		<ScrollViewer
+			VerticalScrollBarVisibility="Auto"
+			Grid.Row="1">
+			<ListView
+				ItemsSource="{Binding Devices}"
+				SelectedItem="{Binding SelectedDevice}">
+				<ItemsControl.ItemTemplate>
+					<DataTemplate>
+						<Grid>
+							<Grid.RowDefinitions>
+								<RowDefinition
+									Height="Auto" />
+								<RowDefinition
+									Height="Auto" />
+							</Grid.RowDefinitions>
+							<StackPanel>
+								<TextBlock
+									Style="{StaticResource ItemHeading}"
+									Text="{Binding Name}"
+									Foreground="{Binding HeadingBrush}" />
+								<TextBlock
+									Text="{Binding VhdProperties}" />
+								<TextBox
+									Style="{StaticResource ReadonlyTextbox}"
+									FontSize="15"
+									FontWeight="Bold"
+									Margin="10,0,0,0"
+									Text="{Binding AddressInfo, Mode=OneWay}"
+									Visibility="{Binding AddressVisibility}" />
+								<TextBox
+									Style="{StaticResource ReadonlyTextbox}"
+									Margin="10,0,0,0"
+									Text="{Binding DeviceProperties, Mode=OneWay}"
+									Visibility="{Binding CommandsVisibility}" />
+							</StackPanel>
+							<StackPanel
+								Orientation="Horizontal"
+								Grid.Row="1"
+								Visibility="{Binding CommandsVisibility}">
+								<Button
+									Style="{StaticResource ItemButton}"
+									Command="{Binding StartCommand}">Start...</Button>
+								<Button
+									Style="{StaticResource ItemButton}"
+									Command="{Binding EditCommand}">Edit...</Button>
+								<Button
+									Style="{StaticResource ItemButton}"
+									Command="{Binding DeleteCommand}">Delete...</Button>
+								<Button
+									Style="{StaticResource ItemButton}"
+									Width="auto"
+									Margin="20,0,0,0"
+									Command="{Binding StartKernelDbgCommand}"
+									Visibility="{Binding InternalVersionVisibility}">Open Kernel Debugger</Button>
+							</StackPanel>
+						</Grid>
+					</DataTemplate>
+				</ItemsControl.ItemTemplate>
+			</ListView>
+		</ScrollViewer>
+		<TextBlock
+			Grid.Row="0"
+			HorizontalAlignment="Right"
+			Margin="0,0,10,0"
+			Text="{Binding VersionText}"
+			Background="{Binding ElementName=MainMenu, Path=Background}"
+			Foreground="{Binding ElementName=MainMenu, Path=Foreground}" />
+	</Grid>
+</Window>

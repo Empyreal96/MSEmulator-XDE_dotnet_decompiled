@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x64</Platform>
+    <ProjectGuid>{FBB6627A-CA23-4339-9F33-4D3C72C22D97}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Microsoft.Xde</RootNamespace>
+    <AssemblyName>Microsoft.Xde.SantPlugin</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60DC8134-EBA5-43B8-BCC9-BB4BC16C2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Xde.Common">
+      <HintPath>Q:\Microsoft.MicrosoftEmulator_1.1.1081.0_x64__8wekyb3d8bbwe\XdeManager\Microsoft.Xde.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xde.Common.Base">
+      <HintPath>Q:\Microsoft.MicrosoftEmulator_1.1.1081.0_x64__8wekyb3d8bbwe\XdeManager\Microsoft.Xde.Common.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xde.Communication">
+      <HintPath>Q:\Microsoft.MicrosoftEmulator_1.1.1081.0_x64__8wekyb3d8bbwe\XdeManager\Microsoft.Xde.Communication.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xde.Interface">
+      <HintPath>Q:\Microsoft.MicrosoftEmulator_1.1.1081.0_x64__8wekyb3d8bbwe\XdeManager\Microsoft.Xde.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xde.Interface.Common">
+      <HintPath>Q:\Microsoft.MicrosoftEmulator_1.1.1081.0_x64__8wekyb3d8bbwe\XdeManager\Microsoft.Xde.Interface.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="H2LPlugin\Orientation\IXdeH2LOrientationFeature.cs" />
+    <Compile Include="H2LPlugin\Orientation\OrientationConfiguration.cs" />
+    <Compile Include="H2LPlugin\Orientation\OrientationFeature.cs" />
+    <Compile Include="H2LPlugin\Orientation\OrientationMode.cs" />
+    <Compile Include="H2LPlugin\Orientation\OrientationModeInformation.cs" />
+    <Compile Include="H2LPlugin\Toolbar\OrientationFlyoutButton.cs" />
+    <Compile Include="H2LPlugin\Toolbar\OrientationRotateButtonBase.cs" />
+    <Compile Include="H2LPlugin\Toolbar\OrientationRotateLeftButton.cs" />
+    <Compile Include="H2LPlugin\Toolbar\OrientationRotateRightButton.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SantPlugin\Orientation\AccelerometerReading.cs" />
+    <Compile Include="SantPlugin\Orientation\AngleChangeConstraint.cs" />
+    <Compile Include="SantPlugin\Orientation\AngleReading.cs" />
+    <Compile Include="SantPlugin\Orientation\Device.xaml.cs">
+      <DependentUpon>Device.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SantPlugin\Orientation\DeviceView.xaml.cs">
+      <DependentUpon>DeviceView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SantPlugin\Orientation\DeviceViewModel.cs" />
+    <Compile Include="SantPlugin\Orientation\DeviceViewViewModel.cs" />
+    <Compile Include="SantPlugin\Orientation\FoldReading.cs" />
+    <Compile Include="SantPlugin\Orientation\IXdeOrientationFeature.cs" />
+    <Compile Include="SantPlugin\Orientation\IXdeOrientationPipe.cs" />
+    <Compile Include="SantPlugin\Orientation\OcclusionDeviceType.cs" />
+    <Compile Include="SantPlugin\Orientation\OcclusionReading.cs" />
+    <Compile Include="SantPlugin\Orientation\OrientationConfiguration.cs" />
+    <Compile Include="SantPlugin\Orientation\OrientationFeature.cs" />
+    <Compile Include="SantPlugin\Orientation\OrientationMode.cs" />
+    <Compile Include="SantPlugin\Orientation\OrientationModeInformation.cs" />
+    <Compile Include="SantPlugin\Orientation\OrientationReading.cs" />
+    <Compile Include="SantPlugin\Orientation\OrientationReading2.cs" />
+    <Compile Include="SantPlugin\Orientation\OrientationTabCreator.cs" />
+    <Compile Include="SantPlugin\Orientation\PanelId.cs" />
+    <Compile Include="SantPlugin\Orientation\PostureItemViewModel.cs" />
+    <Compile Include="SantPlugin\Orientation\XdeOrientationPipe.cs" />
+    <Compile Include="SantPlugin\Resources.cs" />
+    <Compile Include="SantPlugin\Toolbar\LandscapeRotateFlyoutButton.cs" />
+    <Compile Include="SantPlugin\Toolbar\OrientationFlyoutButton.cs" />
+    <Compile Include="SantPlugin\Toolbar\OrientationRotateButtonBase.cs" />
+    <Compile Include="SantPlugin\Toolbar\OrientationRotateLeftButton.cs" />
+    <Compile Include="SantPlugin\Toolbar\OrientationRotateRightButton.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SantPlugin\Resources.resources" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="SantPlugin\Orientation\Device.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SantPlugin\Orientation\DeviceView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="h2lorientation\modes\clamshell.png" />
+    <Resource Include="h2lorientation\modes\closed.png" />
+    <Resource Include="h2lorientation\modes\flat.png" />
+    <Resource Include="h2lorientation\modes\media.png" />
+    <Resource Include="h2lorientation\modes\ramp.png" />
+    <Resource Include="h2lorientation\modes\tablet.png" />
+    <Resource Include="h2lorientation\modes\unknown.png" />
+    <Resource Include="Orientation\1.png" />
+    <Resource Include="Orientation\2.png" />
+    <Resource Include="Orientation\case.png" />
+    <Resource Include="Orientation\cherry_wood_texture.jpg" />
+    <Resource Include="Orientation\genericcase.png" />
+    <Resource Include="orientation\modes\brochureleft.png" />
+    <Resource Include="orientation\modes\brochureright.png" />
+    <Resource Include="orientation\modes\closed.png" />
+    <Resource Include="orientation\modes\flatlandscape.png" />
+    <Resource Include="orientation\modes\flatportraitleft.png" />
+    <Resource Include="orientation\modes\flatportraitright.png" />
+    <Resource Include="orientation\modes\flipleftlandscape.png" />
+    <Resource Include="orientation\modes\flipleftportrait.png" />
+    <Resource Include="orientation\modes\fliprightlandscape.png" />
+    <Resource Include="orientation\modes\fliprightportrait.png" />
+    <Resource Include="orientation\modes\paletteleft.png" />
+    <Resource Include="orientation\modes\paletteright.png" />
+    <Resource Include="orientation\modes\peek.png" />
+    <Resource Include="orientation\modes\rampleft.png" />
+    <Resource Include="orientation\modes\rampright.png" />
+    <Resource Include="orientation\modes\read.png" />
+    <Resource Include="orientation\modes\tentleft.png" />
+    <Resource Include="orientation\modes\tentright.png" />
+    <Resource Include="orientation\modes\unknown.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

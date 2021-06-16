@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BCFC71C1-6E91-423B-A5AE-C1D632EEC071}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>DiscUtils.Ntfs</RootNamespace>
+    <AssemblyName>DiscUtils.Ntfs</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DiscUtils.Core">
+      <HintPath>Q:\Microsoft.MicrosoftEmulator_1.1.1081.0_x64__8wekyb3d8bbwe\XdeManager\DiscUtils.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DiscUtils.Streams">
+      <HintPath>Q:\Microsoft.MicrosoftEmulator_1.1.1081.0_x64__8wekyb3d8bbwe\XdeManager\DiscUtils.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AllocateFileFn.cs" />
+    <Compile Include="AttributeCollationRule.cs" />
+    <Compile Include="AttributeDefinitionRecord.cs" />
+    <Compile Include="AttributeDefinitions.cs" />
+    <Compile Include="AttributeFlags.cs" />
+    <Compile Include="AttributeList.cs" />
+    <Compile Include="AttributeListRecord.cs" />
+    <Compile Include="AttributeRecord.cs" />
+    <Compile Include="AttributeReference.cs" />
+    <Compile Include="AttributeType.cs" />
+    <Compile Include="AttributeTypeFlags.cs" />
+    <Compile Include="BiosParameterBlock.cs" />
+    <Compile Include="Bitmap.cs" />
+    <Compile Include="ClusterBitmap.cs" />
+    <Compile Include="ClusterStream.cs" />
+    <Compile Include="CompressedClusterStream.cs" />
+    <Compile Include="CookedDataRun.cs" />
+    <Compile Include="CookedDataRuns.cs" />
+    <Compile Include="DataRun.cs" />
+    <Compile Include="Directory.cs" />
+    <Compile Include="DirectoryEntry.cs" />
+    <Compile Include="File.cs" />
+    <Compile Include="FileAttributeFlags.cs" />
+    <Compile Include="FileNameNamespace.cs" />
+    <Compile Include="FileNameRecord.cs" />
+    <Compile Include="FileRecord.cs" />
+    <Compile Include="FileRecordFlags.cs" />
+    <Compile Include="FileRecordReference.cs" />
+    <Compile Include="FileSystemFactory.cs" />
+    <Compile Include="FixupRecordBase.cs" />
+    <Compile Include="ForgetFileFn.cs" />
+    <Compile Include="GenericFixupRecord.cs" />
+    <Compile Include="GetDirectoryByIndexFn.cs" />
+    <Compile Include="GetDirectoryByRefFn.cs" />
+    <Compile Include="GetFileByIndexFn.cs" />
+    <Compile Include="GetFileByRefFn.cs" />
+    <Compile Include="Index.cs" />
+    <Compile Include="IndexBlock.cs" />
+    <Compile Include="IndexEntry.cs" />
+    <Compile Include="IndexEntryFlags.cs" />
+    <Compile Include="IndexHeader.cs" />
+    <Compile Include="IndexNode.cs" />
+    <Compile Include="IndexNodeSaveFn.cs" />
+    <Compile Include="IndexRoot.cs" />
+    <Compile Include="IndexView.cs" />
+    <Compile Include="Internals\AttributeFlags.cs" />
+    <Compile Include="Internals\AttributeListAttribute.cs" />
+    <Compile Include="Internals\AttributeListEntry.cs" />
+    <Compile Include="Internals\EntryState.cs" />
+    <Compile Include="Internals\EntryStates.cs" />
+    <Compile Include="Internals\FileNameAttribute.cs" />
+    <Compile Include="Internals\GenericAttribute.cs" />
+    <Compile Include="Internals\MasterFileTable.cs" />
+    <Compile Include="Internals\MasterFileTableAttribute.cs" />
+    <Compile Include="Internals\MasterFileTableEntry.cs" />
+    <Compile Include="Internals\MasterFileTableEntryFlags.cs" />
+    <Compile Include="Internals\MasterFileTableRecord.cs" />
+    <Compile Include="Internals\MasterFileTableRecordFlags.cs" />
+    <Compile Include="Internals\MasterFileTableReference.cs" />
+    <Compile Include="Internals\NtfsFileAttributes.cs" />
+    <Compile Include="Internals\NtfsNamespace.cs" />
+    <Compile Include="Internals\StandardInformationAttribute.cs" />
+    <Compile Include="Internals\UnknownAttribute.cs" />
+    <Compile Include="INtfsContext.cs" />
+    <Compile Include="LZNT1.cs" />
+    <Compile Include="LzWindowDictionary.cs" />
+    <Compile Include="MasterFileTable.cs" />
+    <Compile Include="Microsoft\CodeAnalysis\EmbeddedAttribute.cs" />
+    <Compile Include="NewFileOptions.cs" />
+    <Compile Include="NonResidentAttributeBuffer.cs" />
+    <Compile Include="NonResidentAttributeRecord.cs" />
+    <Compile Include="NonResidentDataBuffer.cs" />
+    <Compile Include="NtfsAttribute.cs" />
+    <Compile Include="NtfsAttributeBuffer.cs" />
+    <Compile Include="NtfsContext.cs" />
+    <Compile Include="NtfsFileStream.cs" />
+    <Compile Include="NtfsFileSystem.cs" />
+    <Compile Include="NtfsFileSystemChecker.cs" />
+    <Compile Include="NtfsFormatOptions.cs" />
+    <Compile Include="NtfsFormatter.cs" />
+    <Compile Include="NtfsOptions.cs" />
+    <Compile Include="NtfsStream.cs" />
+    <Compile Include="NtfsTransaction.cs" />
+    <Compile Include="ObjectId.cs" />
+    <Compile Include="ObjectIdRecord.cs" />
+    <Compile Include="ObjectIds.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Quotas.cs" />
+    <Compile Include="RawClusterStream.cs" />
+    <Compile Include="ReparsePointRecord.cs" />
+    <Compile Include="ReparsePoints.cs" />
+    <Compile Include="ResidentAttributeRecord.cs" />
+    <Compile Include="SecurityDescriptor.cs" />
+    <Compile Include="SecurityDescriptorRecord.cs" />
+    <Compile Include="SecurityDescriptors.cs" />
+    <Compile Include="ShortFileNameOption.cs" />
+    <Compile Include="SparseClusterStream.cs" />
+    <Compile Include="StandardInformation.cs" />
+    <Compile Include="StructuredNtfsAttribute.cs" />
+    <Compile Include="System\Runtime\CompilerServices\IsReadOnlyAttribute.cs" />
+    <Compile Include="UpperCase.cs" />
+    <Compile Include="VolumeInformation.cs" />
+    <Compile Include="VolumeInformationFlags.cs" />
+    <Compile Include="VolumeName.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D9E0CA9A-426A-4D58-82D5-891667CE4812}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Microsoft.Xde.Client.RdpClientInterop</RootNamespace>
+    <AssemblyName>Microsoft.Xde.Client.RdpClientInterop</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AutoReconnectContinueState.cs" />
+    <Compile Include="ControlCloseStatus.cs" />
+    <Compile Include="ExtendedDisconnectReasonCode.cs" />
+    <Compile Include="IMsRdpClient.cs" />
+    <Compile Include="IMsRdpClient2.cs" />
+    <Compile Include="IMsRdpClient3.cs" />
+    <Compile Include="IMsRdpClient4.cs" />
+    <Compile Include="IMsRdpClient5.cs" />
+    <Compile Include="IMsRdpClient6.cs" />
+    <Compile Include="IMsRdpClient7.cs" />
+    <Compile Include="IMsRdpClient8.cs" />
+    <Compile Include="IMsRdpClientAdvancedSettings.cs" />
+    <Compile Include="IMsRdpClientAdvancedSettings2.cs" />
+    <Compile Include="IMsRdpClientAdvancedSettings3.cs" />
+    <Compile Include="IMsRdpClientAdvancedSettings4.cs" />
+    <Compile Include="IMsRdpClientAdvancedSettings5.cs" />
+    <Compile Include="IMsRdpClientAdvancedSettings6.cs" />
+    <Compile Include="IMsRdpClientAdvancedSettings7.cs" />
+    <Compile Include="IMsRdpClientAdvancedSettings8.cs" />
+    <Compile Include="IMsRdpClientNonScriptable.cs" />
+    <Compile Include="IMsRdpClientNonScriptable2.cs" />
+    <Compile Include="IMsRdpClientNonScriptable3.cs" />
+    <Compile Include="IMsRdpClientNonScriptable4.cs" />
+    <Compile Include="IMsRdpClientNonScriptable5.cs" />
+    <Compile Include="IMsRdpClientSecuredSettings.cs" />
+    <Compile Include="IMsRdpClientSecuredSettings2.cs" />
+    <Compile Include="IMsRdpClientShell.cs" />
+    <Compile Include="IMsRdpClientTransportSettings.cs" />
+    <Compile Include="IMsRdpClientTransportSettings2.cs" />
+    <Compile Include="IMsRdpClientTransportSettings3.cs" />
+    <Compile Include="IMsRdpDevice.cs" />
+    <Compile Include="IMsRdpDeviceCollection.cs" />
+    <Compile Include="IMsRdpDrive.cs" />
+    <Compile Include="IMsRdpDriveCollection.cs" />
+    <Compile Include="IMsRdpExtendedSettings.cs" />
+    <Compile Include="IMsRdpPreferredRedirectionInfo.cs" />
+    <Compile Include="IMsTscAdvancedSettings.cs" />
+    <Compile Include="IMsTscAx.cs" />
+    <Compile Include="IMsTscAxEvents.cs" />
+    <Compile Include="IMsTscAxEvents_Event.cs" />
+    <Compile Include="IMsTscAxEvents_EventProvider.cs" />
+    <Compile Include="IMsTscAxEvents_OnAuthenticationWarningDismissedEventHandler.cs" />
+    <Compile Include="IMsTscAxEvents_OnAuthenticationWarningDisplayedEventHandler.cs" />
+    <Compile Include="IMsTscAxEvents_OnAutoReconnectedEventHandler.cs" />
+    <Compile Include="IMsTscAxEvents_OnAutoReconnectingEventHandler.cs" />
+    <Compile Include="IMsTscAxEvents_OnChannelReceivedDataEventHandler.cs" />
+    <Compile Include="IMsTscAxEvents_OnConfirmCloseEventHandler.cs" />
+    <Compile Include="IMsTscAxEvents_OnConnectedEventHandler.cs" />
+    <Compile Include="IMsTscAxEvents_OnConnectingEventHandler.cs" />
+    <Compile Include="IMsTscAxEvents_OnConnectionBarPullDownEventHandler.cs" />
+    <Compile Include="IMsTscAxEvents_OnDisconnectedEventHandler.cs" />
+    <Compile Include="IMsTscAxEvents_OnEnterFullScreenModeEventHandler.cs" />
+    <Compile Include="IMsTscAxEvents_OnFatalErrorEventHandler.cs" />
+    <Compile Include="IMsTscAxEvents_OnFocusReleasedEventHandler.cs" />
+    <Compile Include="IMsTscAxEvents_OnIdleTimeoutNotificationEventHandler.cs" />
+    <Compile Include="IMsTscAxEvents_OnLeaveFullScreenModeEventHandler.cs" />
+    <Compile Include="IMsTscAxEvents_OnLoginCompleteEventHandler.cs" />
+    <Compile Include="IMsTscAxEvents_OnLogonErrorEventHandler.cs" />
+    <Compile Include="IMsTscAxEvents_OnMouseInputModeChangedEventHandler.cs" />
+    <Compile Include="IMsTscAxEvents_OnNetworkBandwidthChangedEventHandler.cs" />
+    <Compile Include="IMsTscAxEvents_OnReceivedTSPublicKeyEventHandler.cs" />
+    <Compile Include="IMsTscAxEvents_OnRemoteDesktopSizeChangeEventHandler.cs" />
+    <Compile Include="IMsTscAxEvents_OnRemoteProgramDisplayedEventHandler.cs" />
+    <Compile Include="IMsTscAxEvents_OnRemoteProgramResultEventHandler.cs" />
+    <Compile Include="IMsTscAxEvents_OnRemoteWindowDisplayedEventHandler.cs" />
+    <Compile Include="IMsTscAxEvents_OnRequestContainerMinimizeEventHandler.cs" />
+    <Compile Include="IMsTscAxEvents_OnRequestGoFullScreenEventHandler.cs" />
+    <Compile Include="IMsTscAxEvents_OnRequestLeaveFullScreenEventHandler.cs" />
+    <Compile Include="IMsTscAxEvents_OnServiceMessageReceivedEventHandler.cs" />
+    <Compile Include="IMsTscAxEvents_OnUserNameAcquiredEventHandler.cs" />
+    <Compile Include="IMsTscAxEvents_OnWarningEventHandler.cs" />
+    <Compile Include="IMsTscAxEvents_SinkHelper.cs" />
+    <Compile Include="IMsTscAx_Redist.cs" />
+    <Compile Include="IMsTscDebug.cs" />
+    <Compile Include="IMsTscNonScriptable.cs" />
+    <Compile Include="IMsTscSecuredSettings.cs" />
+    <Compile Include="IRemoteDesktopClient.cs" />
+    <Compile Include="IRemoteDesktopClientActions.cs" />
+    <Compile Include="IRemoteDesktopClientEvents.cs" />
+    <Compile Include="IRemoteDesktopClientEvents_Event.cs" />
+    <Compile Include="IRemoteDesktopClientEvents_EventProvider.cs" />
+    <Compile Include="IRemoteDesktopClientEvents_OnAdminMessageReceivedEventHandle.cs" />
+    <Compile Include="IRemoteDesktopClientEvents_OnAutoReconnectedEventHandler.cs" />
+    <Compile Include="IRemoteDesktopClientEvents_OnAutoReconnectingEventHandler.cs" />
+    <Compile Include="IRemoteDesktopClientEvents_OnConnectedEventHandler.cs" />
+    <Compile Include="IRemoteDesktopClientEvents_OnConnectingEventHandler.cs" />
+    <Compile Include="IRemoteDesktopClientEvents_OnDialogDismissedEventHandler.cs" />
+    <Compile Include="IRemoteDesktopClientEvents_OnDialogDisplayingEventHandler.cs" />
+    <Compile Include="IRemoteDesktopClientEvents_OnDisconnectedEventHandler.cs" />
+    <Compile Include="IRemoteDesktopClientEvents_OnKeyCombinationPressedEventHandl.cs" />
+    <Compile Include="IRemoteDesktopClientEvents_OnLoginCompletedEventHandler.cs" />
+    <Compile Include="IRemoteDesktopClientEvents_OnNetworkBandwidthChangedEventHan.cs" />
+    <Compile Include="IRemoteDesktopClientEvents_OnRemoteDesktopSizeChangedEventHa.cs" />
+    <Compile Include="IRemoteDesktopClientEvents_OnStatusChangedEventHandler.cs" />
+    <Compile Include="IRemoteDesktopClientEvents_SinkHelper.cs" />
+    <Compile Include="IRemoteDesktopClientSettings.cs" />
+    <Compile Include="ITSRemoteProgram.cs" />
+    <Compile Include="ITSRemoteProgram2.cs" />
+    <Compile Include="LocalActionType.cs" />
+    <Compile Include="MsRdpClient.cs" />
+    <Compile Include="MsRdpClient2.cs" />
+    <Compile Include="MsRdpClient2a.cs" />
+    <Compile Include="MsRdpClient2aClass.cs" />
+    <Compile Include="MsRdpClient2Class.cs" />
+    <Compile Include="MsRdpClient2NotSafeForScripting.cs" />
+    <Compile Include="MsRdpClient2NotSafeForScriptingClass.cs" />
+    <Compile Include="MsRdpClient3.cs" />
+    <Compile Include="MsRdpClient3a.cs" />
+    <Compile Include="MsRdpClient3aClass.cs" />
+    <Compile Include="MsRdpClient3Class.cs" />
+    <Compile Include="MsRdpClient3NotSafeForScripting.cs" />
+    <Compile Include="MsRdpClient3NotSafeForScriptingClass.cs" />
+    <Compile Include="MsRdpClient4.cs" />
+    <Compile Include="MsRdpClient4a.cs" />
+    <Compile Include="MsRdpClient4aClass.cs" />
+    <Compile Include="MsRdpClient4Class.cs" />
+    <Compile Include="MsRdpClient4NotSafeForScripting.cs" />
+    <Compile Include="MsRdpClient4NotSafeForScriptingClass.cs" />
+    <Compile Include="MsRdpClient5.cs" />
+    <Compile Include="MsRdpClient5Class.cs" />
+    <Compile Include="MsRdpClient5NotSafeForScripting.cs" />
+    <Compile Include="MsRdpClient5NotSafeForScriptingClass.cs" />
+    <Compile Include="MsRdpClient6.cs" />
+    <Compile Include="MsRdpClient6Class.cs" />
+    <Compile Include="MsRdpClient6NotSafeForScripting.cs" />
+    <Compile Include="MsRdpClient6NotSafeForScriptingClass.cs" />
+    <Compile Include="MsRdpClient7.cs" />
+    <Compile Include="MsRdpClient7Class.cs" />
+    <Compile Include="MsRdpClient7NotSafeForScripting.cs" />
+    <Compile Include="MsRdpClient7NotSafeForScriptingClass.cs" />
+    <Compile Include="MsRdpClient8.cs" />
+    <Compile Include="MsRdpClient8Class.cs" />
+    <Compile Include="MsRdpClient8NotSafeForScripting.cs" />
+    <Compile Include="MsRdpClient8NotSafeForScriptingClass.cs" />
+    <Compile Include="MsRdpClientClass.cs" />
+    <Compile Include="MsRdpClientNotSafeForScripting.cs" />
+    <Compile Include="MsRdpClientNotSafeForScriptingClass.cs" />
+    <Compile Include="MsTscAx.cs" />
+    <Compile Include="MsTscAxClass.cs" />
+    <Compile Include="MsTscAxNotSafeForScripting.cs" />
+    <Compile Include="MsTscAxNotSafeForScriptingClass.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RedirectionWarningType.cs" />
+    <Compile Include="RemoteActionType.cs" />
+    <Compile Include="RemoteDesktopClient.cs" />
+    <Compile Include="RemoteDesktopClientClass.cs" />
+    <Compile Include="RemoteProgramResult.cs" />
+    <Compile Include="RemoteSessionActionType.cs" />
+    <Compile Include="RemoteWindowDisplayedAttribute.cs" />
+    <Compile Include="SnapshotEncodingType.cs" />
+    <Compile Include="SnapshotFormatType.cs" />
+    <Compile Include="_RemotableHandle.cs" />
+    <Compile Include="__MIDL_IMsRdpClientNonScriptable4_0001.cs" />
+    <Compile Include="__MIDL_IMsRdpClient_0001.cs" />
+    <Compile Include="__MIDL_IRemoteDesktopClientActions_0001.cs" />
+    <Compile Include="__MIDL_IRemoteDesktopClientActions_0002.cs" />
+    <Compile Include="__MIDL_IRemoteDesktopClientActions_0003.cs" />
+    <Compile Include="__MIDL_IRemoteDesktopClientActions_0004.cs" />
+    <Compile Include="__MIDL_IWinTypes_0009.cs" />
+    <Compile Include="__MIDL___MIDL_itf_mstsax_0000_0000_0001.cs" />
+    <Compile Include="__MIDL___MIDL_itf_mstsax_0000_0000_0003.cs" />
+    <Compile Include="__MIDL___MIDL_itf_mstsax_0000_0036_0001.cs" />
+    <Compile Include="__MIDL___MIDL_itf_mstsax_0000_0046_0001.cs" />
+    <Compile Include="__MIDL___MIDL_itf_mstsax_0000_0046_0002.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

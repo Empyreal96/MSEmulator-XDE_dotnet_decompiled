@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x64</Platform>
+    <ProjectGuid>{6795CF2D-8B93-4408-9EF4-216A2B8320F6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Microsoft.Xde.Wmi</RootNamespace>
+    <AssemblyName>Microsoft.Xde.Wmi</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Xde.Common">
+      <HintPath>Q:\Microsoft.MicrosoftEmulator_1.1.1081.0_x64__8wekyb3d8bbwe\XdeManager\Microsoft.Xde.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xde.Common.Base">
+      <HintPath>Q:\Microsoft.MicrosoftEmulator_1.1.1081.0_x64__8wekyb3d8bbwe\XdeManager\Microsoft.Xde.Common.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xde.Interface.Public.10.1">
+      <HintPath>Q:\Microsoft.MicrosoftEmulator_1.1.1081.0_x64__8wekyb3d8bbwe\XdeManager\Microsoft.Xde.Interface.Public.10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IXdeHyperVManagementService.cs" />
+    <Compile Include="IXdeWmiObject.cs" />
+    <Compile Include="IXdeWmiVirtualServices.cs" />
+    <Compile Include="NetNat.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SettingsType.cs" />
+    <Compile Include="Strings.cs" />
+    <Compile Include="VirtualEthernetSwitchManagementService.cs" />
+    <Compile Include="VirtualSystemManagementService.cs" />
+    <Compile Include="WmiUtils.cs" />
+    <Compile Include="WmiVhdBootSettings.cs" />
+    <Compile Include="XdeDisplayControllerSettings.cs" />
+    <Compile Include="XdeHyperVManagementService.cs" />
+    <Compile Include="XdeVirtualMachine.cs" />
+    <Compile Include="XdeVirtualMachineDefaultSettings.cs" />
+    <Compile Include="XdeVirtualMachineException.cs" />
+    <Compile Include="XdeVirtualMachineSettings.cs" />
+    <Compile Include="XdeVmExceptions.cs" />
+    <Compile Include="XdeWmiTypes.cs" />
+    <Compile Include="XdeWmiVirtualServices.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Strings.resources" />
+    <EmbeddedResource Include="XdeVmExceptions.resources" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

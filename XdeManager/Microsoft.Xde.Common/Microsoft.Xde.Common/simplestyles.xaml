@@ -1,0 +1,3468 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:xdecommon="clr-namespace:Microsoft.Xde.Common;assembly=" xmlns:componentModel="clr-namespace:System.ComponentModel;assembly=PresentationFramework" xmlns:common="clr-namespace:Microsoft.Xde.Common;assembly="
+	x:Uid="ResourceDictionary_2">
+	<common:BoolToVisibilityConverter
+		x:Key="BoolToVis" />
+	<common:InverseBooleanConverter
+		x:Key="InverseBooleanConverter" />
+	<Color
+		x:Uid="Color_1"
+		x:Key="Color_TextBoxFill">#FF333333</Color>
+	<Color
+		x:Uid="Color_2"
+		x:Key="Color_TextBoxStroke">#FF454545</Color>
+	<Color
+		x:Uid="Color_3"
+		x:Key="Color_ForegroundTextcolor">#AAFFFFFF</Color>
+	<Color
+		x:Uid="Color_4"
+		x:Key="Color_ForegroundSelectedTextColor">#E5000000</Color>
+	<Color
+		x:Uid="Color_5"
+		x:Key="Color_ReadonlyTBBackground">#FF353535</Color>
+	<Color
+		x:Uid="Color_6"
+		x:Key="Color_SearchTextbox_Foreground">#4CFFFFFF</Color>
+	<Color
+		x:Uid="Color_7"
+		x:Key="Color_TabPanel_Background">#FF2F2F2F</Color>
+	<Color
+		x:Uid="Color_8"
+		x:Key="Color_Listbox_Background">#FF545454</Color>
+	<Color
+		x:Uid="Color_9"
+		x:Key="Color_TextBox_Fill">#FF333333</Color>
+	<Color
+		x:Uid="Color_10"
+		x:Key="Color_TextBox_Stroke">#FF454545</Color>
+	<Color
+		x:Uid="Color_11"
+		x:Key="Color_HighlightTextcolor">#FFFFFFFF</Color>
+	<Color
+		x:Uid="Color_12"
+		x:Key="Color_ReadonlyTextBox_Background">#FF2D2D2D</Color>
+	<Color
+		x:Uid="Color_13"
+		x:Key="Color_RecordIcon_Gradient_1">#FFE4E4E4</Color>
+	<Color
+		x:Uid="Color_14"
+		x:Key="Color_UnselectedForeground">#AAA</Color>
+	<SolidColorBrush
+		x:Uid="SolidColorBrush_1"
+		Color="#FF6E6E6E"
+		x:Key="Brush_MediumIconGray" />
+	<SolidColorBrush
+		x:Uid="SolidColorBrush_2"
+		Color="#FF444444"
+		x:Key="Brush_Title_Background" />
+	<SolidColorBrush
+		x:Uid="SolidColorBrush_3"
+		Color="#FF141414"
+		x:Key="Brush_WindowInner_Border" />
+	<SolidColorBrush
+		x:Uid="SolidColorBrush_4"
+		Color="#FF000000"
+		x:Key="Brush_TabGutter_Background" />
+	<SolidColorBrush
+		x:Uid="SolidColorBrush_5"
+		Color="#AAFFFFFF"
+		x:Key="Brush_Text_Foreground" />
+	<SolidColorBrush
+		x:Uid="SolidColorBrush_6"
+		Color="#FFFFFFFF"
+		x:Key="Brush_Text_Highlight" />
+	<SolidColorBrush
+		x:Uid="SolidColorBrush_7"
+		Color="#DDD"
+		x:Key="Brush_SelectedBackground" />
+	<SolidColorBrush
+		x:Uid="SolidColorBrush_8"
+		Color="#FFF"
+		x:Key="Brush_WindowBackground" />
+	<SolidColorBrush
+		x:Uid="SolidColorBrush_9"
+		Color="#4C7E7E7E"
+		x:Key="Brush_PanelGray" />
+	<SolidColorBrush
+		x:Uid="SolidColorBrush_10"
+		Color="#DDD"
+		x:Key="Brush_SelectedBackgroundBrush" />
+	<SolidColorBrush
+		x:Uid="SolidColorBrush_11"
+		Color="#888"
+		x:Key="Brush_DisabledForeground" />
+	<SolidColorBrush
+		x:Uid="SolidColorBrush_12"
+		Color="#FFF"
+		x:Key="Brush_WindowBackgroundBrush" />
+	<SolidColorBrush
+		x:Uid="SolidColorBrush_13"
+		Color="#0CFFFFFF"
+		x:Key="Brush_ModelPerimeter" />
+	<SolidColorBrush
+		x:Uid="SolidColorBrush_14"
+		Color="#3DFFFFFF"
+		x:Key="Brush_FocusBrush" />
+	<SolidColorBrush
+		x:Uid="SolidColorBrush_15"
+		Color="#FF434343"
+		x:Key="Brush_RecordBorder" />
+	<SolidColorBrush
+		x:Uid="SolidColorBrush_16"
+		Color="#888"
+		x:Key="Brush_SolidBorder" />
+	<SolidColorBrush
+		x:Uid="SolidColorBrush_17"
+		Color="CornflowerBlue"
+		x:Key="Brush_SimulatedLatLon" />
+	<SolidColorBrush
+		x:Uid="SolidColorBrush_20"
+		Color="Orange"
+		x:Key="Brush_Route" />
+	<SolidColorBrush
+		Color="{StaticResource Color_TabPanel_Background}"
+		x:Key="Brush_TabPanel" />
+	<Style
+		TargetType="{x:Type xdecommon:BrowserHyperlink}"
+		x:Key="{x:Type xdecommon:BrowserHyperlink}">
+		<Setter
+			Property="Foreground"
+			Value="{StaticResource Brush_Text_Foreground}" />
+		<Setter
+			Property="Inline.TextDecorations"
+			Value="Underline" />
+		<Style.Triggers>
+			<Trigger
+				Property="ContentElement.IsMouseOver"
+				Value="True">
+				<Setter
+					Property="Foreground"
+					Value="#FFFFFF00" />
+			</Trigger>
+			<Trigger
+				Property="ContentElement.IsEnabled"
+				Value="False">
+				<Setter
+					Property="Foreground"
+					Value="{DynamicResource SystemColors.GrayTextBrushKey}" />
+			</Trigger>
+			<Trigger
+				Property="ContentElement.IsEnabled"
+				Value="True">
+				<Setter
+					Property="FrameworkContentElement.Cursor"
+					Value="Hand" />
+			</Trigger>
+		</Style.Triggers>
+	</Style>
+	<Style
+		x:Uid="Style_2"
+		TargetType="{x:Type RepeatButton}"
+		BasedOn="{x:Null}"
+		x:Key="General_RepeatButton_Style">
+		<Setter
+			x:Uid="Setter_2"
+			Property="Background">
+			<Setter.Value>
+				<LinearGradientBrush
+					x:Uid="LinearGradientBrush_1"
+					EndPoint="0,1"
+					StartPoint="0,0">
+					<GradientStop
+						x:Uid="GradientStop_1"
+						Color="#EEE"
+						Offset="0.0" />
+					<GradientStop
+						x:Uid="GradientStop_2"
+						Color="#CCC"
+						Offset="1.0" />
+				</LinearGradientBrush>
+			</Setter.Value>
+		</Setter>
+		<Setter
+			x:Uid="Setter_3"
+			Property="BorderBrush">
+			<Setter.Value>
+				<LinearGradientBrush
+					x:Uid="LinearGradientBrush_2"
+					EndPoint="0,1"
+					StartPoint="0,0">
+					<GradientStop
+						x:Uid="GradientStop_3"
+						Color="#CCC"
+						Offset="0.0" />
+					<GradientStop
+						x:Uid="GradientStop_4"
+						Color="#444"
+						Offset="1.0" />
+				</LinearGradientBrush>
+			</Setter.Value>
+		</Setter>
+		<Setter
+			x:Uid="Setter_4"
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate
+					x:Uid="ControlTemplate_2"
+					TargetType="{x:Type RepeatButton}">
+					<Grid
+						Name="grid"
+						x:Uid="Grid_39"
+						Opacity="0.65">
+						<VisualStateManager.VisualStateGroups>
+							<VisualStateGroup
+								x:Uid="VisualStateGroup_1"
+								x:Name="CommonStates">
+								<VisualState
+									x:Uid="VisualState_1"
+									x:Name="Normal">
+									<Storyboard
+										x:Uid="Storyboard_2">
+										<DoubleAnimationUsingKeyFrames
+											x:Uid="DoubleAnimationUsingKeyFrames_1"
+											Storyboard.TargetProperty="(UIElement.Opacity)"
+											Storyboard.TargetName="grid">
+											<EasingDoubleKeyFrame
+												x:Uid="EasingDoubleKeyFrame_1"
+												KeyTime="0"
+												Value="0.4" />
+										</DoubleAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+								<VisualState
+									x:Uid="VisualState_2"
+									x:Name="MouseOver">
+									<Storyboard
+										x:Uid="Storyboard_3">
+										<DoubleAnimationUsingKeyFrames
+											x:Uid="DoubleAnimationUsingKeyFrames_2"
+											Storyboard.TargetProperty="(UIElement.Opacity)"
+											Storyboard.TargetName="grid">
+											<EasingDoubleKeyFrame
+												x:Uid="EasingDoubleKeyFrame_2"
+												KeyTime="0"
+												Value="0.9" />
+										</DoubleAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+								<VisualState
+									x:Uid="VisualState_3"
+									x:Name="Pressed">
+									<Storyboard
+										x:Uid="Storyboard_4">
+										<DoubleAnimationUsingKeyFrames
+											x:Uid="DoubleAnimationUsingKeyFrames_3"
+											Storyboard.TargetProperty="(UIElement.Opacity)"
+											Storyboard.TargetName="grid">
+											<EasingDoubleKeyFrame
+												x:Uid="EasingDoubleKeyFrame_3"
+												KeyTime="0"
+												Value="0.4" />
+										</DoubleAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+								<VisualState
+									x:Uid="VisualState_4"
+									x:Name="Disabled">
+									<Storyboard
+										x:Uid="Storyboard_5">
+										<DoubleAnimationUsingKeyFrames
+											x:Uid="DoubleAnimationUsingKeyFrames_4"
+											Storyboard.TargetProperty="(UIElement.Opacity)"
+											Storyboard.TargetName="grid">
+											<EasingDoubleKeyFrame
+												x:Uid="EasingDoubleKeyFrame_4"
+												KeyTime="0"
+												Value="0.2" />
+										</DoubleAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+							</VisualStateGroup>
+						</VisualStateManager.VisualStateGroups>
+						<Border
+							Name="Border"
+							x:Uid="Border_1"
+							Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}" />
+						<ContentPresenter
+							Name="ContentPresenter"
+							x:Uid="ContentPresenter"
+							HorizontalAlignment="Center"
+							VerticalAlignment="Center"
+							Content="{TemplateBinding Content}"
+							ContentTemplate="{TemplateBinding ContentTemplate}"
+							ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}" />
+					</Grid>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style
+		x:Uid="Style_3"
+		TargetType="{x:Type Thumb}"
+		BasedOn="{x:Null}"
+		x:Key="Thumb_Style">
+		<Setter
+			x:Uid="Setter_5"
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate
+					x:Uid="ControlTemplate_3"
+					TargetType="{x:Type Thumb}">
+					<Grid
+						Name="Grid"
+						x:Uid="Grid_2"
+						Margin="0,0,0,0">
+						<VisualStateManager.VisualStateGroups>
+							<VisualStateGroup
+								x:Uid="VisualStateGroup_2"
+								x:Name="CommonStates">
+								<VisualState
+									x:Uid="VisualState_5"
+									x:Name="Normal">
+									<Storyboard
+										x:Uid="Storyboard_6">
+										<DoubleAnimationUsingKeyFrames
+											x:Uid="DoubleAnimationUsingKeyFrames_5"
+											Storyboard.TargetProperty="(UIElement.Opacity)"
+											Storyboard.TargetName="Rectangle">
+											<EasingDoubleKeyFrame
+												x:Uid="EasingDoubleKeyFrame_5"
+												KeyTime="0"
+												Value="0.4" />
+										</DoubleAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+								<VisualState
+									x:Uid="VisualState_6"
+									x:Name="MouseOver">
+									<Storyboard
+										x:Uid="Storyboard_7">
+										<DoubleAnimationUsingKeyFrames
+											x:Uid="DoubleAnimationUsingKeyFrames_6"
+											Storyboard.TargetProperty="(UIElement.Opacity)"
+											Storyboard.TargetName="Rectangle">
+											<EasingDoubleKeyFrame
+												x:Uid="EasingDoubleKeyFrame_6"
+												KeyTime="0"
+												Value="0.9" />
+										</DoubleAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+								<VisualState
+									x:Uid="VisualState_7"
+									x:Name="Pressed">
+									<Storyboard
+										x:Uid="Storyboard_8">
+										<DoubleAnimationUsingKeyFrames
+											x:Uid="DoubleAnimationUsingKeyFrames_7"
+											Storyboard.TargetProperty="(UIElement.Opacity)"
+											Storyboard.TargetName="Rectangle">
+											<EasingDoubleKeyFrame
+												x:Uid="EasingDoubleKeyFrame_7"
+												KeyTime="0"
+												Value="0.4" />
+										</DoubleAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+								<VisualState
+									x:Uid="VisualState_8"
+									x:Name="Disabled">
+									<Storyboard
+										x:Uid="Storyboard_9">
+										<DoubleAnimationUsingKeyFrames
+											x:Uid="DoubleAnimationUsingKeyFrames_8"
+											Storyboard.TargetProperty="(UIElement.Opacity)"
+											Storyboard.TargetName="Rectangle">
+											<EasingDoubleKeyFrame
+												x:Uid="EasingDoubleKeyFrame_8"
+												KeyTime="0"
+												Value="0.2" />
+										</DoubleAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+							</VisualStateGroup>
+						</VisualStateManager.VisualStateGroups>
+						<Rectangle
+							Name="Rectangle"
+							x:Uid="Rectangle"
+							HorizontalAlignment="Stretch"
+							VerticalAlignment="Stretch"
+							Width="Auto"
+							Height="Auto"
+							RadiusX="4"
+							RadiusY="4"
+							StrokeThickness="0"
+							Margin="4,0"
+							Opacity="0.4"
+							Fill="{StaticResource Brush_Text_Foreground}" />
+					</Grid>
+					<ControlTemplate.Triggers>
+						<Trigger
+							x:Uid="Trigger_1"
+							Property="UIElement.IsFocused"
+							Value="True" />
+						<Trigger
+							x:Uid="Trigger_2"
+							Property="UIElement.IsMouseOver"
+							Value="True" />
+						<Trigger
+							x:Uid="Trigger_3"
+							Property="IsEnabled"
+							Value="False" />
+						<Trigger
+							x:Uid="Trigger_4"
+							Property="Thumb.IsDragging"
+							Value="True" />
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style
+		x:Uid="Style_4"
+		TargetType="{x:Type RepeatButton}"
+		x:Key="ScrollRepeatButton_Style">
+		<Setter
+			x:Uid="Setter_6"
+			Property="Background"
+			Value="#00FFFFFF" />
+		<Setter
+			x:Uid="Setter_7"
+			Property="BorderBrush"
+			Value="#00FFFFFF" />
+		<Setter
+			x:Uid="Setter_8"
+			Property="IsTabStop"
+			Value="False" />
+		<Setter
+			x:Uid="Setter_9"
+			Property="Focusable"
+			Value="False" />
+		<Setter
+			x:Uid="Setter_10"
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate
+					x:Uid="ControlTemplate_4"
+					TargetType="{x:Type RepeatButton}">
+					<Grid
+						x:Uid="Grid_3">
+						<Rectangle
+							x:Uid="Rectangle_1"
+							Fill="{TemplateBinding Background}"
+							Stroke="{TemplateBinding BorderBrush}"
+							StrokeThickness="{TemplateBinding BorderThickness}" />
+					</Grid>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+		<Style.Triggers>
+			<DataTrigger
+				Value="True"
+				Binding="{Binding Path=(SystemParameters.HighContrast)}">
+				<Setter
+					x:Uid="Setter_6"
+					Property="Background"
+					Value="{DynamicResource SystemColors.ControlBrushKey}" />
+				<Setter
+					x:Uid="Setter_7"
+					Property="BorderBrush"
+					Value="{DynamicResource SystemColors.ControlTextBrushKey}" />
+			</DataTrigger>
+			<MultiDataTrigger>
+				<MultiDataTrigger.Conditions>
+					<Condition
+						Value="True"
+						Binding="{Binding Path=(SystemParameters.HighContrast)}" />
+					<Condition
+						Value="true"
+						Binding="{Binding Path=IsSelected, RelativeSource={RelativeSource Self}}" />
+				</MultiDataTrigger.Conditions>
+				<Setter
+					x:Uid="Setter_6"
+					Property="Background"
+					Value="{DynamicResource SystemColors.HighlightBrushKey}" />
+				<Setter
+					x:Uid="Setter_7"
+					Property="BorderBrush"
+					Value="{DynamicResource SystemColors.HighlightTextBrushKey}" />
+			</MultiDataTrigger>
+		</Style.Triggers>
+	</Style>
+	<Style
+		x:Uid="Style_5"
+		TargetType="{x:Type ScrollBar}"
+		x:Key="ScrollBar_Style">
+		<Setter
+			x:Uid="Setter_11"
+			Property="Stylus.IsFlicksEnabled"
+			Value="False" />
+		<Setter
+			x:Uid="Setter_12"
+			Property="Foreground"
+			Value="{StaticResource {x:Static SystemColors.ControlTextBrushKey}}" />
+		<Setter
+			x:Uid="Setter_13"
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate
+					x:Uid="ControlTemplate_5"
+					TargetType="{x:Type ScrollBar}">
+					<Grid
+						Name="GridRoot"
+						x:Uid="GridRoot"
+						Width="{StaticResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}"
+						Background="{x:Null}">
+						<Grid.RowDefinitions>
+							<RowDefinition
+								x:Uid="RowDefinition_1"
+								MaxHeight="18" />
+							<RowDefinition
+								x:Uid="RowDefinition_2"
+								Height="0.00001*" />
+							<RowDefinition
+								x:Uid="RowDefinition_3"
+								MaxHeight="18" />
+						</Grid.RowDefinitions>
+						<RepeatButton
+							Name="DecreaseRepeat"
+							x:Uid="DecreaseRepeat"
+							Command="ScrollBar.LineUpCommand"
+							Margin="0,-2,0,0"
+							Style="{StaticResource General_RepeatButton_Style}"
+							Background="{x:Null}"
+							BorderBrush="{x:Null}">
+							<Grid
+								x:Uid="Grid_4"
+								Background="#02000000">
+								<Path
+									Name="DecreaseArrow"
+									x:Uid="DecreaseArrow"
+									StrokeThickness="1"
+									Data="M0,4 L8,4 L4,0">
+									<Shape.Fill>
+										<SolidColorBrush
+											x:Uid="SolidColorBrush_17"
+											Color="{StaticResource Color_ForegroundTextcolor}" />
+									</Shape.Fill>
+									<Shape.Stroke>
+										<SolidColorBrush
+											x:Uid="SolidColorBrush_18"
+											Color="{StaticResource Color_ForegroundTextcolor}" />
+									</Shape.Stroke>
+								</Path>
+							</Grid>
+						</RepeatButton>
+						<Track
+							Name="PART_Track"
+							x:Uid="PART_Track"
+							Grid.Row="1"
+							Orientation="Vertical"
+							IsDirectionReversed="True">
+							<Track.Thumb>
+								<Thumb
+									x:Uid="Thumb_1"
+									Style="{StaticResource Thumb_Style}" />
+							</Track.Thumb>
+							<Track.IncreaseRepeatButton>
+								<RepeatButton
+									Name="PageUp"
+									x:Uid="PageUp"
+									Command="ScrollBar.PageDownCommand"
+									Style="{StaticResource ScrollRepeatButton_Style}" />
+							</Track.IncreaseRepeatButton>
+							<Track.DecreaseRepeatButton>
+								<RepeatButton
+									Name="PageDown"
+									x:Uid="PageDown"
+									Command="ScrollBar.PageUpCommand"
+									Style="{StaticResource ScrollRepeatButton_Style}" />
+							</Track.DecreaseRepeatButton>
+						</Track>
+						<RepeatButton
+							Name="IncreaseRepeat"
+							x:Uid="IncreaseRepeat"
+							Grid.Row="2"
+							Command="ScrollBar.LineDownCommand"
+							Margin="0,0,0,-2"
+							Style="{StaticResource General_RepeatButton_Style}"
+							Background="{x:Null}"
+							BorderBrush="{x:Null}">
+							<Grid
+								x:Uid="Grid_5"
+								Background="#02000000">
+								<Path
+									Name="IncreaseArrow"
+									x:Uid="IncreaseArrow"
+									StrokeThickness="1"
+									Data="M0,0 L4,4 L8,0">
+									<Shape.Fill>
+										<SolidColorBrush
+											x:Uid="SolidColorBrush_19"
+											Color="{StaticResource Color_ForegroundTextcolor}" />
+									</Shape.Fill>
+									<Shape.Stroke>
+										<SolidColorBrush
+											x:Uid="SolidColorBrush_20"
+											Color="{StaticResource Color_ForegroundTextcolor}" />
+									</Shape.Stroke>
+								</Path>
+							</Grid>
+						</RepeatButton>
+					</Grid>
+					<ControlTemplate.Triggers>
+						<Trigger
+							x:Uid="Trigger_5"
+							Property="ScrollBar.Orientation"
+							Value="Horizontal">
+							<Setter
+								x:Uid="Setter_14"
+								TargetName="GridRoot"
+								Property="FrameworkElement.LayoutTransform">
+								<Setter.Value>
+									<RotateTransform
+										x:Uid="RotateTransform_1"
+										Angle="-90" />
+								</Setter.Value>
+							</Setter>
+							<Setter
+								x:Uid="Setter_15"
+								TargetName="PART_Track"
+								Property="Orientation"
+								Value="Vertical" />
+							<Setter
+								x:Uid="Setter_16"
+								TargetName="DecreaseRepeat"
+								Property="Command"
+								Value="ScrollBar.LineLeftCommand" />
+							<Setter
+								x:Uid="Setter_17"
+								TargetName="IncreaseRepeat"
+								Property="Command"
+								Value="ScrollBar.LineRightCommand" />
+							<Setter
+								x:Uid="Setter_18"
+								TargetName="PageDown"
+								Property="Command"
+								Value="ScrollBar.PageLeftCommand" />
+							<Setter
+								x:Uid="Setter_19"
+								TargetName="PageUp"
+								Property="Command"
+								Value="ScrollBar.PageRightCommand" />
+						</Trigger>
+						<DataTrigger
+							Value="True"
+							Binding="{Binding Path=(SystemParameters.HighContrast)}">
+							<Setter
+								x:Uid="Setter_12"
+								Property="Foreground"
+								Value="{StaticResource {x:Static SystemColors.ControlTextBrushKey}}" />
+							<Setter
+								TargetName="IncreaseArrow"
+								Value="{DynamicResource SystemColors.ControlTextBrushKey}"
+								Property="Fill" />
+							<Setter
+								TargetName="DecreaseArrow"
+								Value="{DynamicResource SystemColors.ControlTextBrushKey}"
+								Property="Fill" />
+							<Setter
+								TargetName="GridRoot"
+								Value="{DynamicResource SystemColors.ControlTextBrushKey}"
+								Property="Background" />
+						</DataTrigger>
+						<MultiDataTrigger>
+							<MultiDataTrigger.Conditions>
+								<Condition
+									Value="True"
+									Binding="{Binding Path=(SystemParameters.HighContrast)}" />
+								<Condition
+									Value="true"
+									Binding="{Binding Path=IsSelected, RelativeSource={RelativeSource Self}}" />
+							</MultiDataTrigger.Conditions>
+							<Setter
+								x:Uid="Setter_12"
+								Property="Foreground"
+								Value="{StaticResource {x:Static SystemColors.HighlightTextBrushKey}}" />
+							<Setter
+								TargetName="IncreaseArrow"
+								Value="{DynamicResource SystemColors.ControlTextBrushKey}"
+								Property="Fill" />
+							<Setter
+								TargetName="DecreaseArrow"
+								Value="{DynamicResource SystemColors.ControlTextBrushKey}"
+								Property="Fill" />
+							<Setter
+								TargetName="GridRoot"
+								Value="{DynamicResource SystemColors.ControlTextBrushKey}"
+								Property="Background" />
+						</MultiDataTrigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+		<Style.Triggers>
+			<DataTrigger
+				Value="True"
+				Binding="{Binding Path=(SystemParameters.HighContrast)}">
+				<Setter
+					x:Uid="Setter_12"
+					Property="Foreground"
+					Value="{DynamicResource SystemColors.ControlTextBrushKey}" />
+			</DataTrigger>
+			<MultiDataTrigger>
+				<MultiDataTrigger.Conditions>
+					<Condition
+						Value="True"
+						Binding="{Binding Path=(SystemParameters.HighContrast)}" />
+					<Condition
+						Value="true"
+						Binding="{Binding Path=IsSelected, RelativeSource={RelativeSource Self}}" />
+				</MultiDataTrigger.Conditions>
+				<Setter
+					x:Uid="Setter_12"
+					Property="Background"
+					Value="{DynamicResource SystemColors.HighlightBrushKey}" />
+			</MultiDataTrigger>
+		</Style.Triggers>
+	</Style>
+	<Style
+		x:Uid="Style_6"
+		TargetType="{x:Type ScrollViewer}"
+		BasedOn="{x:Null}"
+		x:Key="ScrollViewer_Style">
+		<Setter
+			x:Uid="Setter_20"
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate
+					x:Uid="ControlTemplate_6"
+					TargetType="{x:Type ScrollViewer}">
+					<Grid
+						x:Uid="Grid_6"
+						Background="{TemplateBinding Background}">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition
+								x:Uid="ColumnDefinition_1"
+								Width="*" />
+							<ColumnDefinition
+								x:Uid="ColumnDefinition_2"
+								Width="Auto" />
+						</Grid.ColumnDefinitions>
+						<Grid.RowDefinitions>
+							<RowDefinition
+								x:Uid="RowDefinition_4"
+								Height="*" />
+							<RowDefinition
+								x:Uid="RowDefinition_5"
+								Height="Auto" />
+						</Grid.RowDefinitions>
+						<ScrollContentPresenter
+							x:Uid="ScrollContentPresenter_1"
+							Grid.Column="0"
+							Grid.Row="0"
+							Margin="{TemplateBinding Padding}"
+							Content="{TemplateBinding Content}"
+							ContentTemplate="{TemplateBinding ContentTemplate}"
+							CanContentScroll="{TemplateBinding CanContentScroll}" />
+						<ScrollBar
+							Name="PART_HorizontalScrollBar"
+							x:Uid="PART_HorizontalScrollBar"
+							Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"
+							Grid.Column="0"
+							Grid.Row="1"
+							Orientation="Horizontal"
+							ViewportSize="{TemplateBinding ViewportWidth}"
+							Minimum="0"
+							Maximum="{TemplateBinding ScrollableWidth}"
+							Style="{StaticResource ScrollBar_Style}"
+							Value="{Binding HorizontalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" />
+						<ScrollBar
+							Name="PART_VerticalScrollBar"
+							x:Uid="PART_VerticalScrollBar"
+							Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"
+							Grid.Column="1"
+							Grid.Row="0"
+							Orientation="Vertical"
+							ViewportSize="{TemplateBinding ViewportHeight}"
+							Minimum="0"
+							Maximum="{TemplateBinding ScrollableHeight}"
+							Style="{StaticResource ScrollBar_Style}"
+							Value="{Binding VerticalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" />
+					</Grid>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style
+		x:Uid="Style_14"
+		TargetType="{x:Type Label}"
+		x:Key="Label_Style">
+		<Setter
+			x:Uid="Setter_34"
+			Property="Foreground"
+			Value="{StaticResource Brush_Text_Foreground}" />
+		<Setter
+			x:Uid="Setter_35"
+			Property="HorizontalContentAlignment"
+			Value="Left" />
+		<Setter
+			x:Uid="Setter_36"
+			Property="Margin"
+			Value="0,0,0,3" />
+		<Setter
+			x:Uid="Setter_37"
+			Property="VerticalContentAlignment"
+			Value="Top" />
+		<Setter
+			x:Uid="Setter_38"
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate
+					x:Uid="ControlTemplate_14"
+					TargetType="{x:Type Label}">
+					<Grid
+						x:Uid="Grid_19"
+						Margin="{TemplateBinding Margin}">
+						<ContentPresenter
+							x:Uid="ContentPresenter_1"
+							HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+							VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+							RecognizesAccessKey="True" />
+					</Grid>
+					<ControlTemplate.Triggers>
+						<Trigger
+							x:Uid="Trigger_6"
+							Property="IsEnabled"
+							Value="False" />
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+		<Style.Triggers>
+			<DataTrigger
+				Value="True"
+				Binding="{Binding Path=(SystemParameters.HighContrast)}">
+				<Setter
+					x:Uid="Setter_34"
+					Property="Foreground"
+					Value="{DynamicResource SystemColors.ControlTextBrushKey}" />
+			</DataTrigger>
+			<MultiDataTrigger>
+				<MultiDataTrigger.Conditions>
+					<Condition
+						Value="True"
+						Binding="{Binding Path=(SystemParameters.HighContrast)}" />
+					<Condition
+						Value="true"
+						Binding="{Binding Path=IsSelected, RelativeSource={RelativeSource Self}}" />
+				</MultiDataTrigger.Conditions>
+				<Setter
+					x:Uid="Setter_34"
+					Property="Foreground"
+					Value="{DynamicResource SystemColors.HighlightTextBrushKey}" />
+			</MultiDataTrigger>
+		</Style.Triggers>
+	</Style>
+	<Style
+		TargetType="{x:Type Label}"
+		BasedOn="{StaticResource Label_Style}"
+		x:Key="ColumnLabel_Style">
+		<Setter
+			Property="VerticalContentAlignment"
+			Value="Center" />
+		<Setter
+			Property="Margin"
+			Value="0,0,10,0" />
+		<Style.Triggers>
+			<DataTrigger
+				Value="True"
+				Binding="{Binding Path=(SystemParameters.HighContrast)}">
+				<Setter
+					Property="Foreground"
+					Value="{DynamicResource SystemColors.ControlTextBrushKey}" />
+				<Setter
+					Property="Background"
+					Value="{DynamicResource SystemColors.ControlBrushKey}" />
+			</DataTrigger>
+			<MultiDataTrigger>
+				<MultiDataTrigger.Conditions>
+					<Condition
+						Value="True"
+						Binding="{Binding Path=(SystemParameters.HighContrast)}" />
+					<Condition
+						Value="true"
+						Binding="{Binding Path=IsSelected, RelativeSource={RelativeSource Self}}" />
+				</MultiDataTrigger.Conditions>
+				<Setter
+					Property="Background"
+					Value="{DynamicResource SystemColors.HighlightBrushKey}" />
+				<Setter
+					Property="Foreground"
+					Value="{DynamicResource SystemColors.HighlightTextBrushKey}" />
+				<Setter
+					Property="BorderBrush"
+					Value="{DynamicResource SystemColors.HighlightTextBrushKey}" />
+			</MultiDataTrigger>
+		</Style.Triggers>
+	</Style>
+	<Style
+		TargetType="{x:Type CheckBox}"
+		x:Key="CheckBox_Style">
+		<Setter
+			Property="Foreground"
+			Value="{StaticResource Brush_Text_Foreground}" />
+		<Setter
+			Property="Margin"
+			Value="0,0,0,3" />
+		<Setter
+			Property="VerticalContentAlignment"
+			Value="Center" />
+		<Setter
+			Property="HorizontalContentAlignment"
+			Value="Left" />
+		<Setter
+			Property="VerticalAlignment"
+			Value="Stretch" />
+		<Setter
+			Property="HorizontalAlignment"
+			Value="Left" />
+		<Style.Triggers>
+			<DataTrigger
+				Value="True"
+				Binding="{Binding Path=(SystemParameters.HighContrast)}">
+				<Setter
+					Property="Foreground"
+					Value="{DynamicResource SystemColors.ControlTextBrushKey}" />
+				<Setter
+					Property="Background"
+					Value="{DynamicResource SystemColors.ControlBrushKey}" />
+			</DataTrigger>
+		</Style.Triggers>
+	</Style>
+	<Style
+		TargetType="{x:Type RadioButton}"
+		x:Key="RadioButton_Style">
+		<Setter
+			Property="Foreground"
+			Value="{StaticResource Brush_Text_Foreground}" />
+		<Setter
+			Property="VerticalContentAlignment"
+			Value="Center" />
+		<Setter
+			Property="HorizontalContentAlignment"
+			Value="Left" />
+		<Setter
+			Property="VerticalAlignment"
+			Value="Stretch" />
+		<Setter
+			Property="HorizontalAlignment"
+			Value="Stretch" />
+		<Setter
+			Property="Height"
+			Value="25" />
+		<Style.Triggers>
+			<DataTrigger
+				Value="True"
+				Binding="{Binding Path=(SystemParameters.HighContrast)}">
+				<Setter
+					Property="Foreground"
+					Value="{DynamicResource SystemColors.ControlTextBrushKey}" />
+				<Setter
+					Property="Background"
+					Value="{DynamicResource SystemColors.ControlBrushKey}" />
+			</DataTrigger>
+			<MultiDataTrigger>
+				<MultiDataTrigger.Conditions>
+					<Condition
+						Value="True"
+						Binding="{Binding Path=(SystemParameters.HighContrast)}" />
+					<Condition
+						Value="true"
+						Binding="{Binding Path=IsSelected, RelativeSource={RelativeSource Self}}" />
+				</MultiDataTrigger.Conditions>
+				<Setter
+					Property="Background"
+					Value="{DynamicResource SystemColors.HighlightBrushKey}" />
+				<Setter
+					Property="Foreground"
+					Value="{DynamicResource SystemColors.HighlightTextBrushKey}" />
+				<Setter
+					Property="BorderBrush"
+					Value="{DynamicResource SystemColors.HighlightTextBrushKey}" />
+			</MultiDataTrigger>
+			<MultiDataTrigger>
+				<MultiDataTrigger.Conditions>
+					<Condition
+						Value="True"
+						Binding="{Binding Path=(SystemParameters.HighContrast)}" />
+					<Condition
+						Value="true"
+						Binding="{Binding Path=IsMouseOver, RelativeSource={RelativeSource Self}}" />
+				</MultiDataTrigger.Conditions>
+				<Setter
+					Property="Background"
+					Value="{DynamicResource SystemColors.HighlightBrushKey}" />
+				<Setter
+					Property="Foreground"
+					Value="{DynamicResource SystemColors.HighlightTextBrushKey}" />
+				<Setter
+					Property="BorderBrush"
+					Value="{DynamicResource SystemColors.HighlightTextBrushKey}" />
+			</MultiDataTrigger>
+		</Style.Triggers>
+	</Style>
+	<Style
+		x:Uid="Style_17"
+		TargetType="{x:Type Button}"
+		BasedOn="{x:Null}"
+		x:Key="General_Button_Style">
+		<Setter
+			x:Uid="Setter_41"
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate
+					x:Uid="ControlTemplate_17"
+					TargetType="{x:Type Button}">
+					<Grid
+						Name="Grid"
+						x:Uid="Grid_24">
+						<VisualStateManager.VisualStateGroups>
+							<VisualStateGroup
+								x:Uid="VisualStateGroup_22"
+								x:Name="CommonStates">
+								<VisualState
+									x:Uid="VisualState_65"
+									x:Name="Normal" />
+								<VisualState
+									x:Uid="VisualState_66"
+									x:Name="MouseOver">
+									<Storyboard
+										x:Uid="Storyboard_42">
+										<ColorAnimationUsingKeyFrames
+											x:Uid="ColorAnimationUsingKeyFrames_30"
+											Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)"
+											Storyboard.TargetName="Border">
+											<EasingColorKeyFrame
+												x:Uid="EasingColorKeyFrame_30"
+												KeyTime="0"
+												Value="#FFAAAAAA" />
+										</ColorAnimationUsingKeyFrames>
+										<ColorAnimationUsingKeyFrames
+											x:Uid="ColorAnimationUsingKeyFrames_31"
+											Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)"
+											Storyboard.TargetName="contentControl">
+											<EasingColorKeyFrame
+												x:Uid="EasingColorKeyFrame_31"
+												KeyTime="0"
+												Value="#E51A1A1A" />
+										</ColorAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+								<VisualState
+									x:Uid="VisualState_67"
+									x:Name="Pressed" />
+								<VisualState
+									x:Uid="VisualState_68"
+									x:Name="Disabled">
+									<Storyboard
+										x:Uid="Storyboard_43">
+										<DoubleAnimationUsingKeyFrames
+											x:Uid="DoubleAnimationUsingKeyFrames_26"
+											Storyboard.TargetProperty="(UIElement.Opacity)"
+											Storyboard.TargetName="Grid">
+											<EasingDoubleKeyFrame
+												x:Uid="EasingDoubleKeyFrame_26"
+												KeyTime="0"
+												Value="0.55" />
+										</DoubleAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+							</VisualStateGroup>
+							<VisualStateGroup
+								x:Uid="VisualStateGroup_23"
+								x:Name="FocusStates">
+								<VisualState
+									x:Uid="VisualState_69"
+									x:Name="Unfocused" />
+								<VisualState
+									x:Uid="VisualState_70"
+									x:Name="Focused">
+									<Storyboard
+										x:Uid="Storyboard_44">
+										<DoubleAnimationUsingKeyFrames
+											x:Uid="DoubleAnimationUsingKeyFrames_27"
+											Storyboard.TargetProperty="(UIElement.Opacity)"
+											Storyboard.TargetName="Focus">
+											<EasingDoubleKeyFrame
+												x:Uid="EasingDoubleKeyFrame_27"
+												KeyTime="0"
+												Value="0.75" />
+										</DoubleAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+							</VisualStateGroup>
+						</VisualStateManager.VisualStateGroups>
+						<Border
+							Name="Border"
+							x:Uid="Border_9"
+							Background="#FF595959"
+							BorderBrush="#FF454545"
+							BorderThickness="1"
+							Padding="6,2,6,2" />
+						<ContentControl
+							Name="contentControl"
+							x:Uid="contentControl"
+							Foreground="#AAFFFFFF"
+							KeyboardNavigation.IsTabStop="False">
+							<ContentPresenter
+								x:Uid="ContentPresenter_2"
+								HorizontalAlignment="Center"
+								Margin="8,2,8,2"
+								VerticalAlignment="Center"
+								RecognizesAccessKey="True" />
+						</ContentControl>
+						<Rectangle
+							Name="Focus"
+							x:Uid="Rectangle_12"
+							Stroke="#3DFFFFFF"
+							Margin="2"
+							Opacity="0"
+							StrokeDashArray="1.5" />
+					</Grid>
+					<ControlTemplate.Triggers>
+						<DataTrigger
+							Value="True"
+							Binding="{Binding Path=(SystemParameters.HighContrast)}">
+							<Setter
+								TargetName="contentControl"
+								Value="{DynamicResource SystemColors.ControlTextBrushKey}"
+								Property="Foreground" />
+							<Setter
+								TargetName="Border"
+								Value="{DynamicResource SystemColors.ControlTextBrushKey}"
+								Property="BorderBrush" />
+							<Setter
+								TargetName="Border"
+								Value="{DynamicResource SystemColors.ControlBrushKey}"
+								Property="Background" />
+						</DataTrigger>
+						<MultiDataTrigger>
+							<MultiDataTrigger.Conditions>
+								<Condition
+									Value="True"
+									Binding="{Binding Path=(SystemParameters.HighContrast)}" />
+								<Condition
+									Value="true"
+									Binding="{Binding Path=IsSelected, RelativeSource={RelativeSource Self}}" />
+							</MultiDataTrigger.Conditions>
+							<Setter
+								TargetName="contentControl"
+								Value="{DynamicResource SystemColors.HighlightTextBrushKey}"
+								Property="Foreground" />
+							<Setter
+								TargetName="Border"
+								Value="{DynamicResource SystemColors.HighlightTextBrushKey}"
+								Property="BorderBrush" />
+							<Setter
+								TargetName="Border"
+								Value="{DynamicResource SystemColors.HighlightBrushKey}"
+								Property="Background" />
+						</MultiDataTrigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style
+		TargetType="{x:Type Button}"
+		BasedOn="{StaticResource General_Button_Style}"
+		x:Key="General_Button_Style2">
+		<Setter
+			Property="Height"
+			Value="28" />
+	</Style>
+	<Style
+		x:Uid="Style_18"
+		TargetType="{x:Type ScrollViewer}"
+		BasedOn="{x:Null}"
+		x:Key="ListBoxScrollViewer_Style">
+		<Setter
+			x:Uid="Setter_42"
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate
+					x:Uid="ControlTemplate_18"
+					TargetType="{x:Type ScrollViewer}">
+					<Grid
+						x:Uid="Grid_25"
+						Background="{TemplateBinding Background}">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition
+								x:Uid="ColumnDefinition_3"
+								Width="*" />
+							<ColumnDefinition
+								x:Uid="ColumnDefinition_4"
+								Width="Auto" />
+						</Grid.ColumnDefinitions>
+						<Grid.RowDefinitions>
+							<RowDefinition
+								x:Uid="RowDefinition_6"
+								Height="*" />
+							<RowDefinition
+								x:Uid="RowDefinition_7"
+								Height="Auto" />
+						</Grid.RowDefinitions>
+						<VisualStateManager.VisualStateGroups>
+							<VisualStateGroup
+								x:Uid="ValidationStates"
+								x:Name="ValidationStates">
+								<VisualState
+									x:Uid="Valid"
+									x:Name="Valid" />
+								<VisualState
+									x:Uid="InvalidFocused"
+									x:Name="InvalidFocused" />
+								<VisualState
+									x:Uid="InvalidUnfocused"
+									x:Name="InvalidUnfocused" />
+							</VisualStateGroup>
+						</VisualStateManager.VisualStateGroups>
+						<Border
+							Name="Border"
+							x:Uid="Border_10"
+							BorderThickness="{TemplateBinding BorderThickness}"
+							Margin="0,0,4,0"
+							Grid.RowSpan="2"
+							BorderBrush="{x:Null}">
+							<Border.Background>
+								<SolidColorBrush
+									x:Uid="SolidColorBrush_27"
+									Color="{StaticResource Color_Listbox_Background}" />
+							</Border.Background>
+						</Border>
+						<ScrollContentPresenter
+							x:Uid="ScrollContentPresenter_2"
+							Grid.Column="0"
+							Grid.Row="0"
+							Margin="{TemplateBinding Padding}"
+							Content="{TemplateBinding Content}"
+							ContentTemplate="{TemplateBinding ContentTemplate}"
+							CanContentScroll="{TemplateBinding CanContentScroll}" />
+						<ScrollBar
+							Name="PART_HorizontalScrollBar"
+							x:Uid="ScrollBar_1"
+							Visibility="Collapsed"
+							Grid.Column="0"
+							Grid.Row="1"
+							Orientation="Horizontal"
+							ViewportSize="{TemplateBinding ViewportWidth}"
+							Minimum="0"
+							Maximum="{TemplateBinding ScrollableWidth}"
+							ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+							Style="{StaticResource ScrollBar_Style}"
+							Value="{Binding HorizontalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" />
+						<ScrollBar
+							Name="PART_VerticalScrollBar"
+							x:Uid="ScrollBar_2"
+							Visibility="Visible"
+							Grid.Column="1"
+							Grid.Row="0"
+							Orientation="Vertical"
+							ViewportSize="{TemplateBinding ViewportHeight}"
+							Minimum="0"
+							Maximum="{TemplateBinding ScrollableHeight}"
+							ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+							Style="{StaticResource ScrollBar_Style}"
+							Value="{Binding VerticalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" />
+					</Grid>
+					<ControlTemplate.Triggers>
+						<DataTrigger
+							Value="True"
+							Binding="{Binding Path=(SystemParameters.HighContrast)}">
+							<Setter
+								TargetName="Border"
+								Value="{DynamicResource SystemColors.ControlBrushKey}"
+								Property="Background" />
+							<Setter
+								TargetName="Border"
+								Value="{DynamicResource SystemColors.ControlTextBrushKey}"
+								Property="BorderBrush" />
+						</DataTrigger>
+						<MultiDataTrigger>
+							<MultiDataTrigger.Conditions>
+								<Condition
+									Value="True"
+									Binding="{Binding Path=(SystemParameters.HighContrast)}" />
+								<Condition
+									Value="true"
+									Binding="{Binding Path=IsSelected, RelativeSource={RelativeSource Self}}" />
+							</MultiDataTrigger.Conditions>
+							<Setter
+								TargetName="Border"
+								Value="{DynamicResource SystemColors.HighlightBrushKey}"
+								Property="Background" />
+							<Setter
+								TargetName="Border"
+								Value="{DynamicResource SystemColors.HighlightTextBrushKey}"
+								Property="BorderBrush" />
+						</MultiDataTrigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style
+		x:Uid="Style_19"
+		TargetType="{x:Type ListBox}"
+		x:Key="ListBox_Style">
+		<Setter
+			x:Uid="Setter_43"
+			Property="UIElement.SnapsToDevicePixels"
+			Value="True" />
+		<Setter
+			x:Uid="Setter_44"
+			Property="Background"
+			Value="{StaticResource Brush_WindowBackground}" />
+		<Setter
+			x:Uid="Setter_45"
+			Property="BorderBrush"
+			Value="{StaticResource Brush_SolidBorder}" />
+		<Setter
+			x:Uid="Setter_46"
+			Property="HorizontalScrollBarVisibility"
+			Value="Auto" />
+		<Setter
+			x:Uid="Setter_47"
+			Property="VerticalScrollBarVisibility"
+			Value="Auto" />
+		<Setter
+			x:Uid="Setter_48"
+			Property="CanContentScroll"
+			Value="True" />
+		<Setter
+			x:Uid="Setter_49"
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate
+					x:Uid="ControlTemplate_19"
+					TargetType="{x:Type ListBox}">
+					<Grid
+						x:Uid="Grid_26">
+						<ScrollViewer
+							x:Uid="ScrollViewer_1"
+							Margin="1"
+							Focusable="False"
+							Style="{StaticResource ListBoxScrollViewer_Style}"
+							Background="{x:Null}">
+							<StackPanel
+								x:Uid="StackPanel_1"
+								Margin="2"
+								IsItemsHost="True" />
+						</ScrollViewer>
+					</Grid>
+					<ControlTemplate.Triggers>
+						<Trigger
+							x:Uid="Trigger_7"
+							Property="IsEnabled"
+							Value="False" />
+						<Trigger
+							x:Uid="Trigger_8"
+							Property="ItemsControl.IsGrouping"
+							Value="True">
+							<Setter
+								x:Uid="Setter_50"
+								Property="CanContentScroll"
+								Value="False" />
+						</Trigger>
+						<DataTrigger
+							Value="True"
+							Binding="{Binding Path=(SystemParameters.HighContrast)}">
+							<Setter
+								x:Uid="Setter_44"
+								Value="{DynamicResource SystemColors.ControlBrushKey}"
+								Property="Background" />
+							<Setter
+								x:Uid="Setter_45"
+								Value="{DynamicResource SystemColors.ControlTextBrushKey}"
+								Property="BorderBrush" />
+						</DataTrigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+		<Style.Triggers>
+			<DataTrigger
+				Value="True"
+				Binding="{Binding Path=(SystemParameters.HighContrast)}">
+				<Setter
+					Property="Foreground"
+					Value="{DynamicResource SystemColors.ControlTextBrushKey}" />
+				<Setter
+					x:Uid="Setter_44"
+					Property="Background"
+					Value="{DynamicResource SystemColors.ControlBrushKey}" />
+				<Setter
+					x:Uid="Setter_45"
+					Property="BorderBrush"
+					Value="{DynamicResource SystemColors.ControlTextBrushKey}" />
+			</DataTrigger>
+			<MultiDataTrigger>
+				<MultiDataTrigger.Conditions>
+					<Condition
+						Value="True"
+						Binding="{Binding Path=(SystemParameters.HighContrast)}" />
+					<Condition
+						Value="true"
+						Binding="{Binding Path=IsSelected, RelativeSource={RelativeSource Self}}" />
+				</MultiDataTrigger.Conditions>
+				<Setter
+					x:Uid="Setter_44"
+					Property="Background"
+					Value="{DynamicResource SystemColors.HighlightBrushKey}" />
+				<Setter
+					Property="Foreground"
+					Value="{DynamicResource SystemColors.HighlightTextBrushKey}" />
+				<Setter
+					x:Uid="Setter_45"
+					Property="BorderBrush"
+					Value="{DynamicResource SystemColors.HighlightTextBrushKey}" />
+			</MultiDataTrigger>
+		</Style.Triggers>
+	</Style>
+	<Style
+		x:Uid="Style_20"
+		TargetType="{x:Type ListBoxItem}"
+		x:Key="ListBoxItem_Style">
+		<Setter
+			x:Uid="Setter_51"
+			Property="UIElement.SnapsToDevicePixels"
+			Value="True" />
+		<Setter
+			x:Uid="Setter_52"
+			Property="FrameworkElement.OverridesDefaultStyle"
+			Value="True" />
+		<Setter
+			x:Uid="Setter_53"
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate
+					x:Uid="ControlTemplate_20"
+					TargetType="{x:Type ListBoxItem}">
+					<Grid
+						x:Uid="Grid_27"
+						SnapsToDevicePixels="True">
+						<Border
+							Name="Border"
+							x:Uid="Border_11"
+							Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}" />
+						<ContentPresenter
+							x:Uid="ContentPresenter_3"
+							HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+							VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+					</Grid>
+					<ControlTemplate.Triggers>
+						<Trigger
+							x:Uid="Trigger_9"
+							Property="ListBoxItem.IsSelected"
+							Value="True">
+							<Setter
+								x:Uid="Setter_54"
+								TargetName="Border"
+								Property="Background"
+								Value="{StaticResource Brush_SelectedBackground}" />
+						</Trigger>
+						<Trigger
+							x:Uid="Trigger_10"
+							Property="IsEnabled"
+							Value="False">
+							<Setter
+								x:Uid="Setter_55"
+								Property="Foreground"
+								Value="{StaticResource Brush_DisabledForeground}" />
+						</Trigger>
+						<DataTrigger
+							Value="True"
+							Binding="{Binding Path=(SystemParameters.HighContrast)}">
+							<Setter
+								x:Uid="Setter_55"
+								Value="{DynamicResource SystemColors.ControlTextBrushKey}"
+								Property="Foreground" />
+							<Setter
+								x:Uid="Setter_54"
+								Value="{DynamicResource SystemColors.ControlBrushKey}"
+								Property="Background" />
+						</DataTrigger>
+						<MultiDataTrigger>
+							<MultiDataTrigger.Conditions>
+								<Condition
+									Value="True"
+									Binding="{Binding Path=(SystemParameters.HighContrast)}" />
+								<Condition
+									Value="true"
+									Binding="{Binding Path=IsFocused, RelativeSource={RelativeSource Self}}" />
+							</MultiDataTrigger.Conditions>
+							<Setter
+								x:Uid="Setter_55"
+								Value="{DynamicResource SystemColors.HighlightTextBrushKey}"
+								Property="Foreground" />
+							<Setter
+								x:Uid="Setter_54"
+								Value="{DynamicResource SystemColors.HighlightBrushKey}"
+								Property="Background" />
+						</MultiDataTrigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<ControlTemplate
+		x:Uid="ControlTemplate_21"
+		TargetType="{x:Type ToggleButton}"
+		x:Key="ComboBoxToggleButton_Style">
+		<Grid
+			x:Uid="Grid_28">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition
+					x:Uid="ColumnDefinition_5" />
+				<ColumnDefinition
+					x:Uid="ColumnDefinition_6"
+					Width="20" />
+			</Grid.ColumnDefinitions>
+			<VisualStateManager.VisualStateGroups>
+				<VisualStateGroup
+					x:Uid="VisualStateGroup_24"
+					x:Name="CommonStates">
+					<VisualState
+						x:Uid="VisualState_71"
+						x:Name="Normal" />
+					<VisualState
+						x:Uid="VisualState_72"
+						x:Name="MouseOver">
+						<Storyboard
+							x:Uid="Storyboard_45">
+							<ColorAnimationUsingKeyFrames
+								x:Uid="ColorAnimationUsingKeyFrames_32"
+								Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)"
+								Storyboard.TargetName="Arrow">
+								<EasingColorKeyFrame
+									x:Uid="EasingColorKeyFrame_32"
+									KeyTime="0"
+									Value="#E51A1A1A" />
+							</ColorAnimationUsingKeyFrames>
+							<DoubleAnimationUsingKeyFrames
+								x:Uid="DoubleAnimationUsingKeyFrames_28"
+								Storyboard.TargetProperty="(UIElement.Opacity)"
+								Storyboard.TargetName="Checked_Visual">
+								<EasingDoubleKeyFrame
+									x:Uid="EasingDoubleKeyFrame_28"
+									KeyTime="0"
+									Value="1" />
+							</DoubleAnimationUsingKeyFrames>
+						</Storyboard>
+					</VisualState>
+					<VisualState
+						x:Uid="VisualState_73"
+						x:Name="Pressed" />
+					<VisualState
+						x:Uid="VisualState_74"
+						x:Name="Disabled" />
+				</VisualStateGroup>
+				<VisualStateGroup
+					x:Uid="VisualStateGroup_25"
+					x:Name="CheckStates">
+					<VisualState
+						x:Uid="VisualState_75"
+						x:Name="Checked">
+						<Storyboard
+							x:Uid="Storyboard_46">
+							<ColorAnimationUsingKeyFrames
+								x:Uid="ColorAnimationUsingKeyFrames_33"
+								Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)"
+								Storyboard.TargetName="Rectangle">
+								<EasingColorKeyFrame
+									x:Uid="EasingColorKeyFrame_33"
+									KeyTime="0"
+									Value="#FFAAAAAA" />
+							</ColorAnimationUsingKeyFrames>
+						</Storyboard>
+					</VisualState>
+					<VisualState
+						x:Uid="VisualState_76"
+						x:Name="Unchecked" />
+					<VisualState
+						x:Uid="VisualState_77"
+						x:Name="Indeterminate" />
+				</VisualStateGroup>
+				<VisualStateGroup
+					x:Uid="VisualStateGroup_26"
+					x:Name="FocusStates">
+					<VisualState
+						x:Uid="VisualState_78"
+						x:Name="Unfocused" />
+					<VisualState
+						x:Uid="VisualState_79"
+						x:Name="Focused" />
+				</VisualStateGroup>
+			</VisualStateManager.VisualStateGroups>
+			<Rectangle
+				Name="Rectangle"
+				x:Uid="Rectangle_13"
+				Grid.ColumnSpan="2"
+				HorizontalAlignment="Stretch"
+				VerticalAlignment="Stretch"
+				Width="Auto"
+				Height="Auto"
+				RadiusX="0"
+				RadiusY="0"
+				Fill="#FF6E6E6E"
+				Stroke="#FF454545" />
+			<Rectangle
+				Name="Checked_Visual"
+				x:Uid="Rectangle_14"
+				Grid.ColumnSpan="2"
+				HorizontalAlignment="Stretch"
+				VerticalAlignment="Stretch"
+				Width="Auto"
+				Height="Auto"
+				RadiusX="0"
+				RadiusY="0"
+				Fill="#FFAAAAAA"
+				Stroke="#FF454545"
+				Opacity="0" />
+			<Rectangle
+				Name="Rectangle_2"
+				x:Uid="Rectangle_15"
+				Grid.Column="0"
+				HorizontalAlignment="Stretch"
+				VerticalAlignment="Stretch"
+				Width="Auto"
+				Height="Auto"
+				RadiusX="0"
+				RadiusY="0">
+				<Shape.Stroke>
+					<SolidColorBrush
+						x:Uid="SolidColorBrush_28"
+						Color="{StaticResource Color_TextBoxStroke}" />
+				</Shape.Stroke>
+				<Shape.Fill>
+					<SolidColorBrush
+						x:Uid="SolidColorBrush_29"
+						Color="{StaticResource Color_TextBoxFill}" />
+				</Shape.Fill>
+			</Rectangle>
+			<Path
+				Name="Arrow"
+				x:Uid="Arrow"
+				Grid.Column="1"
+				HorizontalAlignment="Center"
+				VerticalAlignment="Center"
+				Fill="#AAFFFFFF"
+				Data="M0,0 L4,4 L8,0" />
+		</Grid>
+		<ControlTemplate.Triggers>
+			<DataTrigger
+				Value="True"
+				Binding="{Binding Path=(SystemParameters.HighContrast)}">
+				<Setter
+					TargetName="Rectangle"
+					Value="{DynamicResource SystemColors.ControlBrushKey}"
+					Property="Fill" />
+				<Setter
+					TargetName="Rectangle_2"
+					Value="{DynamicResource SystemColors.ControlBrushKey}"
+					Property="Fill" />
+				<Setter
+					TargetName="Rectangle_2"
+					Value="{DynamicResource SystemColors.ControlTextBrushKey}"
+					Property="Stroke" />
+				<Setter
+					TargetName="Checked_Visual"
+					Value="{DynamicResource SystemColors.ControlBrushKey}"
+					Property="Fill" />
+				<Setter
+					TargetName="Checked_Visual"
+					Value="{DynamicResource SystemColors.ControlTextBrushKey}"
+					Property="Stroke" />
+				<Setter
+					TargetName="Arrow"
+					Value="{DynamicResource SystemColors.ControlTextBrushKey}"
+					Property="Fill" />
+			</DataTrigger>
+			<MultiDataTrigger>
+				<MultiDataTrigger.Conditions>
+					<Condition
+						Value="True"
+						Binding="{Binding Path=(SystemParameters.HighContrast)}" />
+					<Condition
+						Value="true"
+						Binding="{Binding Path=IsFocused, RelativeSource={RelativeSource Self}}" />
+				</MultiDataTrigger.Conditions>
+				<Setter
+					TargetName="Rectangle"
+					Value="{DynamicResource SystemColors.HighlightBrushKey}"
+					Property="Fill" />
+				<Setter
+					TargetName="Rectangle_2"
+					Value="{DynamicResource SystemColors.HighlightBrushKey}"
+					Property="Fill" />
+				<Setter
+					TargetName="Rectangle_2"
+					Value="{DynamicResource SystemColors.HighlightTextBrushKey}"
+					Property="Stroke" />
+				<Setter
+					TargetName="Checked_Visual"
+					Value="{DynamicResource SystemColors.HighlightBrushKey}"
+					Property="Fill" />
+				<Setter
+					TargetName="Checked_Visual"
+					Value="{DynamicResource SystemColors.HighlightTextBrushKey}"
+					Property="Stroke" />
+				<Setter
+					TargetName="Arrow"
+					Value="{DynamicResource SystemColors.HighlightBrushKey}"
+					Property="Fill" />
+			</MultiDataTrigger>
+		</ControlTemplate.Triggers>
+	</ControlTemplate>
+	<ControlTemplate
+		x:Uid="ControlTemplate_22"
+		TargetType="{x:Type TextBox}"
+		x:Key="ComboBoxTextBox_Style">
+		<Border
+			Name="PART_ContentHost"
+			x:Uid="Border_12"
+			Focusable="False"
+			Background="#FF424242" />
+		<ControlTemplate.Triggers>
+			<DataTrigger
+				Value="True"
+				Binding="{Binding Path=(SystemParameters.HighContrast)}">
+				<Setter
+					TargetName="PART_ContentHost"
+					Value="{DynamicResource SystemColors.ControlBrushKey}"
+					Property="Background" />
+			</DataTrigger>
+			<MultiDataTrigger>
+				<MultiDataTrigger.Conditions>
+					<Condition
+						Value="True"
+						Binding="{Binding Path=(SystemParameters.HighContrast)}" />
+					<Condition
+						Value="true"
+						Binding="{Binding Path=IsFocused, RelativeSource={RelativeSource Self}}" />
+				</MultiDataTrigger.Conditions>
+				<Setter
+					TargetName="PART_ContentHost"
+					Value="{DynamicResource SystemColors.HighlightBrushKey}"
+					Property="Background" />
+			</MultiDataTrigger>
+		</ControlTemplate.Triggers>
+	</ControlTemplate>
+	<Style
+		x:Uid="Style_21"
+		TargetType="{x:Type ComboBox}"
+		x:Key="ComboBox_Style">
+		<Setter
+			x:Uid="Setter_56"
+			Property="UIElement.SnapsToDevicePixels"
+			Value="True" />
+		<Setter
+			x:Uid="Setter_57"
+			Property="Foreground"
+			Value="{StaticResource Brush_Text_Foreground}" />
+		<Setter
+			x:Uid="Setter_58"
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate
+					x:Uid="ControlTemplate_23"
+					TargetType="{x:Type ComboBox}">
+					<Grid
+						Name="grid"
+						x:Uid="Grid_29">
+						<VisualStateManager.VisualStateGroups>
+							<VisualStateGroup
+								x:Uid="VisualStateGroup_27"
+								x:Name="CommonStates">
+								<VisualState
+									x:Uid="VisualState_80"
+									x:Name="Normal" />
+								<VisualState
+									x:Uid="VisualState_81"
+									x:Name="MouseOver" />
+								<VisualState
+									x:Uid="VisualState_82"
+									x:Name="Disabled">
+									<Storyboard
+										x:Uid="Storyboard_47">
+										<DoubleAnimationUsingKeyFrames
+											x:Uid="DoubleAnimationUsingKeyFrames_29"
+											Storyboard.TargetProperty="(UIElement.Opacity)"
+											Storyboard.TargetName="grid">
+											<EasingDoubleKeyFrame
+												x:Uid="EasingDoubleKeyFrame_29"
+												KeyTime="0"
+												Value="0.55" />
+										</DoubleAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+							</VisualStateGroup>
+							<VisualStateGroup
+								x:Uid="VisualStateGroup_28"
+								x:Name="FocusStates">
+								<VisualState
+									x:Uid="VisualState_83"
+									x:Name="Unfocused" />
+								<VisualState
+									x:Uid="VisualState_84"
+									x:Name="Focused">
+									<Storyboard
+										x:Uid="Storyboard_48">
+										<DoubleAnimationUsingKeyFrames
+											x:Uid="DoubleAnimationUsingKeyFrames_30"
+											Storyboard.TargetProperty="(UIElement.Opacity)"
+											Storyboard.TargetName="Focus">
+											<EasingDoubleKeyFrame
+												x:Uid="EasingDoubleKeyFrame_30"
+												KeyTime="0"
+												Value="0.75" />
+										</DoubleAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+								<VisualState
+									x:Uid="FocusedDropDown"
+									x:Name="FocusedDropDown" />
+							</VisualStateGroup>
+						</VisualStateManager.VisualStateGroups>
+						<ToggleButton
+							Name="ToggleButton"
+							x:Uid="ToggleButton"
+							Grid.Column="2"
+							Focusable="False"
+							ClickMode="Press"
+							Template="{StaticResource ComboBoxToggleButton_Style}"
+							IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" />
+						<ContentPresenter
+							Name="ContentSite"
+							x:Uid="ContentSite"
+							HorizontalAlignment="Left"
+							Margin="3,3,23,3"
+							VerticalAlignment="Center"
+							Content="{TemplateBinding SelectionBoxItem}"
+							ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
+							ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+							IsHitTestVisible="False" />
+						<TextBox
+							Name="PART_EditableTextBox"
+							x:Uid="PART_EditableTextBox"
+							Visibility="Hidden"
+							HorizontalAlignment="Left"
+							Margin="6,3,23,3"
+							VerticalAlignment="Center"
+							Focusable="True"
+							IsReadOnly="{TemplateBinding IsReadOnly}"
+							Template="{StaticResource ComboBoxTextBox_Style}"
+							Foreground="{StaticResource Brush_Text_Foreground}" />
+						<Popup
+							Name="Popup"
+							x:Uid="Popup"
+							IsOpen="{TemplateBinding IsDropDownOpen}"
+							Placement="Bottom"
+							Focusable="False"
+							AllowsTransparency="True"
+							PopupAnimation="Slide">
+							<Grid
+								Name="DropDown"
+								x:Uid="DropDown"
+								MaxHeight="{TemplateBinding MaxDropDownHeight}"
+								MinWidth="{TemplateBinding ActualWidth}"
+								SnapsToDevicePixels="True">
+								<Border
+									Name="DropDownBorder"
+									x:Uid="DropDownBorder" />
+								<Border
+									Name="Border_13"
+									x:Uid="Border_13"
+									BorderBrush="#FF454545"
+									Background="#FF4B4B4B"
+									BorderThickness="1">
+									<ScrollViewer
+										x:Uid="ScrollViewer_2"
+										Margin="4,6,4,6"
+										SnapsToDevicePixels="True"
+										HorizontalScrollBarVisibility="Auto"
+										VerticalScrollBarVisibility="Auto"
+										CanContentScroll="True"
+										Style="{StaticResource ScrollViewer_Style}">
+										<StackPanel
+											x:Uid="StackPanel_2"
+											IsItemsHost="True"
+											KeyboardNavigation.DirectionalNavigation="Contained"
+											Margin="2,0" />
+									</ScrollViewer>
+								</Border>
+							</Grid>
+						</Popup>
+						<Rectangle
+							Name="Focus"
+							x:Uid="Rectangle_16"
+							Stroke="#3DFFFFFF"
+							Margin="2,2,22,2"
+							Opacity="0"
+							StrokeDashArray="1.5"
+							Width="Auto" />
+					</Grid>
+					<ControlTemplate.Triggers>
+						<Trigger
+							x:Uid="Trigger_11"
+							Property="ItemsControl.HasItems"
+							Value="False">
+							<Setter
+								x:Uid="Setter_59"
+								TargetName="DropDownBorder"
+								Property="MinHeight"
+								Value="95" />
+						</Trigger>
+						<Trigger
+							x:Uid="Trigger_12"
+							Property="IsEnabled"
+							Value="False">
+							<Setter
+								x:Uid="Setter_60"
+								Property="Foreground"
+								Value="{StaticResource Brush_DisabledForeground}" />
+						</Trigger>
+						<Trigger
+							x:Uid="Trigger_13"
+							Property="ItemsControl.IsGrouping"
+							Value="True">
+							<Setter
+								x:Uid="Setter_61"
+								Property="CanContentScroll"
+								Value="False" />
+						</Trigger>
+						<Trigger
+							x:Uid="Trigger_14"
+							SourceName="Popup"
+							Property="Popup.AllowsTransparency"
+							Value="True">
+							<Setter
+								x:Uid="Setter_62"
+								TargetName="DropDownBorder"
+								Property="Border.CornerRadius"
+								Value="4" />
+							<Setter
+								x:Uid="Setter_63"
+								TargetName="DropDownBorder"
+								Property="Margin"
+								Value="0,2,0,0" />
+						</Trigger>
+						<Trigger
+							x:Uid="Trigger_15"
+							Property="ComboBox.IsEditable"
+							Value="True">
+							<Setter
+								x:Uid="Setter_64"
+								Property="IsTabStop"
+								Value="False" />
+							<Setter
+								x:Uid="Setter_65"
+								TargetName="PART_EditableTextBox"
+								Property="Visibility"
+								Value="Visible" />
+							<Setter
+								x:Uid="Setter_66"
+								TargetName="ContentSite"
+								Property="Visibility"
+								Value="Hidden" />
+						</Trigger>
+						<DataTrigger
+							Value="True"
+							Binding="{Binding Path=(SystemParameters.HighContrast)}">
+							<Setter
+								TargetName="PART_EditableTextBox"
+								Value="{DynamicResource SystemColors.ControlBrushKey}"
+								Property="Background" />
+							<Setter
+								TargetName="PART_EditableTextBox"
+								Value="{DynamicResource SystemColors.ControlTextBrushKey}"
+								Property="Foreground" />
+							<Setter
+								TargetName="Border_13"
+								Value="{DynamicResource SystemColors.ControlBrushKey}"
+								Property="Background" />
+							<Setter
+								TargetName="Border_13"
+								Value="{DynamicResource SystemColors.ControlTextBrushKey}"
+								Property="BorderBrush" />
+						</DataTrigger>
+						<MultiDataTrigger>
+							<MultiDataTrigger.Conditions>
+								<Condition
+									Value="True"
+									Binding="{Binding Path=(SystemParameters.HighContrast)}" />
+								<Condition
+									Value="true"
+									Binding="{Binding Path=IsFocused, RelativeSource={RelativeSource Self}}" />
+							</MultiDataTrigger.Conditions>
+							<Setter
+								TargetName="PART_EditableTextBox"
+								Value="{DynamicResource SystemColors.HighlightBrushKey}"
+								Property="Background" />
+							<Setter
+								TargetName="PART_EditableTextBox"
+								Value="{DynamicResource SystemColors.HighlightTextBrushKey}"
+								Property="Foreground" />
+							<Setter
+								TargetName="Border_13"
+								Value="{DynamicResource SystemColors.HighlightBrushKey}"
+								Property="Background" />
+							<Setter
+								TargetName="Border_13"
+								Value="{DynamicResource SystemColors.HighlightTextBrushKey}"
+								Property="BorderBrush" />
+						</MultiDataTrigger>
+						<MultiDataTrigger>
+							<MultiDataTrigger.Conditions>
+								<Condition
+									Value="True"
+									Binding="{Binding Path=(SystemParameters.HighContrast)}" />
+								<Condition
+									Value="true"
+									Binding="{Binding Path=IsSelected, RelativeSource={RelativeSource Self}}" />
+							</MultiDataTrigger.Conditions>
+							<Setter
+								TargetName="PART_EditableTextBox"
+								Value="{DynamicResource SystemColors.HighlightBrushKey}"
+								Property="Background" />
+							<Setter
+								TargetName="PART_EditableTextBox"
+								Value="{DynamicResource SystemColors.HighlightTextBrushKey}"
+								Property="Foreground" />
+							<Setter
+								TargetName="Border_13"
+								Value="{DynamicResource SystemColors.HighlightBrushKey}"
+								Property="Background" />
+							<Setter
+								TargetName="Border_13"
+								Value="{DynamicResource SystemColors.HighlightTextBrushKey}"
+								Property="BorderBrush" />
+						</MultiDataTrigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+		<Style.Triggers>
+			<DataTrigger
+				Value="True"
+				Binding="{Binding Path=(SystemParameters.HighContrast)}">
+				<Setter
+					x:Uid="Setter_57"
+					Property="Foreground"
+					Value="{DynamicResource SystemColors.ControlTextBrushKey}" />
+			</DataTrigger>
+			<MultiDataTrigger>
+				<MultiDataTrigger.Conditions>
+					<Condition
+						Value="True"
+						Binding="{Binding Path=(SystemParameters.HighContrast)}" />
+					<Condition
+						Value="true"
+						Binding="{Binding Path=IsSelected, RelativeSource={RelativeSource Self}}" />
+				</MultiDataTrigger.Conditions>
+				<Setter
+					x:Uid="Setter_57"
+					Property="Foreground"
+					Value="{DynamicResource SystemColors.HighlightTextBrushKey}" />
+			</MultiDataTrigger>
+		</Style.Triggers>
+	</Style>
+	<Style
+		x:Uid="Style_22"
+		TargetType="{x:Type TabControl}"
+		x:Key="MainTabControl_Style">
+		<Setter
+			x:Uid="Setter_67"
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate
+					x:Uid="ControlTemplate_24"
+					TargetType="{x:Type TabControl}">
+					<Grid
+						x:Uid="Grid_30"
+						KeyboardNavigation.TabNavigation="Local">
+						<Grid.RowDefinitions>
+							<RowDefinition
+								x:Uid="RowDefinition_8"
+								Height="Auto" />
+							<RowDefinition
+								x:Uid="RowDefinition_9"
+								Height="*" />
+						</Grid.RowDefinitions>
+						<Border
+							x:Uid="Border_14"
+							Background="{StaticResource Brush_TabGutter_Background}">
+							<TabPanel
+								Name="HeaderPanel"
+								x:Uid="HeaderPanel"
+								Margin="2,0,-2,0"
+								IsItemsHost="True"
+								ZIndex="1"
+								KeyboardNavigation.TabIndex="1" />
+						</Border>
+						<Border
+							Name="Border"
+							x:Uid="Border_15"
+							Grid.Row="1"
+							KeyboardNavigation.DirectionalNavigation="Contained"
+							KeyboardNavigation.TabNavigation="Local"
+							KeyboardNavigation.TabIndex="2"
+							Background="{StaticResource Brush_TabPanel}">
+							<ContentPresenter
+								Name="PART_SelectedContentHost"
+								x:Uid="PART_SelectedContentHost"
+								Margin="8"
+								ContentSource="SelectedContent" />
+						</Border>
+					</Grid>
+					<ControlTemplate.Triggers>
+						<DataTrigger
+							Value="True"
+							Binding="{Binding Path=(SystemParameters.HighContrast)}">
+							<Setter
+								TargetName="Border"
+								Value="{DynamicResource SystemColors.ControlBrushKey}"
+								Property="Background" />
+							<Setter
+								x:Uid="Border_14"
+								Value="{DynamicResource SystemColors.ControlBrushKey}"
+								Property="Background" />
+							<Setter
+								TargetName="PART_SelectedContentHost"
+								Value="{DynamicResource SystemColors.ControlTextBrushKey}"
+								Property="Foreground" />
+						</DataTrigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style
+		TargetType="{x:Type UserControl}"
+		x:Key="XDEUserControlStyle">
+		<Setter
+			Property="Foreground"
+			Value="{StaticResource Brush_Text_Foreground}" />
+		<Style.Triggers>
+			<DataTrigger
+				Value="True"
+				Binding="{Binding Path=(componentModel:DesignerProperties.IsInDesignMode), RelativeSource={RelativeSource Self}}">
+				<Setter
+					Property="Background"
+					Value="{StaticResource Brush_TabPanel}" />
+			</DataTrigger>
+		</Style.Triggers>
+	</Style>
+	<Style
+		x:Uid="Style_23"
+		TargetType="{x:Type TabItem}"
+		x:Key="MainTabItem_Style">
+		<Setter
+			x:Uid="Setter_68"
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate
+					x:Uid="ControlTemplate_25"
+					TargetType="{x:Type TabItem}">
+					<Grid
+						Name="grid"
+						x:Uid="Grid_31"
+						Margin="0,2,0,0"
+						Background="#00000000">
+						<VisualStateManager.VisualStateGroups>
+							<VisualStateGroup
+								x:Uid="SelectionStates"
+								x:Name="SelectionStates">
+								<VisualState
+									x:Uid="Unselected"
+									x:Name="Unselected">
+									<Storyboard
+										x:Uid="Storyboard_49">
+										<ColorAnimationUsingKeyFrames
+											x:Uid="ColorAnimationUsingKeyFrames_34"
+											Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[1].(GradientStop.Color)"
+											Storyboard.TargetName="Border">
+											<EasingColorKeyFrame
+												x:Uid="EasingColorKeyFrame_34"
+												KeyTime="0"
+												Value="#00666666" />
+										</ColorAnimationUsingKeyFrames>
+										<ColorAnimationUsingKeyFrames
+											x:Uid="ColorAnimationUsingKeyFrames_35"
+											Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[0].(GradientStop.Color)"
+											Storyboard.TargetName="Border">
+											<EasingColorKeyFrame
+												x:Uid="EasingColorKeyFrame_35"
+												KeyTime="0"
+												Value="#00414141" />
+										</ColorAnimationUsingKeyFrames>
+										<ColorAnimationUsingKeyFrames
+											x:Uid="ColorAnimationUsingKeyFrames_36"
+											Storyboard.TargetProperty="(ContentControl.Foreground).(SolidColorBrush.Color)"
+											Storyboard.TargetName="tabHeader">
+											<EasingColorKeyFrame
+												x:Uid="EasingColorKeyFrame_36"
+												KeyTime="0"
+												Value="{StaticResource Color_UnselectedForeground}" />
+										</ColorAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+								<VisualState
+									x:Uid="Selected"
+									x:Name="Selected">
+									<Storyboard
+										x:Uid="Storyboard_50">
+										<ColorAnimationUsingKeyFrames
+											x:Uid="ColorAnimationUsingKeyFrames_37"
+											Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[1].(GradientStop.Color)"
+											Storyboard.TargetName="Border">
+											<EasingColorKeyFrame
+												x:Uid="EasingColorKeyFrame_37"
+												KeyTime="0"
+												Value="{StaticResource Color_TabPanel_Background}" />
+										</ColorAnimationUsingKeyFrames>
+										<ColorAnimationUsingKeyFrames
+											x:Uid="ColorAnimationUsingKeyFrames_38"
+											Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[0].(GradientStop.Color)"
+											Storyboard.TargetName="Border">
+											<EasingColorKeyFrame
+												x:Uid="EasingColorKeyFrame_38"
+												KeyTime="0"
+												Value="{StaticResource Color_TabPanel_Background}" />
+										</ColorAnimationUsingKeyFrames>
+										<ColorAnimationUsingKeyFrames
+											x:Uid="ColorAnimationUsingKeyFrames_39"
+											Storyboard.TargetProperty="(ContentControl.Foreground).(SolidColorBrush.Color)"
+											Storyboard.TargetName="tabHeader">
+											<EasingColorKeyFrame
+												x:Uid="EasingColorKeyFrame_39"
+												KeyTime="0"
+												Value="{StaticResource Color_HighlightTextcolor}" />
+										</ColorAnimationUsingKeyFrames>
+										<DoubleAnimationUsingKeyFrames
+											x:Uid="DoubleAnimationUsingKeyFrames_31"
+											Storyboard.TargetProperty="(UIElement.Opacity)"
+											Storyboard.TargetName="Border">
+											<EasingDoubleKeyFrame
+												x:Uid="EasingDoubleKeyFrame_31"
+												KeyTime="0"
+												Value="1" />
+										</DoubleAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+							</VisualStateGroup>
+							<VisualStateGroup
+								x:Uid="VisualStateGroup_29"
+								x:Name="FocusStates">
+								<VisualState
+									x:Uid="VisualState_85"
+									x:Name="Unfocused" />
+								<VisualState
+									x:Uid="VisualState_86"
+									x:Name="Focused">
+									<Storyboard
+										x:Uid="Storyboard_51">
+										<DoubleAnimationUsingKeyFrames
+											x:Uid="DoubleAnimationUsingKeyFrames_32"
+											Storyboard.TargetProperty="(UIElement.Opacity)"
+											Storyboard.TargetName="Focus">
+											<EasingDoubleKeyFrame
+												x:Uid="EasingDoubleKeyFrame_32"
+												KeyTime="0"
+												Value="0.75" />
+										</DoubleAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+							</VisualStateGroup>
+							<VisualStateGroup
+								x:Uid="VisualStateGroup_30"
+								x:Name="CommonStates">
+								<VisualState
+									x:Uid="VisualState_87"
+									x:Name="Normal" />
+								<VisualState
+									x:Uid="VisualState_88"
+									x:Name="MouseOver">
+									<Storyboard
+										x:Uid="Storyboard_52">
+										<ColorAnimationUsingKeyFrames
+											x:Uid="ColorAnimationUsingKeyFrames_40"
+											Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)"
+											Storyboard.TargetName="grid">
+											<EasingColorKeyFrame
+												x:Uid="EasingColorKeyFrame_40"
+												KeyTime="0"
+												Value="#7F666666" />
+										</ColorAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+								<VisualState
+									x:Uid="VisualState_89"
+									x:Name="Disabled">
+									<Storyboard
+										x:Uid="Storyboard_53">
+										<DoubleAnimationUsingKeyFrames
+											x:Uid="DoubleAnimationUsingKeyFrames_33"
+											Storyboard.TargetProperty="(UIElement.Opacity)"
+											Storyboard.TargetName="grid">
+											<EasingDoubleKeyFrame
+												x:Uid="EasingDoubleKeyFrame_33"
+												KeyTime="0"
+												Value="0.55" />
+										</DoubleAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+							</VisualStateGroup>
+						</VisualStateManager.VisualStateGroups>
+						<Border
+							Name="Border"
+							x:Uid="Border_16"
+							BorderThickness="0,0,1,0">
+							<Border.Background>
+								<LinearGradientBrush
+									x:Uid="LinearGradientBrush_13"
+									EndPoint="1,0.5"
+									StartPoint="0,0.5">
+									<GradientStop
+										x:Uid="GradientStop_25"
+										Color="#00414141"
+										Offset="0" />
+									<GradientStop
+										x:Uid="GradientStop_26"
+										Color="#00666666"
+										Offset="1" />
+								</LinearGradientBrush>
+							</Border.Background>
+							<Grid
+								x:Uid="Grid_32">
+								<ContentControl
+									Name="tabHeader"
+									x:Uid="tabHeader"
+									FontSize="12">
+									<ContentPresenter
+										Name="ContentSite"
+										x:Uid="ContentPresenter_4"
+										HorizontalAlignment="Left"
+										Margin="10,3,26,4"
+										VerticalAlignment="Center"
+										RecognizesAccessKey="True"
+										ContentSource="Header" />
+								</ContentControl>
+								<Rectangle
+									Name="Focus"
+									x:Uid="Rectangle_17"
+									Stroke="#3DFFFFFF"
+									Margin="2,2,0,2"
+									Opacity="0"
+									StrokeDashArray="1.5" />
+							</Grid>
+						</Border>
+					</Grid>
+					<ControlTemplate.Triggers>
+						<DataTrigger
+							Value="True"
+							Binding="{Binding Path=(SystemParameters.HighContrast)}">
+							<Setter
+								TargetName="grid"
+								Value="{DynamicResource SystemColors.ControlBrushKey}"
+								Property="Background" />
+							<Setter
+								TargetName="tabHeader"
+								Value="{DynamicResource SystemColors.ControlTextBrushKey}"
+								Property="Foreground" />
+						</DataTrigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style
+		x:Uid="Style_24"
+		TargetType="{x:Type TextBox}"
+		x:Key="TextBox_Style">
+		<Setter
+			x:Uid="Setter_69"
+			Property="KeyboardNavigation.TabNavigation"
+			Value="None" />
+		<Setter
+			x:Uid="Setter_70"
+			Property="FrameworkElement.FocusVisualStyle"
+			Value="{x:Null}" />
+		<Setter
+			x:Uid="Setter_71"
+			Property="Foreground"
+			Value="{StaticResource Brush_Text_Foreground}" />
+		<Setter
+			x:Uid="Setter_72"
+			Property="UIElement.AllowDrop"
+			Value="True" />
+		<Setter
+			x:Uid="Setter_73"
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate
+					x:Uid="ControlTemplate_26"
+					TargetType="{x:Type TextBox}">
+					<Grid
+						Name="grid"
+						x:Uid="Grid_33">
+						<VisualStateManager.VisualStateGroups>
+							<VisualStateGroup
+								x:Uid="VisualStateGroup_31"
+								x:Name="CommonStates">
+								<VisualState
+									x:Uid="VisualState_90"
+									x:Name="Normal" />
+								<VisualState
+									x:Uid="VisualState_91"
+									x:Name="Disabled">
+									<Storyboard
+										x:Uid="Storyboard_54">
+										<DoubleAnimationUsingKeyFrames
+											x:Uid="DoubleAnimationUsingKeyFrames_34"
+											Storyboard.TargetProperty="(UIElement.Opacity)"
+											Storyboard.TargetName="grid">
+											<EasingDoubleKeyFrame
+												x:Uid="EasingDoubleKeyFrame_34"
+												KeyTime="0"
+												Value="0.55" />
+										</DoubleAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+								<VisualState
+									x:Uid="VisualState_92"
+									x:Name="ReadOnly">
+									<Storyboard
+										x:Uid="Storyboard_55">
+										<ColorAnimationUsingKeyFrames
+											x:Uid="ColorAnimationUsingKeyFrames_41"
+											Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)"
+											Storyboard.TargetName="Border">
+											<EasingColorKeyFrame
+												x:Uid="EasingColorKeyFrame_41"
+												KeyTime="0"
+												Value="{StaticResource Color_ReadonlyTBBackground}" />
+										</ColorAnimationUsingKeyFrames>
+										<DoubleAnimationUsingKeyFrames
+											x:Uid="DoubleAnimationUsingKeyFrames_35"
+											Storyboard.TargetProperty="(UIElement.Opacity)"
+											Storyboard.TargetName="PART_ContentHost">
+											<EasingDoubleKeyFrame
+												x:Uid="EasingDoubleKeyFrame_35"
+												KeyTime="0"
+												Value=".5" />
+										</DoubleAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+								<VisualState
+									x:Uid="VisualState_93"
+									x:Name="MouseOver" />
+							</VisualStateGroup>
+							<VisualStateGroup
+								x:Uid="VisualStateGroup_32"
+								x:Name="FocusStates">
+								<VisualState
+									x:Uid="VisualState_94"
+									x:Name="Unfocused" />
+								<VisualState
+									x:Uid="VisualState_95"
+									x:Name="Focused">
+									<Storyboard
+										x:Uid="Storyboard_56">
+										<DoubleAnimationUsingKeyFrames
+											x:Uid="DoubleAnimationUsingKeyFrames_36"
+											Storyboard.TargetProperty="(UIElement.Opacity)"
+											Storyboard.TargetName="Focus">
+											<EasingDoubleKeyFrame
+												x:Uid="EasingDoubleKeyFrame_36"
+												KeyTime="0"
+												Value=".75" />
+										</DoubleAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+							</VisualStateGroup>
+						</VisualStateManager.VisualStateGroups>
+						<Border
+							Name="Border"
+							x:Uid="Border_17"
+							Padding="2">
+							<Border.BorderBrush>
+								<SolidColorBrush
+									x:Uid="SolidColorBrush_31"
+									Color="{StaticResource Color_TextBoxStroke}" />
+							</Border.BorderBrush>
+							<Border.Background>
+								<SolidColorBrush
+									x:Uid="SolidColorBrush_32"
+									Color="{StaticResource Color_TextBoxFill}" />
+							</Border.Background>
+							<ScrollViewer
+								Name="PART_ContentHost"
+								x:Uid="ScrollViewer_3"
+								Style="{StaticResource ScrollViewer_Style}" />
+						</Border>
+						<Rectangle
+							Name="Focus"
+							x:Uid="Rectangle_18"
+							Margin="2"
+							Opacity="0"
+							StrokeDashArray="1.5"
+							Stroke="{StaticResource Brush_FocusBrush}" />
+					</Grid>
+					<ControlTemplate.Triggers>
+						<DataTrigger
+							Value="True"
+							Binding="{Binding Path=(SystemParameters.HighContrast)}">
+							<Setter
+								TargetName="Border"
+								Value="{DynamicResource SystemColors.ControlBrushKey}"
+								Property="Background" />
+						</DataTrigger>
+						<MultiDataTrigger>
+							<MultiDataTrigger.Conditions>
+								<Condition
+									Value="True"
+									Binding="{Binding Path=(SystemParameters.HighContrast)}" />
+								<Condition
+									Value="true"
+									Binding="{Binding Path=IsSelected, RelativeSource={RelativeSource Self}}" />
+							</MultiDataTrigger.Conditions>
+							<Setter
+								TargetName="Border"
+								Value="{DynamicResource SystemColors.HighlightBrushKey}"
+								Property="Background" />
+						</MultiDataTrigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+		<Style.Triggers>
+			<DataTrigger
+				Value="True"
+				Binding="{Binding Path=(SystemParameters.HighContrast)}">
+				<Setter
+					x:Uid="Setter_71"
+					Property="Foreground"
+					Value="{DynamicResource SystemColors.ControlTextBrushKey}" />
+			</DataTrigger>
+			<MultiDataTrigger>
+				<MultiDataTrigger.Conditions>
+					<Condition
+						Value="True"
+						Binding="{Binding Path=(SystemParameters.HighContrast)}" />
+					<Condition
+						Value="true"
+						Binding="{Binding Path=IsSelected, RelativeSource={RelativeSource Self}}" />
+				</MultiDataTrigger.Conditions>
+				<Setter
+					x:Uid="Setter_71"
+					Property="Foreground"
+					Value="{DynamicResource SystemColors.HighlightTextBrushKey}" />
+			</MultiDataTrigger>
+		</Style.Triggers>
+	</Style>
+	<Style
+		x:Uid="CodeTextBox_Style"
+		TargetType="{x:Type TextBox}"
+		x:Key="CodeTextBox_Style">
+		<Setter
+			x:Uid="Setter_69"
+			Property="KeyboardNavigation.TabNavigation"
+			Value="None" />
+		<Setter
+			x:Uid="Setter_70"
+			Property="FrameworkElement.FocusVisualStyle"
+			Value="{x:Null}" />
+		<Setter
+			x:Uid="Setter_71"
+			Property="Foreground"
+			Value="{StaticResource Brush_Text_Foreground}" />
+		<Setter
+			x:Uid="Setter_72"
+			Property="UIElement.AllowDrop"
+			Value="True" />
+		<Setter
+			x:Uid=" Setter_FontStyle"
+			Property="FontFamily"
+			Value="Consolas" />
+		<Setter
+			x:Uid=" Setter_WrappingStyle"
+			Property="TextBox.TextWrapping"
+			Value="NoWrap" />
+		<Setter
+			x:Uid=" Setter_ReturnStyle"
+			Property="TextBoxBase.AcceptsReturn"
+			Value="True" />
+		<Setter
+			Property="Background">
+			<Setter.Value>
+				<SolidColorBrush
+					Color="{StaticResource Color_TextBoxFill}" />
+			</Setter.Value>
+		</Setter>
+		<Setter
+			Property="BorderBrush">
+			<Setter.Value>
+				<SolidColorBrush
+					Color="{StaticResource Color_TextBoxStroke}" />
+			</Setter.Value>
+		</Setter>
+		<Setter
+			Property="Padding"
+			Value="1" />
+		<Setter
+			Property="VerticalContentAlignment"
+			Value="Top" />
+		<Setter
+			Property="HorizontalAlignment"
+			Value="Stretch" />
+		<Setter
+			Property="VerticalAlignment"
+			Value="Stretch" />
+		<Setter
+			Property="TextBoxBase.HorizontalScrollBarVisibility"
+			Value="Auto" />
+		<Setter
+			Property="TextBoxBase.VerticalScrollBarVisibility"
+			Value="Auto" />
+		<Style.Triggers>
+			<DataTrigger
+				Value="True"
+				Binding="{Binding Path=(SystemParameters.HighContrast)}">
+				<Setter
+					Property="Foreground"
+					Value="{DynamicResource SystemColors.ControlTextBrushKey}" />
+				<Setter
+					Property="Background"
+					Value="{DynamicResource SystemColors.ControlBrushKey}" />
+			</DataTrigger>
+			<MultiDataTrigger>
+				<MultiDataTrigger.Conditions>
+					<Condition
+						Value="True"
+						Binding="{Binding Path=(SystemParameters.HighContrast)}" />
+					<Condition
+						Value="true"
+						Binding="{Binding Path=IsSelected, RelativeSource={RelativeSource Self}}" />
+				</MultiDataTrigger.Conditions>
+				<Setter
+					Property="Foreground"
+					Value="{DynamicResource SystemColors.HighlightTextBrushKey}" />
+				<Setter
+					Property="Background"
+					Value="{DynamicResource SystemColors.HighlightBrushKey}" />
+			</MultiDataTrigger>
+		</Style.Triggers>
+	</Style>
+	<Style
+		x:Uid="Style_25"
+		TargetType="{x:Type ComboBoxItem}"
+		x:Key="ComboBoxItem_Style">
+		<Setter
+			x:Uid="Setter_74"
+			Property="UIElement.SnapsToDevicePixels"
+			Value="True" />
+		<Setter
+			Property="BorderThickness"
+			Value="0" />
+		<Setter
+			x:Uid="Setter_75"
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate
+					x:Uid="ControlTemplate_27"
+					TargetType="{x:Type ComboBoxItem}">
+					<FrameworkTemplate.Resources>
+						<ResourceDictionary>
+							<Storyboard
+								x:Uid="Storyboard_57"
+								x:Key="OnMouseEnter1">
+								<ColorAnimationUsingKeyFrames
+									x:Uid="ColorAnimationUsingKeyFrames_42"
+									Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)"
+									Storyboard.TargetName="contentControl">
+									<EasingColorKeyFrame
+										x:Uid="EasingColorKeyFrame_42"
+										KeyTime="0"
+										Value="{StaticResource Color_ForegroundSelectedTextColor}" />
+								</ColorAnimationUsingKeyFrames>
+								<ColorAnimationUsingKeyFrames
+									x:Uid="ColorAnimationUsingKeyFrames_43"
+									Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)"
+									Storyboard.TargetName="Border">
+									<EasingColorKeyFrame
+										x:Uid="EasingColorKeyFrame_43"
+										KeyTime="0"
+										Value="{StaticResource Color_ForegroundTextcolor}" />
+								</ColorAnimationUsingKeyFrames>
+							</Storyboard>
+						</ResourceDictionary>
+					</FrameworkTemplate.Resources>
+					<Grid
+						x:Uid="Grid_34"
+						SnapsToDevicePixels="True"
+						Margin="0,2">
+						<VisualStateManager.VisualStateGroups>
+							<VisualStateGroup
+								x:Uid="VisualStateGroup_33"
+								x:Name="CommonStates">
+								<VisualState
+									x:Uid="VisualState_96"
+									x:Name="Normal" />
+								<VisualState
+									x:Uid="VisualState_97"
+									x:Name="MouseOver">
+									<Storyboard
+										x:Uid="Storyboard_58">
+										<ColorAnimationUsingKeyFrames
+											x:Uid="ColorAnimationUsingKeyFrames_44"
+											Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)"
+											Storyboard.TargetName="Border">
+											<EasingColorKeyFrame
+												x:Uid="EasingColorKeyFrame_44"
+												KeyTime="0"
+												Value="#33FFFFFF" />
+										</ColorAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+								<VisualState
+									x:Uid="VisualState_98"
+									x:Name="Disabled" />
+							</VisualStateGroup>
+							<VisualStateGroup
+								x:Uid="VisualStateGroup_34"
+								x:Name="FocusStates">
+								<VisualState
+									x:Uid="VisualState_99"
+									x:Name="Unfocused" />
+								<VisualState
+									x:Uid="VisualState_100"
+									x:Name="Focused" />
+							</VisualStateGroup>
+						</VisualStateManager.VisualStateGroups>
+						<Border
+							Name="Border"
+							x:Uid="Border_18"
+							Background="#00FFFFFF"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}"
+							Padding="0"
+							Margin="-2,-2,-2,-3" />
+						<ContentControl
+							Name="contentControl"
+							x:Uid="ContentControl_1"
+							Foreground="#AAFFFFFF"
+							Margin="2,0">
+							<ContentPresenter
+								x:Uid="ContentPresenter_5"
+								HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+								VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+						</ContentControl>
+					</Grid>
+					<ControlTemplate.Triggers>
+						<DataTrigger
+							Value="True"
+							Binding="{Binding Path=(SystemParameters.HighContrast)}">
+							<Setter
+								TargetName="contentControl"
+								Value="{DynamicResource SystemColors.ControlTextBrushKey}"
+								Property="Foreground" />
+							<Setter
+								TargetName="Border"
+								Value="{DynamicResource SystemColors.ControlBrushKey}"
+								Property="Background" />
+							<Setter
+								TargetName="Border"
+								Value="{DynamicResource SystemColors.ControlTextBrushKey}"
+								Property="BorderBrush" />
+						</DataTrigger>
+						<MultiDataTrigger>
+							<MultiDataTrigger.Conditions>
+								<Condition
+									Value="True"
+									Binding="{Binding Path=(SystemParameters.HighContrast)}" />
+								<Condition
+									Value="true"
+									Binding="{Binding Path=IsMouseOver, RelativeSource={RelativeSource Self}}" />
+							</MultiDataTrigger.Conditions>
+							<Setter
+								TargetName="contentControl"
+								Value="{DynamicResource SystemColors.HighlightTextBrushKey}"
+								Property="Foreground" />
+							<Setter
+								TargetName="Border"
+								Value="{DynamicResource SystemColors.HighlightBrushKey}"
+								Property="Background" />
+							<Setter
+								TargetName="Border"
+								Value="{DynamicResource SystemColors.HighlightTextBrushKey}"
+								Property="BorderBrush" />
+						</MultiDataTrigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style
+		x:Uid="Style_25"
+		TargetType="{x:Type ComboBoxItem}"
+		BasedOn="{StaticResource ComboBoxItem_Style}"
+		x:Key="ComboBoxItem_TrimmedTextStyle">
+		<Setter
+			Property="ContentTemplate">
+			<Setter.Value>
+				<DataTemplate>
+					<TextBlock
+						Text="{TemplateBinding Content}"
+						TextTrimming="CharacterEllipsis" />
+				</DataTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<ResourceDictionary
+		x:Key="DefaultTrimmedComboBoxItem">
+		<Style
+			TargetType="{x:Type ComboBoxItem}"
+			x:Key="{x:Type ComboBoxItem}">
+			<Setter
+				Property="UIElement.SnapsToDevicePixels"
+				Value="True" />
+			<Setter
+				Property="FrameworkElement.OverridesDefaultStyle"
+				Value="True" />
+			<Setter
+				Property="ContentTemplate">
+				<Setter.Value>
+					<DataTemplate>
+						<TextBlock
+							Text="{TemplateBinding Content}"
+							TextTrimming="CharacterEllipsis" />
+					</DataTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+	</ResourceDictionary>
+	<Style
+		TargetType="{x:Type ComboBox}"
+		BasedOn="{StaticResource ComboBox_Style}"
+		Resources="{StaticResource DefaultTrimmedComboBoxItem}"
+		x:Key="ComboBoxTrimmedText_Style">
+		<Setter
+			Property="ItemContainerStyle"
+			Value="{StaticResource ComboBoxItem_TrimmedTextStyle}" />
+	</Style>
+	<Style
+		x:Uid="Style_28"
+		TargetType="{x:Type ToolTip}"
+		x:Key="{x:Type ToolTip}">
+		<Setter
+			x:Uid="Setter_78"
+			Property="Foreground"
+			Value="{StaticResource Brush_Text_Foreground}" />
+		<Setter
+			x:Uid="Setter_79"
+			Property="FrameworkElement.OverridesDefaultStyle"
+			Value="True" />
+		<Setter
+			x:Uid="Setter_80"
+			Property="ToolTip.HasDropShadow"
+			Value="True" />
+		<Setter
+			x:Uid="Setter_81"
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate
+					x:Uid="ControlTemplate_30"
+					TargetType="{x:Type ToolTip}">
+					<Border
+						Name="Border"
+						x:Uid="Border_21"
+						BorderThickness="1"
+						Width="{TemplateBinding Width}"
+						Height="{TemplateBinding Height}"
+						Background="#FF666666"
+						BorderBrush="#FFCCCCCC">
+						<ContentPresenter
+							x:Uid="ContentPresenter_6"
+							Margin="4,1,4,2"
+							HorizontalAlignment="Left"
+							VerticalAlignment="Top" />
+					</Border>
+					<ControlTemplate.Triggers>
+						<Trigger
+							x:Uid="Trigger_16"
+							Property="ToolTip.HasDropShadow"
+							Value="True">
+							<Setter
+								x:Uid="Setter_82"
+								TargetName="Border"
+								Property="UIElement.SnapsToDevicePixels"
+								Value="True" />
+						</Trigger>
+						<DataTrigger
+							Value="True"
+							Binding="{Binding Path=(SystemParameters.HighContrast)}">
+							<Setter
+								x:Uid="Setter_78"
+								Value="{DynamicResource SystemColors.ControlTextBrushKey}"
+								Property="Foreground" />
+							<Setter
+								x:Uid="Border_21"
+								TargetName="Border"
+								Value="{DynamicResource SystemColors.ControlBrushKey}"
+								Property="Background" />
+							<Setter
+								x:Uid="Border_21"
+								TargetName="Border"
+								Value="{DynamicResource SystemColors.ControlTextBrushKey}"
+								Property="BorderBrush" />
+						</DataTrigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+		<Style.Triggers>
+			<DataTrigger
+				Value="True"
+				Binding="{Binding Path=(SystemParameters.HighContrast)}">
+				<Setter
+					x:Uid="Setter_78"
+					Property="Foreground"
+					Value="{DynamicResource SystemColors.ControlTextBrushKey}" />
+				<Setter
+					Property="Background"
+					Value="{DynamicResource SystemColors.ControlBrushKey}" />
+			</DataTrigger>
+			<MultiDataTrigger>
+				<MultiDataTrigger.Conditions>
+					<Condition
+						Value="True"
+						Binding="{Binding Path=(SystemParameters.HighContrast)}" />
+					<Condition
+						Value="true"
+						Binding="{Binding Path=IsSelected, RelativeSource={RelativeSource Self}}" />
+				</MultiDataTrigger.Conditions>
+				<Setter
+					Property="Background"
+					Value="{DynamicResource SystemColors.HighlightBrushKey}" />
+				<Setter
+					x:Uid="Setter_78"
+					Property="Foreground"
+					Value="{DynamicResource SystemColors.HighlightTextBrushKey}" />
+				<Setter
+					Property="BorderBrush"
+					Value="{DynamicResource SystemColors.HighlightTextBrushKey}" />
+			</MultiDataTrigger>
+			<MultiDataTrigger>
+				<MultiDataTrigger.Conditions>
+					<Condition
+						Value="True"
+						Binding="{Binding Path=(SystemParameters.HighContrast)}" />
+					<Condition
+						Value="true"
+						Binding="{Binding Path=IsMouseOver, RelativeSource={RelativeSource Self}}" />
+				</MultiDataTrigger.Conditions>
+				<Setter
+					Property="Background"
+					Value="{DynamicResource SystemColors.HighlightBrushKey}" />
+				<Setter
+					x:Uid="Setter_78"
+					Property="Foreground"
+					Value="{DynamicResource SystemColors.HighlightTextBrushKey}" />
+				<Setter
+					Property="BorderBrush"
+					Value="{DynamicResource SystemColors.HighlightTextBrushKey}" />
+			</MultiDataTrigger>
+		</Style.Triggers>
+	</Style>
+	<Style
+		TargetType="{x:Type TextBox}"
+		BasedOn="{x:Null}"
+		x:Key="TextBlockUsingTextBoxStyle">
+		<Setter
+			Property="TextBoxBase.IsReadOnly"
+			Value="True" />
+		<Setter
+			Property="IsTabStop"
+			Value="False" />
+		<Setter
+			Property="BorderThickness"
+			Value="0" />
+		<Setter
+			x:Uid="Setter_85"
+			Property="Background"
+			Value="#00FFFFFF" />
+		<Setter
+			x:Uid="Setter_86"
+			Property="Foreground"
+			Value="#FFFFFFFF" />
+		<Setter
+			Property="Padding"
+			Value="-2,0,0,0" />
+		<Style.Triggers>
+			<MultiTrigger>
+				<MultiTrigger.Conditions>
+					<Condition
+						Property="UIElement.IsMouseOver"
+						Value="False" />
+					<Condition
+						Property="UIElement.IsFocused"
+						Value="False" />
+				</MultiTrigger.Conditions>
+				<Setter
+					Property="Template">
+					<Setter.Value>
+						<ControlTemplate
+							TargetType="{x:Type TextBox}">
+							<TextBlock
+								Text="{TemplateBinding Text}"
+								FontSize="{TemplateBinding FontSize}"
+								FontStyle="{TemplateBinding FontStyle}"
+								FontFamily="{TemplateBinding FontFamily}"
+								FontWeight="{TemplateBinding FontWeight}"
+								TextWrapping="{TemplateBinding TextWrapping}"
+								Foreground="#FFFFFFFF"
+								Padding="0,0,0,0" />
+						</ControlTemplate>
+					</Setter.Value>
+				</Setter>
+			</MultiTrigger>
+			<DataTrigger
+				Value="True"
+				Binding="{Binding Path=(SystemParameters.HighContrast)}">
+				<Setter
+					x:Uid="Setter_86"
+					Property="Foreground"
+					Value="{DynamicResource SystemColors.ControlTextBrushKey}" />
+				<Setter
+					x:Uid="Setter_85"
+					Property="Background"
+					Value="{DynamicResource SystemColors.ControlBrushKey}" />
+			</DataTrigger>
+			<MultiDataTrigger>
+				<MultiDataTrigger.Conditions>
+					<Condition
+						Value="True"
+						Binding="{Binding Path=(SystemParameters.HighContrast)}" />
+					<Condition
+						Value="true"
+						Binding="{Binding Path=IsSelected, RelativeSource={RelativeSource Self}}" />
+				</MultiDataTrigger.Conditions>
+				<Setter
+					x:Uid="Setter_85"
+					Property="Background"
+					Value="{DynamicResource SystemColors.HighlightBrushKey}" />
+				<Setter
+					x:Uid="Setter_86"
+					Property="Foreground"
+					Value="{DynamicResource SystemColors.HighlightTextBrushKey}" />
+				<Setter
+					Property="BorderBrush"
+					Value="{DynamicResource SystemColors.ControlTextBrushKey}" />
+			</MultiDataTrigger>
+		</Style.Triggers>
+	</Style>
+	<Style
+		x:Uid="Style_29"
+		TargetType="{x:Type TextBlock}"
+		x:Key="StatusTextBlockStyle">
+		<Setter
+			x:Uid="Setter_83"
+			Property="Foreground">
+			<Setter.Value>
+				<SolidColorBrush
+					x:Uid="SolidColorBrush_33"
+					Color="#AAFFFFFF" />
+			</Setter.Value>
+		</Setter>
+		<Setter
+			x:Uid="Setter_84"
+			Property="UIElement.Opacity"
+			Value="0.7" />
+		<Style.Triggers>
+			<DataTrigger
+				Value="True"
+				Binding="{Binding Path=(SystemParameters.HighContrast)}">
+				<Setter
+					x:Uid="Setter_83"
+					Property="Foreground"
+					Value="{DynamicResource SystemColors.ControlTextBrushKey}" />
+				<Setter
+					x:Uid="Setter_84"
+					Property="UIElement.Opacity"
+					Value="1.0" />
+			</DataTrigger>
+		</Style.Triggers>
+	</Style>
+	<Style
+		x:Uid="Style_29"
+		TargetType="{x:Type TextBlock}"
+		x:Key="Combobox_TextBlockStyle">
+		<Setter
+			x:Uid="Setter_85"
+			Property="Foreground"
+			Value="{StaticResource Brush_Text_Foreground}" />
+		<Setter
+			x:Uid="Setter_86"
+			Property="UIElement.Opacity"
+			Value="0.7" />
+		<Style.Triggers>
+			<DataTrigger
+				Value="True"
+				Binding="{Binding Path=(SystemParameters.HighContrast)}">
+				<Setter
+					x:Uid="Setter_85"
+					Property="Foreground"
+					Value="{DynamicResource SystemColors.ControlTextBrushKey}" />
+			</DataTrigger>
+			<MultiDataTrigger>
+				<MultiDataTrigger.Conditions>
+					<Condition
+						Value="True"
+						Binding="{Binding Path=(SystemParameters.HighContrast)}" />
+					<Condition
+						Value="true"
+						Binding="{Binding Path=IsSelected, RelativeSource={RelativeSource Self}}" />
+				</MultiDataTrigger.Conditions>
+				<Setter
+					x:Uid="Setter_85"
+					Property="Foreground"
+					Value="{DynamicResource SystemColors.HighlightTextBrushKey}" />
+			</MultiDataTrigger>
+			<MultiDataTrigger>
+				<MultiDataTrigger.Conditions>
+					<Condition
+						Value="True"
+						Binding="{Binding Path=(SystemParameters.HighContrast)}" />
+					<Condition
+						Value="true"
+						Binding="{Binding Path=IsMouseOver, RelativeSource={RelativeSource Self}}" />
+				</MultiDataTrigger.Conditions>
+				<Setter
+					x:Uid="Setter_85"
+					Property="Foreground"
+					Value="{DynamicResource SystemColors.HighlightTextBrushKey}" />
+			</MultiDataTrigger>
+		</Style.Triggers>
+	</Style>
+	<Style
+		TargetType="{x:Type Label}"
+		x:Key="Combobox_Label_Style">
+		<Setter
+			x:Uid="Setter_87"
+			Property="Foreground"
+			Value="{StaticResource Brush_Text_Foreground}" />
+		<Setter
+			x:Uid="Setter_88"
+			Property="HorizontalContentAlignment"
+			Value="Left" />
+		<Setter
+			x:Uid="Setter_89"
+			Property="Margin"
+			Value="0,0,0,3" />
+		<Setter
+			x:Uid="Setter_90"
+			Property="VerticalContentAlignment"
+			Value="Center" />
+		<Style.Triggers>
+			<DataTrigger
+				Value="True"
+				Binding="{Binding Path=(SystemParameters.HighContrast)}">
+				<Setter
+					x:Uid="Setter_88"
+					Property="Foreground"
+					Value="{DynamicResource SystemColors.ControlTextBrushKey}" />
+			</DataTrigger>
+			<MultiDataTrigger>
+				<MultiDataTrigger.Conditions>
+					<Condition
+						Value="True"
+						Binding="{Binding Path=(SystemParameters.HighContrast)}" />
+					<Condition
+						Value="true"
+						Binding="{Binding Path=IsSelected, RelativeSource={RelativeSource Self}}" />
+				</MultiDataTrigger.Conditions>
+				<Setter
+					x:Uid="Setter_88"
+					Property="Foreground"
+					Value="{DynamicResource SystemColors.HighlightTextBrushKey}" />
+			</MultiDataTrigger>
+			<MultiDataTrigger>
+				<MultiDataTrigger.Conditions>
+					<Condition
+						Value="True"
+						Binding="{Binding Path=(SystemParameters.HighContrast)}" />
+					<Condition
+						Value="true"
+						Binding="{Binding Path=IsMouseOver, RelativeSource={RelativeSource Self}}" />
+				</MultiDataTrigger.Conditions>
+				<Setter
+					x:Uid="Setter_88"
+					Property="Foreground"
+					Value="{DynamicResource SystemColors.HighlightTextBrushKey}" />
+			</MultiDataTrigger>
+		</Style.Triggers>
+	</Style>
+	<Style
+		TargetType="{x:Type Border}"
+		x:Key="Border_Style">
+		<Setter
+			x:Uid="Setter_91"
+			Property="Background"
+			Value="{StaticResource Color_TabPanel_Background}" />
+		<Style.Triggers>
+			<DataTrigger
+				Value="True"
+				Binding="{Binding Path=(SystemParameters.HighContrast)}">
+				<Setter
+					x:Uid="Setter_91"
+					Property="Background"
+					Value="{DynamicResource SystemColors.ControlBrushKey}" />
+			</DataTrigger>
+		</Style.Triggers>
+	</Style>
+	<Style
+		TargetType="{x:Type Border}"
+		x:Key="Border_Style_2">
+		<Setter
+			x:Uid="Setter_94"
+			Property="Background"
+			Value="{StaticResource Brush_PanelGray}" />
+		<Style.Triggers>
+			<DataTrigger
+				Value="True"
+				Binding="{Binding Path=(SystemParameters.HighContrast)}">
+				<Setter
+					x:Uid="Setter_94"
+					Property="Background"
+					Value="{DynamicResource SystemColors.ControlBrushKey}" />
+			</DataTrigger>
+		</Style.Triggers>
+	</Style>
+	<Style
+		TargetType="{x:Type Border}"
+		x:Key="TextBoxBorder_Style">
+		<Setter
+			x:Uid="Setter_94"
+			Property="Background"
+			Value="{StaticResource Color_TextBox_Fill}" />
+		<Setter
+			x:Uid="Setter_95"
+			Property="BorderBrush"
+			Value="{StaticResource Color_TextBox_Stroke}" />
+		<Style.Triggers>
+			<DataTrigger
+				Value="True"
+				Binding="{Binding Path=(SystemParameters.HighContrast)}">
+				<Setter
+					x:Uid="Setter_94"
+					Property="Background"
+					Value="{DynamicResource SystemColors.ControlBrushKey}" />
+				<Setter
+					x:Uid="Setter_95"
+					Property="BorderBrush"
+					Value="{DynamicResource SystemColors.ControlTextBrushKey}" />
+			</DataTrigger>
+		</Style.Triggers>
+	</Style>
+	<Style
+		TargetType="{x:Type TextBlock}"
+		x:Key="SearchTextBlockStyle">
+		<Setter
+			x:Uid="Setter_92"
+			Property="Foreground">
+			<Setter.Value>
+				<SolidColorBrush
+					x:Uid="SolidColorBrush_23"
+					Color="{StaticResource Color_SearchTextbox_Foreground}" />
+			</Setter.Value>
+		</Setter>
+		<Setter
+			x:Uid="Setter_93"
+			Property="UIElement.Opacity"
+			Value="0.5" />
+		<Setter
+			Property="VerticalAlignment"
+			Value="Top" />
+		<Setter
+			Property="FontStyle"
+			Value="Italic" />
+		<Setter
+			Property="Margin"
+			Value="2" />
+		<Style.Triggers>
+			<DataTrigger
+				Value="True"
+				Binding="{Binding Path=(SystemParameters.HighContrast)}">
+				<Setter
+					x:Uid="Setter_92"
+					Property="Foreground"
+					Value="{DynamicResource SystemColors.ControlTextBrushKey}" />
+			</DataTrigger>
+			<MultiDataTrigger>
+				<MultiDataTrigger.Conditions>
+					<Condition
+						Value="True"
+						Binding="{Binding Path=(SystemParameters.HighContrast)}" />
+					<Condition
+						Value="true"
+						Binding="{Binding Path=IsMouseOver, RelativeSource={RelativeSource Self}}" />
+				</MultiDataTrigger.Conditions>
+				<Setter
+					x:Uid="Setter_92"
+					Property="Foreground"
+					Value="{DynamicResource SystemColors.HighlightTextBrushKey}" />
+			</MultiDataTrigger>
+		</Style.Triggers>
+	</Style>
+	<Style
+		TargetType="{x:Type TextBlock}"
+		x:Key="GridBlockStyle">
+		<Setter
+			Property="VerticalAlignment"
+			Value="Center" />
+		<Setter
+			Property="Visibility"
+			Value="{Binding IsEditingItem, ConverterParameter=False, Converter={StaticResource BoolToVis}}" />
+		<Style.Triggers>
+			<DataTrigger
+				Value="True"
+				Binding="{Binding Path=(SystemParameters.HighContrast)}">
+				<Setter
+					Property="Foreground"
+					Value="{DynamicResource SystemColors.ControlTextBrushKey}" />
+			</DataTrigger>
+			<MultiDataTrigger>
+				<MultiDataTrigger.Conditions>
+					<Condition
+						Value="True"
+						Binding="{Binding Path=(SystemParameters.HighContrast)}" />
+					<Condition
+						Value="true"
+						Binding="{Binding Path=IsSelected, RelativeSource={RelativeSource Self}}" />
+				</MultiDataTrigger.Conditions>
+				<Setter
+					Property="Foreground"
+					Value="{DynamicResource SystemColors.HighlightTextBrushKey}" />
+			</MultiDataTrigger>
+			<MultiDataTrigger>
+				<MultiDataTrigger.Conditions>
+					<Condition
+						Value="True"
+						Binding="{Binding Path=(SystemParameters.HighContrast)}" />
+					<Condition
+						Value="true"
+						Binding="{Binding Path=IsMouseOver, RelativeSource={RelativeSource Self}}" />
+				</MultiDataTrigger.Conditions>
+				<Setter
+					Property="Foreground"
+					Value="{DynamicResource SystemColors.HighlightTextBrushKey}" />
+			</MultiDataTrigger>
+		</Style.Triggers>
+	</Style>
+	<Style
+		TargetType="{x:Type FrameworkElement}"
+		x:Key="GridEditStyle">
+		<Setter
+			Property="VerticalAlignment"
+			Value="Center" />
+		<Setter
+			Property="Visibility"
+			Value="{Binding IsEditingItem, ConverterParameter=True, Converter={StaticResource BoolToVis}}" />
+	</Style>
+	<Style
+		TargetType="{x:Type ListView}"
+		x:Key="SensorsListViewStyle">
+		<Setter
+			Property="Background"
+			Value="{StaticResource Brush_PanelGray}" />
+		<Setter
+			Property="ItemTemplate">
+			<Setter.Value>
+				<DataTemplate
+					x:Uid="ListView_CheckBox_Template">
+					<CheckBox
+						Style="{StaticResource CheckBox_Style}"
+						Content="{Binding Mode=OneWay, Path=Name}"
+						IsChecked="{Binding IsEnabled}"
+						AutomationProperties.Name="{Binding Path=Name}" />
+				</DataTemplate>
+			</Setter.Value>
+		</Setter>
+		<Setter
+			Property="ItemContainerStyle">
+			<Setter.Value>
+				<Style
+					TargetType="{x:Type ListViewItem}">
+					<Setter
+						Property="IsTabStop"
+						Value="False" />
+				</Style>
+			</Setter.Value>
+		</Setter>
+		<Setter
+			Property="Margin"
+			Value="0,0,0,15" />
+		<Style.Triggers>
+			<DataTrigger
+				Value="True"
+				Binding="{Binding Path=(SystemParameters.HighContrast)}">
+				<Setter
+					Property="Background"
+					Value="{DynamicResource SystemColors.ControlBrushKey}" />
+			</DataTrigger>
+		</Style.Triggers>
+	</Style>
+	<Style
+		TargetType="{x:Type Ellipse}"
+		x:Key="Ellipse_Style">
+		<Setter
+			Property="Stroke"
+			Value="{StaticResource Brush_ModelPerimeter}" />
+		<Setter
+			Property="Shape.StrokeDashArray"
+			Value="1.5" />
+		<Setter
+			Property="StrokeThickness"
+			Value="2" />
+		<Style.Triggers>
+			<DataTrigger
+				Value="True"
+				Binding="{Binding Path=(SystemParameters.HighContrast)}">
+				<Setter
+					Property="Stroke"
+					Value="{DynamicResource SystemColors.ControlTextBrushKey}" />
+			</DataTrigger>
+		</Style.Triggers>
+	</Style>
+	<DrawingImage
+		x:Uid="DrawingImage_1"
+		x:Key="AccTouchPointImage">
+		<DrawingImage.Drawing>
+			<GeometryDrawing
+				x:Uid="GeometryDrawing_1"
+				Brush="#FFE45000">
+				<GeometryDrawing.Geometry>
+					<EllipseGeometry
+						x:Uid="EllipseGeometry_1"
+						RadiusX="20"
+						RadiusY="20" />
+				</GeometryDrawing.Geometry>
+			</GeometryDrawing>
+		</DrawingImage.Drawing>
+	</DrawingImage>
+</ResourceDictionary>

@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6932758A-CD40-42A9-9E4C-BFF9141E6D97}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>DiscUtils.Core</RootNamespace>
+    <AssemblyName>DiscUtils.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DiscUtils.Streams">
+      <HintPath>Q:\Microsoft.MicrosoftEmulator_1.1.1081.0_x64__8wekyb3d8bbwe\XdeManager\DiscUtils.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DiscUtils\ApplePartitionMap\BlockZero.cs" />
+    <Compile Include="DiscUtils\ApplePartitionMap\PartitionMap.cs" />
+    <Compile Include="DiscUtils\ApplePartitionMap\PartitionMapEntry.cs" />
+    <Compile Include="DiscUtils\ApplePartitionMap\PartitionMapFactory.cs" />
+    <Compile Include="DiscUtils\Archives\FileRecord.cs" />
+    <Compile Include="DiscUtils\Archives\TarFile.cs" />
+    <Compile Include="DiscUtils\Archives\TarFileBuilder.cs" />
+    <Compile Include="DiscUtils\Archives\TarHeader.cs" />
+    <Compile Include="DiscUtils\Archives\TarHeaderExtent.cs" />
+    <Compile Include="DiscUtils\Archives\UnixBuildFileRecord.cs" />
+    <Compile Include="DiscUtils\ChsAddress.cs" />
+    <Compile Include="DiscUtils\ClusterMap.cs" />
+    <Compile Include="DiscUtils\ClusterRoles.cs" />
+    <Compile Include="DiscUtils\Compression\Adler32.cs" />
+    <Compile Include="DiscUtils\Compression\BigEndianBitStream.cs" />
+    <Compile Include="DiscUtils\Compression\BitStream.cs" />
+    <Compile Include="DiscUtils\Compression\BlockCompressor.cs" />
+    <Compile Include="DiscUtils\Compression\BZip2BlockDecoder.cs" />
+    <Compile Include="DiscUtils\Compression\BZip2CombinedHuffmanTrees.cs" />
+    <Compile Include="DiscUtils\Compression\BZip2DecoderStream.cs" />
+    <Compile Include="DiscUtils\Compression\BZip2Randomizer.cs" />
+    <Compile Include="DiscUtils\Compression\BZip2RleStream.cs" />
+    <Compile Include="DiscUtils\Compression\CompressionResult.cs" />
+    <Compile Include="DiscUtils\Compression\DataBlockTransform.cs" />
+    <Compile Include="DiscUtils\Compression\HuffmanTree.cs" />
+    <Compile Include="DiscUtils\Compression\InverseBurrowsWheeler.cs" />
+    <Compile Include="DiscUtils\Compression\MoveToFront.cs" />
+    <Compile Include="DiscUtils\Compression\SizedDeflateStream.cs" />
+    <Compile Include="DiscUtils\Compression\ZlibBuffer.cs" />
+    <Compile Include="DiscUtils\Compression\ZlibStream.cs" />
+    <Compile Include="DiscUtils\CoreCompat\EncodingHelper.cs" />
+    <Compile Include="DiscUtils\CoreCompat\ReflectionHelper.cs" />
+    <Compile Include="DiscUtils\DiscDirectoryInfo.cs" />
+    <Compile Include="DiscUtils\DiscFileInfo.cs" />
+    <Compile Include="DiscUtils\DiscFileLocator.cs" />
+    <Compile Include="DiscUtils\DiscFileSystem.cs" />
+    <Compile Include="DiscUtils\DiscFileSystemChecker.cs" />
+    <Compile Include="DiscUtils\DiscFileSystemInfo.cs" />
+    <Compile Include="DiscUtils\DiscFileSystemOptions.cs" />
+    <Compile Include="DiscUtils\DiskImageBuilder.cs" />
+    <Compile Include="DiscUtils\DiskImageFileSpecification.cs" />
+    <Compile Include="DiscUtils\FileLocator.cs" />
+    <Compile Include="DiscUtils\FileSystemInfo.cs" />
+    <Compile Include="DiscUtils\FileSystemManager.cs" />
+    <Compile Include="DiscUtils\FileSystemParameters.cs" />
+    <Compile Include="DiscUtils\FileTransport.cs" />
+    <Compile Include="DiscUtils\FloppyDiskType.cs" />
+    <Compile Include="DiscUtils\GenericDiskAdapterType.cs" />
+    <Compile Include="DiscUtils\Geometry.cs" />
+    <Compile Include="DiscUtils\GeometryCalculation.cs" />
+    <Compile Include="DiscUtils\GeometryTranslation.cs" />
+    <Compile Include="DiscUtils\IClusterBasedFileSystem.cs" />
+    <Compile Include="DiscUtils\IDiagnosticTraceable.cs" />
+    <Compile Include="DiscUtils\IFileSystem.cs" />
+    <Compile Include="DiscUtils\Internal\Crc32.cs" />
+    <Compile Include="DiscUtils\Internal\Crc32Algorithm.cs" />
+    <Compile Include="DiscUtils\Internal\Crc32BigEndian.cs" />
+    <Compile Include="DiscUtils\Internal\Crc32LittleEndian.cs" />
+    <Compile Include="DiscUtils\Internal\LocalFileLocator.cs" />
+    <Compile Include="DiscUtils\Internal\LogicalVolumeFactory.cs" />
+    <Compile Include="DiscUtils\Internal\LogicalVolumeFactoryAttribute.cs" />
+    <Compile Include="DiscUtils\Internal\ObjectCache.cs" />
+    <Compile Include="DiscUtils\Internal\Utilities.cs" />
+    <Compile Include="DiscUtils\Internal\VirtualDiskFactory.cs" />
+    <Compile Include="DiscUtils\Internal\VirtualDiskFactoryAttribute.cs" />
+    <Compile Include="DiscUtils\Internal\VirtualDiskTransport.cs" />
+    <Compile Include="DiscUtils\Internal\VirtualDiskTransportAttribute.cs" />
+    <Compile Include="DiscUtils\InvalidFileSystemException.cs" />
+    <Compile Include="DiscUtils\IUnixFileSystem.cs" />
+    <Compile Include="DiscUtils\IWindowsFileSystem.cs" />
+    <Compile Include="DiscUtils\LogicalDiskManager\ComponentRecord.cs" />
+    <Compile Include="DiscUtils\LogicalDiskManager\Database.cs" />
+    <Compile Include="DiscUtils\LogicalDiskManager\DatabaseHeader.cs" />
+    <Compile Include="DiscUtils\LogicalDiskManager\DatabaseRecord.cs" />
+    <Compile Include="DiscUtils\LogicalDiskManager\DiskGroupRecord.cs" />
+    <Compile Include="DiscUtils\LogicalDiskManager\DiskRecord.cs" />
+    <Compile Include="DiscUtils\LogicalDiskManager\DynamicDisk.cs" />
+    <Compile Include="DiscUtils\LogicalDiskManager\DynamicDiskGroup.cs" />
+    <Compile Include="DiscUtils\LogicalDiskManager\DynamicDiskManager.cs" />
+    <Compile Include="DiscUtils\LogicalDiskManager\DynamicDiskManagerFactory.cs" />
+    <Compile Include="DiscUtils\LogicalDiskManager\DynamicVolume.cs" />
+    <Compile Include="DiscUtils\LogicalDiskManager\ExtentMergeType.cs" />
+    <Compile Include="DiscUtils\LogicalDiskManager\ExtentRecord.cs" />
+    <Compile Include="DiscUtils\LogicalDiskManager\PrivateHeader.cs" />
+    <Compile Include="DiscUtils\LogicalDiskManager\RecordType.cs" />
+    <Compile Include="DiscUtils\LogicalDiskManager\TocBlock.cs" />
+    <Compile Include="DiscUtils\LogicalDiskManager\VolumeRecord.cs" />
+    <Compile Include="DiscUtils\LogicalVolumeInfo.cs" />
+    <Compile Include="DiscUtils\LogicalVolumeStatus.cs" />
+    <Compile Include="DiscUtils\NativeFileSystem.cs" />
+    <Compile Include="DiscUtils\Partitions\BiosExtendedPartitionTable.cs" />
+    <Compile Include="DiscUtils\Partitions\BiosPartitionedDiskBuilder.cs" />
+    <Compile Include="DiscUtils\Partitions\BiosPartitionInfo.cs" />
+    <Compile Include="DiscUtils\Partitions\BiosPartitionRecord.cs" />
+    <Compile Include="DiscUtils\Partitions\BiosPartitionTable.cs" />
+    <Compile Include="DiscUtils\Partitions\BiosPartitionTypes.cs" />
+    <Compile Include="DiscUtils\Partitions\DefaultPartitionTableFactory.cs" />
+    <Compile Include="DiscUtils\Partitions\GptEntry.cs" />
+    <Compile Include="DiscUtils\Partitions\GptHeader.cs" />
+    <Compile Include="DiscUtils\Partitions\GuidPartitionInfo.cs" />
+    <Compile Include="DiscUtils\Partitions\GuidPartitionTable.cs" />
+    <Compile Include="DiscUtils\Partitions\GuidPartitionTypes.cs" />
+    <Compile Include="DiscUtils\Partitions\PartitionInfo.cs" />
+    <Compile Include="DiscUtils\Partitions\PartitionTable.cs" />
+    <Compile Include="DiscUtils\Partitions\PartitionTableFactory.cs" />
+    <Compile Include="DiscUtils\Partitions\PartitionTableFactoryAttribute.cs" />
+    <Compile Include="DiscUtils\Partitions\WellKnownPartitionType.cs" />
+    <Compile Include="DiscUtils\PhysicalVolumeInfo.cs" />
+    <Compile Include="DiscUtils\PhysicalVolumeType.cs" />
+    <Compile Include="DiscUtils\Plist.cs" />
+    <Compile Include="DiscUtils\Raw\Disk.cs" />
+    <Compile Include="DiscUtils\Raw\DiskFactory.cs" />
+    <Compile Include="DiscUtils\Raw\DiskImageFile.cs" />
+    <Compile Include="DiscUtils\ReadOnlyDiscFileSystem.cs" />
+    <Compile Include="DiscUtils\ReparsePoint.cs" />
+    <Compile Include="DiscUtils\ReportLevels.cs" />
+    <Compile Include="DiscUtils\Setup\FileOpenDelegate.cs" />
+    <Compile Include="DiscUtils\Setup\FileOpenEventArgs.cs" />
+    <Compile Include="DiscUtils\Setup\SetupHelper.cs" />
+    <Compile Include="DiscUtils\TimeConverter.cs" />
+    <Compile Include="DiscUtils\UnixFilePermissions.cs" />
+    <Compile Include="DiscUtils\UnixFileSystemInfo.cs" />
+    <Compile Include="DiscUtils\UnixFileType.cs" />
+    <Compile Include="DiscUtils\Vfs\IVfsDirectory.cs" />
+    <Compile Include="DiscUtils\Vfs\IVfsFile.cs" />
+    <Compile Include="DiscUtils\Vfs\IVfsFileWithStreams.cs" />
+    <Compile Include="DiscUtils\Vfs\IVfsSymlink.cs" />
+    <Compile Include="DiscUtils\Vfs\VfsContext.cs" />
+    <Compile Include="DiscUtils\Vfs\VfsDirEntry.cs" />
+    <Compile Include="DiscUtils\Vfs\VfsFileSystem.cs" />
+    <Compile Include="DiscUtils\Vfs\VfsFileSystemFacade.cs" />
+    <Compile Include="DiscUtils\Vfs\VfsFileSystemFactory.cs" />
+    <Compile Include="DiscUtils\Vfs\VfsFileSystemFactoryAttribute.cs" />
+    <Compile Include="DiscUtils\Vfs\VfsFileSystemInfo.cs" />
+    <Compile Include="DiscUtils\Vfs\VfsFileSystemOpener.cs" />
+    <Compile Include="DiscUtils\Vfs\VfsReadOnlyFileSystem.cs" />
+    <Compile Include="DiscUtils\VirtualDisk.cs" />
+    <Compile Include="DiscUtils\VirtualDiskClass.cs" />
+    <Compile Include="DiscUtils\VirtualDiskExtent.cs" />
+    <Compile Include="DiscUtils\VirtualDiskLayer.cs" />
+    <Compile Include="DiscUtils\VirtualDiskManager.cs" />
+    <Compile Include="DiscUtils\VirtualDiskParameters.cs" />
+    <Compile Include="DiscUtils\VirtualDiskTypeInfo.cs" />
+    <Compile Include="DiscUtils\VolumeInfo.cs" />
+    <Compile Include="DiscUtils\VolumeManager.cs" />
+    <Compile Include="DiscUtils\WindowsFileInformation.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="System\DateTimeOffsetExtensions.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,657 @@
+<Window
+	x:Class="Microsoft.Xde.Client.EmulatorWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:Microsoft.Xde.Client" xmlns:sys="clr-namespace:System;assembly=mscorlib"
+	SizeToContent="WidthAndHeight"
+	AllowsTransparency="True"
+	WindowStyle="None"
+	Background="#00FFFFFF"
+	ResizeMode="NoResize"
+	Title="{Binding WindowText}">
+	<FrameworkElement.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary
+					Source="/Microsoft.Xde.Common;component/SimpleStyles.xaml" />
+			</ResourceDictionary.MergedDictionaries>
+			<sys:Double
+				x:Key="ToolbarButtonSize">30</sys:Double>
+			<sys:Double
+				x:Key="ToolbarSeparatorThickness">2</sys:Double>
+			<Color
+				x:Key="ToolbarColor">#000000</Color>
+			<Color
+				x:Key="SelectColor">#FF007ACC</Color>
+			<SolidColorBrush
+				Color="{StaticResource SelectColor}"
+				x:Key="SelectColorBrush" />
+			<Color
+				x:Key="HoverColor">#FF7C7D7E</Color>
+			<SolidColorBrush
+				Color="{StaticResource HoverColor}"
+				x:Key="HoverColorBrush" />
+			<Color
+				x:Key="DownColor">#FF007ACC</Color>
+			<SolidColorBrush
+				Color="{StaticResource DownColor}"
+				x:Key="DownColorBrush" />
+			<Color
+				x:Key="SeparatorColor">#FFC8C8C8</Color>
+			<SolidColorBrush
+				Color="{StaticResource SeparatorColor}"
+				x:Key="SeparatorColorBrush" />
+			<SolidColorBrush
+				Color="{StaticResource ToolbarColor}"
+				x:Key="ToolbarColorBrush" />
+			<SolidColorBrush
+				Color="DarkBlue"
+				x:Key="ActiveCaptionBrush" />
+			<SolidColorBrush
+				Color="White"
+				x:Key="ActiveCaptionTextBrush" />
+			<local:ToolBarItemSelector
+				x:Key="ToolBarItemSelector" />
+			<Style
+				x:Key="XdeFocusVisualStyle">
+				<Setter
+					Property="Template">
+					<Setter.Value>
+						<ControlTemplate>
+							<Rectangle
+								RadiusX="2"
+								RadiusY="2"
+								Margin="-2"
+								Stroke="#FFFF0000"
+								StrokeThickness="1" />
+						</ControlTemplate>
+					</Setter.Value>
+				</Setter>
+			</Style>
+			<Style
+				TargetType="{x:Type Button}"
+				x:Key="ToolBarButtonStyle">
+				<Setter
+					Property="Template">
+					<Setter.Value>
+						<ControlTemplate
+							TargetType="{x:Type Button}">
+							<Grid
+								Name="ButtonGrid"
+								Background="#FF000000"
+								Visibility="{Binding Visible, Converter={StaticResource BoolToVis}}">
+								<Rectangle
+									Name="ToggleRect"
+									StrokeThickness="1"
+									Fill="#00FFFFFF"
+									Width="{StaticResource ToolbarButtonSize}"
+									Height="{StaticResource ToolbarButtonSize}"
+									Stroke="{StaticResource SelectColorBrush}"
+									Visibility="{Binding Toggled, Converter={StaticResource BoolToVis}}" />
+								<Rectangle
+									Name="SelectRect"
+									Stroke="#00FFFFFF"
+									Visibility="Collapsed"
+									Width="{StaticResource ToolbarButtonSize}"
+									Height="{StaticResource ToolbarButtonSize}"
+									Fill="{StaticResource HoverColorBrush}" />
+								<Polygon
+									StrokeThickness="1"
+									Points="30,30 25,30 30,25"
+									Fill="{StaticResource SelectColorBrush}"
+									Stroke="{StaticResource SelectColorBrush}"
+									Visibility="{Binding Arrowed, Converter={StaticResource BoolToVis}}" />
+								<Image
+									Name="ButtonImage"
+									Width="{StaticResource ToolbarButtonSize}"
+									Height="{StaticResource ToolbarButtonSize}"
+									Source="{Binding ButtonImage}" />
+							</Grid>
+							<ControlTemplate.Triggers>
+								<Trigger
+									Property="UIElement.IsMouseOver"
+									Value="True">
+									<Setter
+										TargetName="SelectRect"
+										Property="Visibility"
+										Value="Visible" />
+								</Trigger>
+								<Trigger
+									Property="IsPressed"
+									Value="True">
+									<Setter
+										TargetName="SelectRect"
+										Property="Visibility"
+										Value="Visible" />
+									<Setter
+										TargetName="SelectRect"
+										Property="Fill"
+										Value="{StaticResource DownColorBrush}" />
+								</Trigger>
+								<DataTrigger
+									Value="False"
+									Binding="{Binding Enabled}">
+									<Setter
+										TargetName="ButtonImage"
+										Property="UIElement.Opacity"
+										Value="0.5" />
+								</DataTrigger>
+							</ControlTemplate.Triggers>
+						</ControlTemplate>
+					</Setter.Value>
+				</Setter>
+				<Setter
+					Property="FrameworkElement.FocusVisualStyle"
+					Value="{StaticResource XdeFocusVisualStyle}" />
+			</Style>
+			<Style
+				TargetType="{x:Type ItemsControl}"
+				x:Key="XdeToolbarStyle">
+				<Style.Setters>
+					<Setter
+						Property="Template">
+						<Setter.Value>
+							<ControlTemplate>
+								<Grid
+									Name="ItemsHolder">
+									<Grid.RowDefinitions>
+										<RowDefinition
+											Height="auto" />
+										<RowDefinition />
+									</Grid.RowDefinitions>
+									<Border
+										CornerRadius="5"
+										Background="{StaticResource ToolbarColorBrush}">
+										<WrapPanel
+											Name="ItemsPanel"
+											Orientation="Horizontal"
+											Margin="4"
+											IsItemsHost="True"
+											ItemWidth="{Binding ItemWidth}"
+											Width="{Binding ItemPanelWidth}" />
+									</Border>
+								</Grid>
+							</ControlTemplate>
+						</Setter.Value>
+					</Setter>
+					<Setter
+						Property="ItemTemplateSelector"
+						Value="{StaticResource ToolBarItemSelector}" />
+				</Style.Setters>
+			</Style>
+			<Style
+				TargetType="{x:Type Slider}"
+				x:Key="ToolbarSliderStyle">
+				<Style.Setters>
+					<Setter
+						Property="Width"
+						Value="{StaticResource ToolbarButtonSize}" />
+					<Setter
+						Property="Height"
+						Value="150" />
+					<Setter
+						Property="Background"
+						Value="{StaticResource ToolbarColorBrush}" />
+					<Setter
+						Property="Foreground"
+						Value="{StaticResource SeparatorColorBrush}" />
+					<Setter
+						Property="Slider.Orientation"
+						Value="Vertical" />
+					<Setter
+						Property="Slider.TickPlacement"
+						Value="BottomRight" />
+					<Setter
+						Property="Slider.IsDirectionReversed"
+						Value="True" />
+				</Style.Setters>
+			</Style>
+			<Style
+				TargetType="{x:Type local:IsPressedButton}"
+				x:Key="SkinButtonStyle">
+				<Setter
+					Property="FrameworkElement.ToolTip"
+					Value="{Binding ToolTip}" />
+				<Setter
+					Property="Width"
+					Value="{Binding Width}" />
+				<Setter
+					Property="Height"
+					Value="{Binding Height}" />
+				<Setter
+					Property="local:IsPressedButton.IsPressed"
+					Value="{Binding IsPressed}" />
+				<Setter
+					Property="Template">
+					<Setter.Value>
+						<ControlTemplate
+							TargetType="{x:Type local:IsPressedButton}">
+							<Grid
+								Name="ButtonGrid"
+								Background="#00FFFFFF">
+								<Image
+									Name="UpImage"
+									Source="{Binding UpImage}"
+									Visibility="{Binding IsPressed, ConverterParameter=False, Converter={StaticResource BoolToVis}}" />
+								<Image
+									Name="DownImage"
+									Source="{Binding DownImage}"
+									Visibility="{Binding IsPressed, ConverterParameter=True, Converter={StaticResource BoolToVis}}" />
+							</Grid>
+						</ControlTemplate>
+					</Setter.Value>
+				</Setter>
+			</Style>
+			<Style
+				TargetType="{x:Type ItemsControl}"
+				x:Key="SkinButtonHolder">
+				<Setter
+					Property="ItemsPanel">
+					<Setter.Value>
+						<ItemsPanelTemplate>
+							<Canvas
+								Name="SkinButtonGrid" />
+						</ItemsPanelTemplate>
+					</Setter.Value>
+				</Setter>
+				<Setter
+					Property="ItemTemplate">
+					<Setter.Value>
+						<DataTemplate>
+							<local:IsPressedButton
+								Style="{StaticResource SkinButtonStyle}" />
+						</DataTemplate>
+					</Setter.Value>
+				</Setter>
+				<Setter
+					Property="ItemContainerStyle">
+					<Setter.Value>
+						<Style>
+							<Setter
+								Property="Canvas.Left"
+								Value="{Binding X}" />
+							<Setter
+								Property="Canvas.Top"
+								Value="{Binding Y}" />
+						</Style>
+					</Setter.Value>
+				</Setter>
+			</Style>
+			<Style
+				TargetType="{x:Type Rectangle}"
+				x:Key="CornerSizeRect">
+				<Setter
+					Property="Width"
+					Value="10" />
+				<Setter
+					Property="Height"
+					Value="10" />
+				<Setter
+					Property="Fill"
+					Value="#01000000" />
+			</Style>
+			<Style
+				TargetType="{x:Type Polygon}"
+				x:Key="CornerResizePoly">
+				<Setter
+					Property="Polygon.Points"
+					Value="0,0 10,0 10,10 20,10 20,20 0,20" />
+				<Setter
+					Property="Fill"
+					Value="#01000000" />
+			</Style>
+			<DataTemplate
+				x:Key="ToolBarButtonTemplate">
+				<Button
+					Style="{StaticResource ToolBarButtonStyle}"
+					ToolTip="{Binding ToolTipText}"
+					Command="{Binding Command}" />
+			</DataTemplate>
+			<DataTemplate
+				x:Key="ToolBarSliderTemplate">
+				<Slider
+					Style="{StaticResource ToolbarSliderStyle}"
+					ToolTip="{Binding ToolTipText}"
+					Value="{Binding Value, Mode=TwoWay}"
+					Maximum="{Binding Maximum}"
+					Minimum="{Binding Minimum}"
+					TickFrequency="{Binding TickFrequency}" />
+			</DataTemplate>
+			<DataTemplate
+				x:Key="ToolBarSeparatorTemplate">
+				<Line
+					X1="0"
+					Y1="0"
+					Y2="0"
+					Margin="0,5,0,5"
+					Stroke="{StaticResource SeparatorColorBrush}"
+					X2="{StaticResource ToolbarButtonSize}"
+					StrokeThickness="{StaticResource ToolbarSeparatorThickness}" />
+			</DataTemplate>
+		</ResourceDictionary>
+	</FrameworkElement.Resources>
+	<Grid
+		Name="MainGrid"
+		Background="#00FFFFFF">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition
+				Width="auto" />
+			<ColumnDefinition
+				Width="auto" />
+			<ColumnDefinition
+				Width="auto" />
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition
+				Height="Auto" />
+			<RowDefinition
+				Height="Auto" />
+		</Grid.RowDefinitions>
+		<StackPanel
+			Name="CaptionPanel"
+			Orientation="Horizontal"
+			Margin="20,0,0,-2"
+			Visibility="{Binding CaptionVisbility}"
+			MouseLeftButtonDown="CaptionPanel_MouseLeftButtonDown">
+			<Border
+				Width="10"
+				Background="{StaticResource ActiveCaptionBrush}"
+				CornerRadius="8,0,0,0"
+				BorderThickness="0"
+				Height="{Binding CaptionHeight}" />
+			<TextBlock
+				Padding="10,10,10,10"
+				Margin="-2.5,0,0,0"
+				Background="{StaticResource ActiveCaptionBrush}"
+				Foreground="{StaticResource ActiveCaptionTextBrush}"
+				FontSize="12"
+				VerticalAlignment="Center"
+				HorizontalAlignment="Left"
+				Height="{Binding CaptionHeight}"
+				Text="{Binding WindowText}" />
+			<Border
+				Width="10"
+				Margin="-1,0,0,0"
+				Background="{StaticResource ActiveCaptionBrush}"
+				CornerRadius="0,8,0,0"
+				BorderThickness="0"
+				Height="{Binding CaptionHeight}" />
+		</StackPanel>
+		<Canvas
+			Name="allChromesCanvas"
+			ClipToBounds="False"
+			VerticalAlignment="Top"
+			Grid.Row="1"
+			Focusable="True"
+			KeyboardNavigation.IsTabStop="False"
+			Margin="10,0,0,10"
+			Width="{Binding ActualChromeWidth}"
+			Height="{Binding ActualChromeHeight}"
+			FocusVisualStyle="{x:Null}"
+			MouseLeftButtonDown="AllChromesCanvas_MouseLeftButtonDown">
+			<ItemsControl
+				Name="ChromesList"
+				KeyboardNavigation.IsTabStop="False"
+				ClipToBounds="True"
+				ItemsSource="{Binding VisibleChromeModels}">
+				<ItemsControl.ItemsPanel>
+					<ItemsPanelTemplate>
+						<Canvas
+							Name="chromesPanelCanvas"
+							ClipToBounds="False"
+							VerticalAlignment="Top"
+							Width="{Binding ActualChromeWidth}"
+							Height="{Binding ActualChromeHeight}">
+							<UIElement.RenderTransform>
+								<TransformGroup>
+									<RotateTransform
+										Angle="{Binding RotateAngle}" />
+									<TranslateTransform
+										X="{Binding TranslateX}"
+										Y="{Binding TranslateY}" />
+									<TranslateTransform
+										X="{Binding SingleDisplayTranslateX}"
+										Y="{Binding SingleDisplayTranslateY}" />
+									<ScaleTransform
+										ScaleX="{Binding DisplayScale}"
+										ScaleY="{Binding DisplayScale}" />
+								</TransformGroup>
+							</UIElement.RenderTransform>
+						</Canvas>
+					</ItemsPanelTemplate>
+				</ItemsControl.ItemsPanel>
+				<ItemsControl.ItemContainerStyle>
+					<Style>
+						<Setter
+							Property="Canvas.Left"
+							Value="{Binding PosX}" />
+						<Setter
+							Property="Canvas.Top"
+							Value="{Binding PosY}" />
+					</Style>
+				</ItemsControl.ItemContainerStyle>
+				<ItemsControl.ItemTemplate>
+					<DataTemplate>
+						<Canvas
+							Name="chromeCanvas">
+							<Image
+								Source="{Binding DeviceImage}"
+								Width="{Binding DeviceImageWidth}"
+								Height="{Binding DeviceImageHeight}"
+								Clip="{Binding ImageMask}" />
+							<ItemsControl
+								Style="{StaticResource SkinButtonHolder}"
+								ItemsSource="{Binding SkinButtonItems}"
+								Width="{Binding DeviceImageWidth}"
+								Height="{Binding DeviceImageHeight}" />
+							<local:DisplayControl
+								Name="DisplayControl1"
+								Source="{Binding Display1}"
+								Width="{Binding Display1Width}"
+								Height="{Binding Display1Height}"
+								Canvas.Left="{Binding Display1X}"
+								Canvas.Top="{Binding Display1Y}"
+								Cursor="{Binding DisplayCursor}"
+								Visibility="{Binding DisplayVisiblity}">
+								<UIElement.RenderTransform>
+									<RotateTransform
+										Angle="{Binding Display1RotateAngle}"
+										CenterX="{Binding Display1CenterX}"
+										CenterY="{Binding Display1CenterY}" />
+								</UIElement.RenderTransform>
+							</local:DisplayControl>
+							<Grid
+								Width="{Binding Display1Width}"
+								Height="{Binding Display1Height}"
+								Canvas.Left="{Binding Display1X}"
+								Canvas.Top="{Binding Display1Y}"
+								Visibility="{Binding StatusMessageVisiblity}">
+								<TextBlock
+									Foreground="#FFFFFFFF"
+									VerticalAlignment="Center"
+									HorizontalAlignment="Center"
+									TextWrapping="Wrap"
+									Text="{Binding Message}"
+									FontSize="{Binding DescaledFontSize}" />
+							</Grid>
+							<local:DisplayControl
+								Name="DisplayControl2"
+								Source="{Binding Display2}"
+								Width="{Binding Display2Width}"
+								Height="{Binding Display2Height}"
+								Canvas.Left="{Binding Display2X}"
+								Canvas.Top="{Binding Display2Y}"
+								Cursor="{Binding DisplayCursor}"
+								Visibility="{Binding Display2Visiblity}">
+								<UIElement.RenderTransform>
+									<RotateTransform
+										Angle="{Binding Display2RotateAngle}"
+										CenterX="{Binding Display2CenterX}"
+										CenterY="{Binding Display2CenterY}" />
+								</UIElement.RenderTransform>
+							</local:DisplayControl>
+						</Canvas>
+					</DataTemplate>
+				</ItemsControl.ItemTemplate>
+			</ItemsControl>
+			<local:MultiTouch
+				Name="MultiTouch"
+				PointsTouched="MultiTouch_PointsTouched"
+				Point1X="-50"
+				Point1Y="50"
+				KeyboardNavigation.IsTabStop="False"
+				Canvas.Left="{Binding MultiX, Mode=TwoWay}"
+				Canvas.Top="{Binding MultiY, Mode=TwoWay}"
+				Visibility="{Binding MultiTouchVisibility}" />
+			<Rectangle
+				Name="TopSizeRect"
+				Canvas.Top="-8"
+				Canvas.Left="0"
+				Height="10"
+				Style="{StaticResource CornerSizeRect}"
+				Cursor="SizeNS"
+				Grid.Row="1"
+				Width="{Binding ActualChromeWidth}"
+				MouseLeftButtonDown="ResizeCorner_MouseLeftButtonDown" />
+			<Rectangle
+				Name="BottomSizeRect"
+				Canvas.Bottom="-8"
+				Canvas.Left="0"
+				Height="10"
+				Style="{StaticResource CornerSizeRect}"
+				Cursor="SizeNS"
+				Grid.Row="1"
+				Width="{Binding ActualChromeWidth}"
+				MouseLeftButtonDown="ResizeCorner_MouseLeftButtonDown" />
+			<Rectangle
+				Name="LeftSizeRect"
+				Canvas.Top="0"
+				Canvas.Left="-8"
+				Width="10"
+				Style="{StaticResource CornerSizeRect}"
+				Cursor="SizeWE"
+				Grid.Row="1"
+				Height="{Binding ActualChromeHeight}"
+				MouseLeftButtonDown="ResizeCorner_MouseLeftButtonDown" />
+			<Rectangle
+				Name="RightSizeRect"
+				Width="10"
+				Style="{StaticResource CornerSizeRect}"
+				Cursor="SizeWE"
+				Grid.Row="1"
+				Canvas.Top="{Binding RightSizeRectCanvasTop}"
+				Canvas.Right="{Binding RightSizeRectCanvasRight}"
+				Height="{Binding RightSizeRectHeight}"
+				MouseLeftButtonDown="ResizeCorner_MouseLeftButtonDown" />
+			<Polygon
+				Name="BottomLeftSizeRect"
+				Style="{StaticResource CornerResizePoly}"
+				Canvas.Bottom="-8"
+				Canvas.Left="-8"
+				Cursor="SizeNESW"
+				Grid.Row="1"
+				MouseLeftButtonDown="ResizeCorner_MouseLeftButtonDown">
+				<UIElement.RenderTransform>
+					<RotateTransform
+						CenterX="10"
+						CenterY="10"
+						Angle="0" />
+				</UIElement.RenderTransform>
+			</Polygon>
+			<Polygon
+				Name="TopLeftSizeRect"
+				Canvas.Top="-8"
+				Canvas.Left="-8"
+				Style="{StaticResource CornerResizePoly}"
+				Cursor="SizeNWSE"
+				Grid.Row="1"
+				MouseLeftButtonDown="ResizeCorner_MouseLeftButtonDown">
+				<UIElement.RenderTransform>
+					<RotateTransform
+						CenterX="10"
+						CenterY="10"
+						Angle="90" />
+				</UIElement.RenderTransform>
+			</Polygon>
+			<Polygon
+				Name="TopRightSizeRect"
+				Canvas.Top="-8"
+				Style="{StaticResource CornerResizePoly}"
+				Cursor="SizeNESW"
+				Grid.Row="1"
+				Canvas.Right="{Binding RightSizeRectCanvasRight}"
+				MouseLeftButtonDown="ResizeCorner_MouseLeftButtonDown">
+				<UIElement.RenderTransform>
+					<RotateTransform
+						CenterX="10"
+						CenterY="10"
+						Angle="180" />
+				</UIElement.RenderTransform>
+			</Polygon>
+			<Polygon
+				Name="BottomRightSizeRect"
+				Canvas.Bottom="-8"
+				Style="{StaticResource CornerResizePoly}"
+				Cursor="SizeNWSE"
+				Grid.Row="1"
+				Canvas.Right="{Binding RightSizeRectCanvasRight}"
+				MouseLeftButtonDown="ResizeCorner_MouseLeftButtonDown">
+				<UIElement.RenderTransform>
+					<RotateTransform
+						CenterX="10"
+						CenterY="10"
+						Angle="-90" />
+				</UIElement.RenderTransform>
+			</Polygon>
+		</Canvas>
+		<Canvas
+			Grid.Column="1"
+			Margin="10,0,0,0"
+			Grid.Row="1"
+			VerticalAlignment="Top"
+			Width="{Binding ActualExternWidth}"
+			Height="{Binding ActualExternHeight}"
+			Visibility="{Binding ExternalDisplayVisibility}">
+			<UIElement.RenderTransform>
+				<TransformGroup>
+					<ScaleTransform
+						ScaleX="{Binding DisplayScale}"
+						ScaleY="{Binding DisplayScale}" />
+				</TransformGroup>
+			</UIElement.RenderTransform>
+			<local:DisplayControl
+				Name="ExternDisplayControl"
+				Source="{Binding ExternDisplay}"
+				Width="{Binding ExternWidth}"
+				Height="{Binding ExternHeight}" />
+		</Canvas>
+		<Grid
+			Name="ToolbarGrid"
+			Row="1"
+			Column="2"
+			Margin="10,0,0,0"
+			MouseLeftButtonDown="ToolbarGrid_MouseLeftButtonDown">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition
+					Width="auto" />
+				<ColumnDefinition
+					Width="auto" />
+			</Grid.ColumnDefinitions>
+			<local:XdeToolbar
+				Name="MainToolbar"
+				Style="{StaticResource XdeToolbarStyle}"
+				Columns="1"
+				Grid.Column="0"
+				HorizontalAlignment="Left"
+				VerticalAlignment="Top"
+				ItemsSource="{Binding ToolbarItems}" />
+			<local:XdeToolbar
+				Name="FlyoutToolbar"
+				Style="{StaticResource XdeToolbarStyle}"
+				Grid.Column="1"
+				HorizontalAlignment="Left"
+				VerticalAlignment="Top"
+				ItemsSource="{Binding FlyoutItems}"
+				Columns="{Binding FlyoutColumns}"
+				Visibility="{Binding FlyoutVisibility}"
+				Margin="{Binding FlyoutMargin}" />
+		</Grid>
+	</Grid>
+</Window>

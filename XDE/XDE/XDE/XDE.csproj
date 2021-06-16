@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x64</Platform>
+    <ProjectGuid>{C4E13979-2DE5-4B32-A8C4-00CDE59B011C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Microsoft.Xde.Client</RootNamespace>
+    <AssemblyName>XDE</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60DC8134-EBA5-43B8-BCC9-BB4BC16C2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>XDE.ico</ApplicationIcon>
+    <StartupObject>Microsoft.Xde.Client.App</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DiscUtils.Core">
+      <HintPath>Q:\Microsoft.MicrosoftEmulator_1.1.1081.0_x64__8wekyb3d8bbwe\XdeManager\DiscUtils.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DiscUtils.Streams">
+      <HintPath>Q:\Microsoft.MicrosoftEmulator_1.1.1081.0_x64__8wekyb3d8bbwe\XdeManager\DiscUtils.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.Xde.Base">
+      <HintPath>Q:\Microsoft.MicrosoftEmulator_1.1.1081.0_x64__8wekyb3d8bbwe\XdeManager\Microsoft.Xde.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xde.Common">
+      <HintPath>Q:\Microsoft.MicrosoftEmulator_1.1.1081.0_x64__8wekyb3d8bbwe\XdeManager\Microsoft.Xde.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xde.Common.Base">
+      <HintPath>Q:\Microsoft.MicrosoftEmulator_1.1.1081.0_x64__8wekyb3d8bbwe\XdeManager\Microsoft.Xde.Common.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xde.Communication">
+      <HintPath>Q:\Microsoft.MicrosoftEmulator_1.1.1081.0_x64__8wekyb3d8bbwe\XdeManager\Microsoft.Xde.Communication.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xde.DeviceManagement">
+      <HintPath>Q:\Microsoft.MicrosoftEmulator_1.1.1081.0_x64__8wekyb3d8bbwe\XdeManager\Microsoft.Xde.DeviceManagement.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xde.Hcs">
+      <HintPath>Q:\Microsoft.MicrosoftEmulator_1.1.1081.0_x64__8wekyb3d8bbwe\XdeManager\Microsoft.Xde.Hcs.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xde.Interface">
+      <HintPath>Q:\Microsoft.MicrosoftEmulator_1.1.1081.0_x64__8wekyb3d8bbwe\XdeManager\Microsoft.Xde.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xde.Interface.Common">
+      <HintPath>Q:\Microsoft.MicrosoftEmulator_1.1.1081.0_x64__8wekyb3d8bbwe\XdeManager\Microsoft.Xde.Interface.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xde.Interface.Public.10.1">
+      <HintPath>Q:\Microsoft.MicrosoftEmulator_1.1.1081.0_x64__8wekyb3d8bbwe\XdeManager\Microsoft.Xde.Interface.Public.10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xde.Tools">
+      <HintPath>Q:\Microsoft.MicrosoftEmulator_1.1.1081.0_x64__8wekyb3d8bbwe\XdeManager\Microsoft.Xde.Tools.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xde.WindowsAPICodePack">
+      <HintPath>Q:\Microsoft.MicrosoftEmulator_1.1.1081.0_x64__8wekyb3d8bbwe\XdeManager\Microsoft.Xde.WindowsAPICodePack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xde.Wmi">
+      <HintPath>Q:\Microsoft.MicrosoftEmulator_1.1.1081.0_x64__8wekyb3d8bbwe\XdeManager\Microsoft.Xde.Wmi.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Threading.Tasks.Dataflow">
+      <HintPath>Q:\Microsoft.MicrosoftEmulator_1.1.1081.0_x64__8wekyb3d8bbwe\XdeManager\System.Threading.Tasks.Dataflow.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsDevicePortalWrapper">
+      <HintPath>Q:\Microsoft.MicrosoftEmulator_1.1.1081.0_x64__8wekyb3d8bbwe\XdeManager\WindowsDevicePortalWrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="mscorlib" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ArgsParser.cs" />
+    <Compile Include="Controls\EulaWindow.xaml.cs">
+      <DependentUpon>EulaWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DisplayControl.cs" />
+    <Compile Include="ElevationRequiredDlg.cs" />
+    <Compile Include="EmulatorWindow.cs" />
+    <Compile Include="EmulatorWindowViewModel.cs" />
+    <Compile Include="Executed.cs" />
+    <Compile Include="IsPressedButton.cs" />
+    <Compile Include="IXdeUiFactory.cs" />
+    <Compile Include="ModifySystemSettingsDialog.cs" />
+    <Compile Include="MultiTouch.cs" />
+    <Compile Include="MultiTouchEventArgs.cs" />
+    <Compile Include="ParsedArg.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\XdeUserSettings.cs" />
+    <Compile Include="Properties\XdeUserSettings.Designer.cs">
+      <DependentUpon>XdeUserSettings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ResizeCorner.cs" />
+    <Compile Include="Resources.cs" />
+    <Compile Include="ScaleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScaleForm.Designer.cs">
+      <DependentUpon>ScaleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SkinButtonItemViewModel.cs" />
+    <Compile Include="SnapshotControl.cs" />
+    <Compile Include="ToolBarButtonViewModel.cs" />
+    <Compile Include="ToolBarItemSelector.cs" />
+    <Compile Include="ToolBarItemViewModel.cs" />
+    <Compile Include="ToolBarSliderViewModel.cs" />
+    <Compile Include="TouchEventType.cs" />
+    <Compile Include="VmUserSettings.cs" />
+    <Compile Include="XdeArgsProcessor.cs" />
+    <Compile Include="XdeController.cs" />
+    <Compile Include="XdeReturnCode.cs" />
+    <Compile Include="XdeToolbar.cs" />
+    <Compile Include="XdeTools\XdeToolsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XdeTools\XdeToolsForm.Designer.cs">
+      <DependentUpon>XdeToolsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XdeUiFactory.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources.resources" />
+    <EmbeddedResource Include="ScaleForm.resources" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.manifest" />
+    <None Include="Properties\XdeUserSettings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>XdeUserSettings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Controls\emulatorwindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\EulaWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\multitouch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\microsoftemulator.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,27 @@
+[
+    {
+        "SkuName": "sant",
+        "ImageInfos": [
+            {
+                "Name": "Dev with vail",
+                "Location": "amd64fre\\wcos_images\\ModernPC\\VMGen2\\wcoscdg_development_emulator\\en-us\\flash.vhdx"
+            },
+            {
+                "Name": "Retail with vail",
+                "Location": "amd64fre\\images\\ModernPC\\VMGen2\\wcoscdg_retail_emulator\\en-us\\flash.vhdx"
+            },
+            {
+                "Name": "Dev no vail",
+                "Location": "amd64fre\\wcos_images\\ModernPCBase\\VMGen2\\wcoscdg_development_emulator_novail\\en-US\\Flash.vhdx"
+            }
+        ]
+    },
+    {
+        "SkuName": "sant.b",
+        "ImageInfosSameAs": "sant"
+    },
+    {
+        "SkuName": "sant.h2l",
+        "ImageInfosSameAs": "sant"
+    }
+]

@@ -1,0 +1,43 @@
+<Window
+	x:Class="Microsoft.Xde.Client.Controls.EulaWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:Microsoft.Xde.Client.Controls"
+	ResizeMode="CanMinimize"
+	Title="Emulator Image EULA"
+	Height="450"
+	Width="760"
+	WindowStartupLocation="CenterScreen">
+	<Grid>
+		<StackPanel
+			Orientation="Vertical"
+			Margin="10,10,10,0"
+			Height="402"
+			VerticalAlignment="Top">
+			<TextBlock
+				FontSize="18"
+				FontWeight="Bold">License Agreement</TextBlock>
+			<TextBlock
+				Margin="0,10,0,10"
+				TextWrapping="Wrap">You must accept the terms of this agreement to continue. If you do not accept the Microsoft Software License Terms, click Decline.</TextBlock>
+			<RichTextBox
+				Name="RtfBox"
+				Width="720"
+				Height="302"
+				VerticalScrollBarVisibility="Visible"
+				Margin="0" />
+			<StackPanel
+				Orientation="Horizontal"
+				HorizontalAlignment="Right"
+				Margin="0,10,0,0">
+				<Button
+					Name="AcceptButton"
+					Width="75"
+					Click="AcceptButton_Click">Accept</Button>
+				<Button
+					Name="DeclineButton"
+					Width="75"
+					Margin="10,0,0,0"
+					IsCancel="True"
+					IsDefault="True">Decline</Button>
+			</StackPanel>
+		</StackPanel>
+	</Grid>
+</Window>

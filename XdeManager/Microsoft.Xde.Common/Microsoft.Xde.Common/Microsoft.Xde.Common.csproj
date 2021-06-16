@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x64</Platform>
+    <ProjectGuid>{8576637A-F463-47AC-9CE3-759D4089F5F9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Microsoft</RootNamespace>
+    <AssemblyName>Microsoft.Xde.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60DC8134-EBA5-43B8-BCC9-BB4BC16C2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DiscUtils.Core">
+      <HintPath>Q:\Microsoft.MicrosoftEmulator_1.1.1081.0_x64__8wekyb3d8bbwe\XdeManager\DiscUtils.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DiscUtils.Ntfs">
+      <HintPath>Q:\Microsoft.MicrosoftEmulator_1.1.1081.0_x64__8wekyb3d8bbwe\XdeManager\DiscUtils.Ntfs.dll</HintPath>
+    </Reference>
+    <Reference Include="DiscUtils.Registry">
+      <HintPath>Q:\Microsoft.MicrosoftEmulator_1.1.1081.0_x64__8wekyb3d8bbwe\XdeManager\DiscUtils.Registry.dll</HintPath>
+    </Reference>
+    <Reference Include="DiscUtils.Streams">
+      <HintPath>Q:\Microsoft.MicrosoftEmulator_1.1.1081.0_x64__8wekyb3d8bbwe\XdeManager\DiscUtils.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="DiscUtils.Vhd">
+      <HintPath>Q:\Microsoft.MicrosoftEmulator_1.1.1081.0_x64__8wekyb3d8bbwe\XdeManager\DiscUtils.Vhd.dll</HintPath>
+    </Reference>
+    <Reference Include="DiscUtils.Vhdx">
+      <HintPath>Q:\Microsoft.MicrosoftEmulator_1.1.1081.0_x64__8wekyb3d8bbwe\XdeManager\DiscUtils.Vhdx.dll</HintPath>
+    </Reference>
+    <Reference Include="Diskstream">
+      <HintPath>Q:\Microsoft.MicrosoftEmulator_1.1.1081.0_x64__8wekyb3d8bbwe\XdeManager\Diskstream.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Diagnostics.Tracing.EventSource">
+      <HintPath>Q:\Microsoft.MicrosoftEmulator_1.1.1081.0_x64__8wekyb3d8bbwe\XdeManager\Microsoft.Diagnostics.Tracing.EventSource.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xde.Common.Base">
+      <HintPath>Q:\Microsoft.MicrosoftEmulator_1.1.1081.0_x64__8wekyb3d8bbwe\XdeManager\Microsoft.Xde.Common.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xde.Interface.Common">
+      <HintPath>Q:\Microsoft.MicrosoftEmulator_1.1.1081.0_x64__8wekyb3d8bbwe\XdeManager\Microsoft.Xde.Interface.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xde.Interface.Public.10.1">
+      <HintPath>Q:\Microsoft.MicrosoftEmulator_1.1.1081.0_x64__8wekyb3d8bbwe\XdeManager\Microsoft.Xde.Interface.Public.10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xde.WindowsAPICodePack">
+      <HintPath>Q:\Microsoft.MicrosoftEmulator_1.1.1081.0_x64__8wekyb3d8bbwe\XdeManager\Microsoft.Xde.WindowsAPICodePack.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="System.Xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Diagnostics\Telemetry\Internal\PartA_PrivTags.cs" />
+    <Compile Include="Diagnostics\Telemetry\PartnerTelemetryEventSource.cs" />
+    <Compile Include="Diagnostics\Telemetry\PrivTags.cs" />
+    <Compile Include="Diagnostics\Telemetry\PrivTagsAdvanced.cs" />
+    <Compile Include="Diagnostics\Telemetry\TelemetryEventSource.cs" />
+    <Compile Include="Diagnostics\Telemetry\TelemetryGroup.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Xde\Base\IXdeSkinFactory.cs" />
+    <Compile Include="Xde\Common\BoolToVisibilityConverter.cs" />
+    <Compile Include="Xde\Common\BrowserHyperlink.cs" />
+    <Compile Include="Xde\Common\DefaultSettings.cs" />
+    <Compile Include="Xde\Common\EnabledStateChangedEventArgs.cs" />
+    <Compile Include="Xde\Common\Globals.cs" />
+    <Compile Include="Xde\Common\GuestScreenCapture.cs" />
+    <Compile Include="Xde\Common\GuestUpdatedEventArgs.cs" />
+    <Compile Include="Xde\Common\ImageUtils.cs" />
+    <Compile Include="Xde\Common\InputEventFlag.cs" />
+    <Compile Include="Xde\Common\InputSessionFlag.cs" />
+    <Compile Include="Xde\Common\InsertEjectCompletedEventArgs.cs" />
+    <Compile Include="Xde\Common\InvalidSettingsReason.cs" />
+    <Compile Include="Xde\Common\InverseBooleanConverter.cs" />
+    <Compile Include="Xde\Common\IPAddressExtensions.cs" />
+    <Compile Include="Xde\Common\IpDadState.cs" />
+    <Compile Include="Xde\Common\IPSubnet.cs" />
+    <Compile Include="Xde\Common\IUiOperations.cs" />
+    <Compile Include="Xde\Common\IVirtualMachineShutdown.cs" />
+    <Compile Include="Xde\Common\IWindowsCompatCheck.cs" />
+    <Compile Include="Xde\Common\IXdeArgsProcessor.cs" />
+    <Compile Include="Xde\Common\IXdeAudioPipe.cs" />
+    <Compile Include="Xde\Common\IXdeAutomationAudioPipe.cs" />
+    <Compile Include="Xde\Common\IXdeAutomationGuestNotificationsPipe.cs" />
+    <Compile Include="Xde\Common\IXdeAutomationInput.cs" />
+    <Compile Include="Xde\Common\IXdeAutomationMicrophonePipe.cs" />
+    <Compile Include="Xde\Common\IXdeAutomationNetworkPipe.cs" />
+    <Compile Include="Xde\Common\IXdeAutomationNotificationSimulationPipe.cs" />
+    <Compile Include="Xde\Common\IXdeAutomationSDCardPipe.cs" />
+    <Compile Include="Xde\Common\IXdeAutomationSDCardPipeCallback.cs" />
+    <Compile Include="Xde\Common\IXdeAutomationSimpleCommandsPipe.cs" />
+    <Compile Include="Xde\Common\IXdeCommands.cs" />
+    <Compile Include="Xde\Common\IXdeConnectionManager.cs" />
+    <Compile Include="Xde\Common\IXdeControllerState.cs" />
+    <Compile Include="Xde\Common\IXdeDisplayControllerSettings.cs" />
+    <Compile Include="Xde\Common\IXdeDisplayOutput.cs" />
+    <Compile Include="Xde\Common\IXdeGuestNotificationsPipe.cs" />
+    <Compile Include="Xde\Common\IXdeInputPipe.cs" />
+    <Compile Include="Xde\Common\IXdeInstanceTestContract.cs" />
+    <Compile Include="Xde\Common\IXdeMicrophonePipe.cs" />
+    <Compile Include="Xde\Common\IXdeNetworkManager.cs" />
+    <Compile Include="Xde\Common\IXdeNetworkPipe.cs" />
+    <Compile Include="Xde\Common\IXdeNetworkThrottlingConfig.cs" />
+    <Compile Include="Xde\Common\IXdeNotificationSimulationPipe.cs" />
+    <Compile Include="Xde\Common\IXdeSDCardPipe.cs" />
+    <Compile Include="Xde\Common\IXdeServerSession.cs" />
+    <Compile Include="Xde\Common\IXdeShellReadyPipe.cs" />
+    <Compile Include="Xde\Common\IXdeSimpleCommandsPipe.cs" />
+    <Compile Include="Xde\Common\IXdeSkin.cs" />
+    <Compile Include="Xde\Common\IXdeSnapshotControl.cs" />
+    <Compile Include="Xde\Common\IXdeToolbar.cs" />
+    <Compile Include="Xde\Common\IXdeView.cs" />
+    <Compile Include="Xde\Common\IXdeVirtualMachine.cs" />
+    <Compile Include="Xde\Common\IXdeVirtualMachineNicInformation.cs" />
+    <Compile Include="Xde\Common\IXdeVirtualMachineSettings.cs" />
+    <Compile Include="Xde\Common\IXdeVirtualServices.cs" />
+    <Compile Include="Xde\Common\IXdeVirtualSwitchInformation.cs" />
+    <Compile Include="Xde\Common\KeyboardKeyOption.cs" />
+    <Compile Include="Xde\Common\Matrix3X2.cs" />
+    <Compile Include="Xde\Common\MinBuildVersion.cs" />
+    <Compile Include="Xde\Common\MonitorMode.cs" />
+    <Compile Include="Xde\Common\NetworkAdapterInformation.cs" />
+    <Compile Include="Xde\Common\NetworkIPAddress.cs" />
+    <Compile Include="Xde\Common\NetworkThrottlingSignalStrength.cs" />
+    <Compile Include="Xde\Common\NetworkThrottlingSpeed.cs" />
+    <Compile Include="Xde\Common\Properties\Resources.cs" />
+    <Compile Include="Xde\Common\RegistryHelper.cs" />
+    <Compile Include="Xde\Common\RegKey.cs" />
+    <Compile Include="Xde\Common\RegKeys.cs" />
+    <Compile Include="Xde\Common\RegValue.cs" />
+    <Compile Include="Xde\Common\ResolutionChangedEventArgs.cs" />
+    <Compile Include="Xde\Common\ResolutionType.cs" />
+    <Compile Include="Xde\Common\SettingsOptions.cs" />
+    <Compile Include="Xde\Common\SkinBitmapIndex.cs" />
+    <Compile Include="Xde\Common\SkinButtonInfo.cs" />
+    <Compile Include="Xde\Common\SkinKeyPressedArgs.cs" />
+    <Compile Include="Xde\Common\Strings.cs" />
+    <Compile Include="Xde\Common\TaskDialogArgs.cs" />
+    <Compile Include="Xde\Common\ThrottlerParams.cs" />
+    <Compile Include="Xde\Common\ThrottlerParamsTableStruct.cs" />
+    <Compile Include="Xde\Common\ToolbarFlags.cs" />
+    <Compile Include="Xde\Common\TouchContact.cs" />
+    <Compile Include="Xde\Common\TouchInputCursorId.cs" />
+    <Compile Include="Xde\Common\UacSecurity.cs" />
+    <Compile Include="Xde\Common\UpdateSyncProgressEventArgs.cs" />
+    <Compile Include="Xde\Common\VGPUInformation.cs" />
+    <Compile Include="Xde\Common\VGPUStatus.cs" />
+    <Compile Include="Xde\Common\VhdUtils.cs" />
+    <Compile Include="Xde\Common\VirtualHardDiskFormat.cs" />
+    <Compile Include="Xde\Common\VirtualHardDiskSettingData.cs" />
+    <Compile Include="Xde\Common\VirtualHardDiskType.cs" />
+    <Compile Include="Xde\Common\VirtualMachineHelper.cs" />
+    <Compile Include="Xde\Common\VirtualMachineShutdown.cs" />
+    <Compile Include="Xde\Common\VirtualMachineStartupEventArgs.cs" />
+    <Compile Include="Xde\Common\WindowsCompatCheck.cs" />
+    <Compile Include="Xde\Common\WindowsImageVhd.cs" />
+    <Compile Include="Xde\Common\WpfUiOperations.cs" />
+    <Compile Include="Xde\Common\XdeDisplayMessageInfo.cs" />
+    <Compile Include="Xde\Common\XdeError.cs" />
+    <Compile Include="Xde\Common\XdeException.cs" />
+    <Compile Include="Xde\Common\XdeToolbarButtonAutomation.cs" />
+    <Compile Include="Xde\Telemetry\HowCommandExecuted.cs" />
+    <Compile Include="Xde\Telemetry\IXdeTelemetryListener.cs" />
+    <Compile Include="Xde\Telemetry\Logger.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Xde\Common\Properties\Resources.resources" />
+    <EmbeddedResource Include="Xde\Common\Strings.resources" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="simplestyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

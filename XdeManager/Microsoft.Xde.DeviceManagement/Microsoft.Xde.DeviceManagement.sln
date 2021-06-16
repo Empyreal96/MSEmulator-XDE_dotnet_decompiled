@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28729.10
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Xde.DeviceManagement", "Microsoft.Xde.DeviceManagement\Microsoft.Xde.DeviceManagement.csproj", "{D766028E-531D-459C-96C4-822A31A5620F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D766028E-531D-459C-96C4-822A31A5620F}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{D766028E-531D-459C-96C4-822A31A5620F}.Debug|Any CPU.Build.0 = Debug|x64
+		{D766028E-531D-459C-96C4-822A31A5620F}.Debug|Mixed Platforms.ActiveCfg = Debug|x64
+		{D766028E-531D-459C-96C4-822A31A5620F}.Debug|Mixed Platforms.Build.0 = Debug|x64
+		{D766028E-531D-459C-96C4-822A31A5620F}.Debug|x64.ActiveCfg = Debug|x64
+		{D766028E-531D-459C-96C4-822A31A5620F}.Debug|x64.Build.0 = Debug|x64
+		{D766028E-531D-459C-96C4-822A31A5620F}.Release|Any CPU.ActiveCfg = Release|x64
+		{D766028E-531D-459C-96C4-822A31A5620F}.Release|Any CPU.Build.0 = Release|x64
+		{D766028E-531D-459C-96C4-822A31A5620F}.Release|Mixed Platforms.ActiveCfg = Release|x64
+		{D766028E-531D-459C-96C4-822A31A5620F}.Release|Mixed Platforms.Build.0 = Release|x64
+		{D766028E-531D-459C-96C4-822A31A5620F}.Release|x64.ActiveCfg = Release|x64
+		{D766028E-531D-459C-96C4-822A31A5620F}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

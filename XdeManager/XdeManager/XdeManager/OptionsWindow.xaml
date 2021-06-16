@@ -1,0 +1,107 @@
+<Window
+	x:Class="XdeManager.OptionsWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:XdeManager"
+	ResizeMode="NoResize"
+	ShowInTaskbar="False"
+	WindowStartupLocation="CenterOwner"
+	Title="Microsoft Emulator Options"
+	Height="225.406"
+	Width="532.74">
+	<FrameworkElement.Resources>
+		<ResourceDictionary>
+			<Style
+				TargetType="{x:Type ComboBox}"
+				x:Key="{x:Type ComboBox}">
+				<Setter
+					Property="HorizontalAlignment"
+					Value="Left" />
+				<Setter
+					Property="Margin"
+					Value="0,5,0,10" />
+			</Style>
+			<Style
+				TargetType="{x:Type TextBox}"
+				x:Key="{x:Type TextBox}">
+				<Setter
+					Property="HorizontalAlignment"
+					Value="Left" />
+				<Setter
+					Property="Margin"
+					Value="0,5,0,10" />
+			</Style>
+			<Style
+				TargetType="{x:Type CheckBox}"
+				x:Key="{x:Type CheckBox}">
+				<Setter
+					Property="HorizontalAlignment"
+					Value="Left" />
+				<Setter
+					Property="Margin"
+					Value="0,5,0,10" />
+			</Style>
+			<Style
+				TargetType="{x:Type Button}"
+				x:Key="{x:Type Button}">
+				<Setter
+					Property="Width"
+					Value="100" />
+				<Setter
+					Property="Height"
+					Value="20" />
+				<Setter
+					Property="Margin"
+					Value="0,0,10,0" />
+			</Style>
+			<Style
+				TargetType="{x:Type Button}"
+				x:Key="BrowseButton">
+				<Setter
+					Property="Width"
+					Value="50" />
+				<Setter
+					Property="Margin"
+					Value="10,-5,0,0" />
+				<Setter
+					Property="Height"
+					Value="20" />
+			</Style>
+		</ResourceDictionary>
+	</FrameworkElement.Resources>
+	<Grid
+		Margin="5">
+		<Grid.RowDefinitions>
+			<RowDefinition
+				Height="auto" />
+			<RowDefinition
+				Height="*" />
+		</Grid.RowDefinitions>
+		<StackPanel
+			Orientation="Vertical">
+			<TextBlock>Download root:</TextBlock>
+			<TextBlock>This path will be used for downloaded images and differencing disks.</TextBlock>
+			<Grid>
+				<TextBox
+					Width="441"
+					Text="{Binding DownloadRoot, ValidatesOnDataErrors=True, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+				<Button
+					Style="{StaticResource BrowseButton}"
+					HorizontalAlignment="Right"
+					Command="{Binding BrowseForDownloadRootCommand}">...</Button>
+			</Grid>
+		</StackPanel>
+		<StackPanel
+			Orientation="Horizontal"
+			HorizontalAlignment="Right"
+			Margin="0,10,0,5"
+			VerticalAlignment="Bottom"
+			Grid.Row="1">
+			<Button
+				Name="SaveButton"
+				IsDefault="True"
+				Click="SaveButton_Click">Save</Button>
+			<Button
+				Name="CancelButton"
+				Margin="0"
+				IsCancel="True">Cancel</Button>
+		</StackPanel>
+	</Grid>
+</Window>

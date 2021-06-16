@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{86D47C1F-6CA2-43B7-A57B-9AB7684235F7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>System.Threading.Tasks.Dataflow</RootNamespace>
+    <AssemblyName>System.Threading.Tasks.Dataflow</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="netstandard" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FxResources\System\Threading\Tasks\Dataflow\SR.cs" />
+    <Compile Include="Internal\PaddingFor32.cs" />
+    <Compile Include="Microsoft\CodeAnalysis\EmbeddedAttribute.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="System\Runtime\CompilerServices\IsReadOnlyAttribute.cs" />
+    <Compile Include="System\SR.cs" />
+    <Compile Include="System\Threading\Tasks\Dataflow\ActionBlock.cs" />
+    <Compile Include="System\Threading\Tasks\Dataflow\BatchBlock.cs" />
+    <Compile Include="System\Threading\Tasks\Dataflow\BatchedJoinBlock.2.cs" />
+    <Compile Include="System\Threading\Tasks\Dataflow\BatchedJoinBlock.cs" />
+    <Compile Include="System\Threading\Tasks\Dataflow\BroadcastBlock.cs" />
+    <Compile Include="System\Threading\Tasks\Dataflow\BufferBlock.cs" />
+    <Compile Include="System\Threading\Tasks\Dataflow\DataflowBlock.cs" />
+    <Compile Include="System\Threading\Tasks\Dataflow\DataflowBlockOptions.cs" />
+    <Compile Include="System\Threading\Tasks\Dataflow\DataflowLinkOptions.cs" />
+    <Compile Include="System\Threading\Tasks\Dataflow\DataflowMessageHeader.cs" />
+    <Compile Include="System\Threading\Tasks\Dataflow\DataflowMessageStatus.cs" />
+    <Compile Include="System\Threading\Tasks\Dataflow\ExecutionDataflowBlockOptions.cs" />
+    <Compile Include="System\Threading\Tasks\Dataflow\GroupingDataflowBlockOptions.cs" />
+    <Compile Include="System\Threading\Tasks\Dataflow\IDataflowBlock.cs" />
+    <Compile Include="System\Threading\Tasks\Dataflow\Internal\BatchedJoinBlockTarget.cs" />
+    <Compile Include="System\Threading\Tasks\Dataflow\Internal\BatchedJoinBlockTargetSharedResources.cs" />
+    <Compile Include="System\Threading\Tasks\Dataflow\Internal\BoundingState.cs" />
+    <Compile Include="System\Threading\Tasks\Dataflow\Internal\BoundingStateWithPostponed.cs" />
+    <Compile Include="System\Threading\Tasks\Dataflow\Internal\BoundingStateWithPostponedAndTask.cs" />
+    <Compile Include="System\Threading\Tasks\Dataflow\Internal\Common.cs" />
+    <Compile Include="System\Threading\Tasks\Dataflow\Internal\DataflowEtwProvider.cs" />
+    <Compile Include="System\Threading\Tasks\Dataflow\Internal\Disposables.cs" />
+    <Compile Include="System\Threading\Tasks\Dataflow\Internal\EnumerableDebugView.cs" />
+    <Compile Include="System\Threading\Tasks\Dataflow\Internal\IDebuggerDisplay.cs" />
+    <Compile Include="System\Threading\Tasks\Dataflow\Internal\ImmutableArray.cs" />
+    <Compile Include="System\Threading\Tasks\Dataflow\Internal\IReorderingBuffer.cs" />
+    <Compile Include="System\Threading\Tasks\Dataflow\Internal\JoinBlockTarget.cs" />
+    <Compile Include="System\Threading\Tasks\Dataflow\Internal\JoinBlockTargetBase.cs" />
+    <Compile Include="System\Threading\Tasks\Dataflow\Internal\JoinBlockTargetSharedResources.cs" />
+    <Compile Include="System\Threading\Tasks\Dataflow\Internal\PaddedInt64.cs" />
+    <Compile Include="System\Threading\Tasks\Dataflow\Internal\QueuedMap.cs" />
+    <Compile Include="System\Threading\Tasks\Dataflow\Internal\ReorderingBuffer.cs" />
+    <Compile Include="System\Threading\Tasks\Dataflow\Internal\SourceCore.cs" />
+    <Compile Include="System\Threading\Tasks\Dataflow\Internal\SpscTargetCore.cs" />
+    <Compile Include="System\Threading\Tasks\Dataflow\Internal\TargetCore.cs" />
+    <Compile Include="System\Threading\Tasks\Dataflow\Internal\TargetCoreOptions.cs" />
+    <Compile Include="System\Threading\Tasks\Dataflow\Internal\TargetRegistry.cs" />
+    <Compile Include="System\Threading\Tasks\Dataflow\Internal\VoidResult.cs" />
+    <Compile Include="System\Threading\Tasks\Dataflow\IPropagatorBlock.cs" />
+    <Compile Include="System\Threading\Tasks\Dataflow\IReceivableSourceBlock.cs" />
+    <Compile Include="System\Threading\Tasks\Dataflow\ISourceBlock.cs" />
+    <Compile Include="System\Threading\Tasks\Dataflow\ITargetBlock.cs" />
+    <Compile Include="System\Threading\Tasks\Dataflow\JoinBlock.2.cs" />
+    <Compile Include="System\Threading\Tasks\Dataflow\JoinBlock.cs" />
+    <Compile Include="System\Threading\Tasks\Dataflow\TransformBlock.cs" />
+    <Compile Include="System\Threading\Tasks\Dataflow\TransformManyBlock.cs" />
+    <Compile Include="System\Threading\Tasks\Dataflow\WriteOnceBlock.cs" />
+    <Compile Include="System\Threading\Tasks\IProducerConsumerQueue.cs" />
+    <Compile Include="System\Threading\Tasks\MultiProducerMultiConsumerQueue.cs" />
+    <Compile Include="System\Threading\Tasks\SingleProducerSingleConsumerQueue.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FxResources\System\Threading\Tasks\Dataflow\SR.resources" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

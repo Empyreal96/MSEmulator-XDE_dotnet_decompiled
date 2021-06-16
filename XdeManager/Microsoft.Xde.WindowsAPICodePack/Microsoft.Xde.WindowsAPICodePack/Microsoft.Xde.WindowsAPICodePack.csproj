@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x64</Platform>
+    <ProjectGuid>{145E9B91-376C-4E59-906A-330B77465B1A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Microsoft.Xde.WindowsAPICodePack</RootNamespace>
+    <AssemblyName>Microsoft.Xde.WindowsAPICodePack</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Microsoft\WindowsAPICodePack\ApplicationServices\ApplicationRecoveryException.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\ApplicationServices\ApplicationRestartRecoveryManager.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\ApplicationServices\AppRestartRecoveryNativeMethods.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\ApplicationServices\BatteryState.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\ApplicationServices\EventManager.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\ApplicationServices\ExecutionStates.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\ApplicationServices\MessageManager.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\ApplicationServices\Power.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\ApplicationServices\PowerManagementNativeMethods.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\ApplicationServices\PowerManager.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\ApplicationServices\PowerManagerException.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\ApplicationServices\PowerPersonality.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\ApplicationServices\PowerPersonalityGuids.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\ApplicationServices\PowerSource.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\ApplicationServices\RecoveryCallback.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\ApplicationServices\RecoveryData.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\ApplicationServices\RecoverySettings.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\ApplicationServices\RestartRestrictions.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\ApplicationServices\RestartSettings.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\Dialogs\DialogControl.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\Dialogs\DialogControlCollection.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\Dialogs\DialogsDefaults.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\Dialogs\DialogShowState.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\Dialogs\IDialogControlHost.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\Dialogs\NativeTaskDialog.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\Dialogs\NativeTaskDialogSettings.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\Dialogs\TaskDialog.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\Dialogs\TaskDialogBar.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\Dialogs\TaskDialogButton.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\Dialogs\TaskDialogButtonBase.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\Dialogs\TaskDialogClosingEventArgs.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\Dialogs\TaskDialogCommandLink.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\Dialogs\TaskDialogControl.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\Dialogs\TaskDialogDefaults.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\Dialogs\TaskDialogExpandedDetailsLocation.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\Dialogs\TaskDialogHyperlinkClickedEventArgs.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\Dialogs\TaskDialogNativeMethods.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\Dialogs\TaskDialogProgressBar.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\Dialogs\TaskDialogProgressBarState.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\Dialogs\TaskDialogRadioButton.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\Dialogs\TaskDialogResult.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\Dialogs\TaskDialogStandardButtons.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\Dialogs\TaskDialogStandardIcon.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\Dialogs\TaskDialogStartupLocation.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\Dialogs\TaskDialogTickEventArgs.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\Net\ConnectivityStates.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\Net\DomainType.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\Net\INetwork.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\Net\INetworkConnection.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\Net\INetworkListManager.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\Net\Network.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\Net\NetworkCategory.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\Net\NetworkCollection.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\Net\NetworkConnection.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\Net\NetworkConnectionCollection.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\Net\NetworkConnectivityLevels.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\Net\NetworkListManager.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\Net\NetworkListManagerClass.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\Resources\LocalizedMessages.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\Shell\PropertySystem\PropertyKey.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\Shell\PropertySystem\PropVariantNativeMethods.cs" />
+    <Compile Include="MS\WindowsAPICodePack\Internal\CoreErrorHelper.cs" />
+    <Compile Include="MS\WindowsAPICodePack\Internal\CoreHelpers.cs" />
+    <Compile Include="MS\WindowsAPICodePack\Internal\CoreNativeMethods.cs" />
+    <Compile Include="MS\WindowsAPICodePack\Internal\HResult.cs" />
+    <Compile Include="MS\WindowsAPICodePack\Internal\PropVariant.cs" />
+    <Compile Include="MS\WindowsAPICodePack\Internal\SafeIconHandle.cs" />
+    <Compile Include="MS\WindowsAPICodePack\Internal\SafeRegionHandle.cs" />
+    <Compile Include="MS\WindowsAPICodePack\Internal\SafeWindowHandle.cs" />
+    <Compile Include="MS\WindowsAPICodePack\Internal\WindowMessage.cs" />
+    <Compile Include="MS\WindowsAPICodePack\Internal\ZeroInvalidHandle.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Microsoft\WindowsAPICodePack\Resources\LocalizedMessages.resources" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,24 @@
+﻿<Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">
+  <Library>
+    <Type Name="Microsoft.Diagnostics.Tracing.EventSourceAttribute" Dynamic="Required All">
+      <AttributeImplies Serialize="Required Public"/>
+    </Type>
+    <Type Name="Microsoft.Diagnostics.Tracing.EventDataAttribute">
+      <AttributeImplies Serialize="Required Public"/>
+    </Type>
+    <Type Name="Microsoft.Diagnostics.Tracing.TraceLoggingTypeInfo{DataType}" Dynamic="Required All"/>
+    <Type Name="Microsoft.Diagnostics.Tracing.EnumHelper{UnderlyingType}" Dynamic="Required All"/>
+    <Type Name="Microsoft.Diagnostics.Tracing.EventSource">
+      <Method Name="Write{T}">
+        <GenericParameter Name="T" Serialize="Required Public"/>
+        <ImpliesType Name="Microsoft.Diagnostics.Tracing.TraceLoggingTypeInfo{T}" Dynamic="Required All" />
+      </Method>
+    </Type>
+    <Type Name="Microsoft.Diagnostics.Tracing.ClassPropertyWriter{ContainerType,ValueType}" Dynamic="Required All"/>
+    <Type Name="Microsoft.Diagnostics.Tracing.TraceLoggingTypeInfo{System.String}" Dynamic="Required All"/>
+    <Type Name="Microsoft.Diagnostics.Tracing.TraceLoggingTypeInfo{System.Int32}" Dynamic="Required All"/>
+    <Type Name="Microsoft.Diagnostics.Tracing.EventSource">
+        <Subtypes Serialize="Required Public"/>
+    </Type>
+  </Library>
+</Directives>

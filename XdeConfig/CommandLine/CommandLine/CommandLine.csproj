@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5E1E3A76-F258-49B8-A80F-F904ED2AB755}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>CommandLine</RootNamespace>
+    <AssemblyName>CommandLine</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BadFormatConversionError.cs" />
+    <Compile Include="BadFormatTokenError.cs" />
+    <Compile Include="BadVerbSelectedError.cs" />
+    <Compile Include="BaseAttribute.cs" />
+    <Compile Include="Core\ArgumentsExtensions.cs" />
+    <Compile Include="Core\InstanceBuilder.cs" />
+    <Compile Include="Core\InstanceChooser.cs" />
+    <Compile Include="Core\KeyValuePairHelper.cs" />
+    <Compile Include="Core\Name.cs" />
+    <Compile Include="Core\NameExtensions.cs" />
+    <Compile Include="Core\NameLookup.cs" />
+    <Compile Include="Core\NameLookupResult.cs" />
+    <Compile Include="Core\OptionMapper.cs" />
+    <Compile Include="Core\OptionSpecification.cs" />
+    <Compile Include="Core\PreprocessorGuards.cs" />
+    <Compile Include="Core\ReflectionExtensions.cs" />
+    <Compile Include="Core\Scalar.cs" />
+    <Compile Include="Core\Sequence.cs" />
+    <Compile Include="Core\Specification.cs" />
+    <Compile Include="Core\SpecificationExtensions.cs" />
+    <Compile Include="Core\SpecificationGuards.cs" />
+    <Compile Include="Core\SpecificationProperty.cs" />
+    <Compile Include="Core\SpecificationPropertyExtensions.cs" />
+    <Compile Include="Core\SpecificationPropertyRules.cs" />
+    <Compile Include="Core\SpecificationType.cs" />
+    <Compile Include="Core\Switch.cs" />
+    <Compile Include="Core\TargetType.cs" />
+    <Compile Include="Core\Token.cs" />
+    <Compile Include="Core\TokenExtensions.cs" />
+    <Compile Include="Core\Tokenizer.cs" />
+    <Compile Include="Core\TokenPartitioner.cs" />
+    <Compile Include="Core\TokenType.cs" />
+    <Compile Include="Core\TypeConverter.cs" />
+    <Compile Include="Core\TypeDescriptor.cs" />
+    <Compile Include="Core\TypeDescriptorExtensions.cs" />
+    <Compile Include="Core\TypeLookup.cs" />
+    <Compile Include="Core\Value.cs" />
+    <Compile Include="Core\ValueMapper.cs" />
+    <Compile Include="Core\ValueSpecification.cs" />
+    <Compile Include="Core\Verb.cs" />
+    <Compile Include="CSharpx\Either.2.cs" />
+    <Compile Include="CSharpx\Either.cs" />
+    <Compile Include="CSharpx\EitherExtensions.cs" />
+    <Compile Include="CSharpx\EitherType.cs" />
+    <Compile Include="CSharpx\EnumerableExtensions.cs" />
+    <Compile Include="CSharpx\Just.cs" />
+    <Compile Include="CSharpx\Left.cs" />
+    <Compile Include="CSharpx\Maybe.2.cs" />
+    <Compile Include="CSharpx\Maybe.cs" />
+    <Compile Include="CSharpx\MaybeExtensions.cs" />
+    <Compile Include="CSharpx\MaybeType.cs" />
+    <Compile Include="CSharpx\Nothing.cs" />
+    <Compile Include="CSharpx\Right.cs" />
+    <Compile Include="Error.cs" />
+    <Compile Include="ErrorExtensions.cs" />
+    <Compile Include="ErrorType.cs" />
+    <Compile Include="HelpRequestedError.cs" />
+    <Compile Include="HelpTextExtensions.cs" />
+    <Compile Include="HelpVerbRequestedError.cs" />
+    <Compile Include="Infrastructure\EnumerableExtensions.cs" />
+    <Compile Include="Infrastructure\ExceptionExtensions.cs" />
+    <Compile Include="Infrastructure\LocalizableAttributeProperty.cs" />
+    <Compile Include="Infrastructure\PopsicleSetter.cs" />
+    <Compile Include="Infrastructure\ReferenceEqualityComparer.cs" />
+    <Compile Include="Infrastructure\ReflectionHelper.cs" />
+    <Compile Include="Infrastructure\ResultExtensions.cs" />
+    <Compile Include="Infrastructure\StringBuilderExtensions.cs" />
+    <Compile Include="Infrastructure\StringExtensions.cs" />
+    <Compile Include="InvalidAttributeConfigurationError.cs" />
+    <Compile Include="MissingRequiredOptionError.cs" />
+    <Compile Include="MissingValueOptionError.cs" />
+    <Compile Include="MutuallyExclusiveSetError.cs" />
+    <Compile Include="NamedError.cs" />
+    <Compile Include="NameInfo.cs" />
+    <Compile Include="NotParsed.cs" />
+    <Compile Include="NoVerbSelectedError.cs" />
+    <Compile Include="NullInstance.cs" />
+    <Compile Include="OptionAttribute.cs" />
+    <Compile Include="Parsed.cs" />
+    <Compile Include="Parser.cs" />
+    <Compile Include="ParserExtensions.cs" />
+    <Compile Include="ParserResult.cs" />
+    <Compile Include="ParserResultExtensions.cs" />
+    <Compile Include="ParserResultType.cs" />
+    <Compile Include="ParserSettings.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RailwaySharp\ErrorHandling\Bad.cs" />
+    <Compile Include="RailwaySharp\ErrorHandling\Ok.cs" />
+    <Compile Include="RailwaySharp\ErrorHandling\Result.2.cs" />
+    <Compile Include="RailwaySharp\ErrorHandling\Result.cs" />
+    <Compile Include="RailwaySharp\ErrorHandling\ResultExtensions.cs" />
+    <Compile Include="RailwaySharp\ErrorHandling\ResultType.cs" />
+    <Compile Include="RailwaySharp\ErrorHandling\Trial.cs" />
+    <Compile Include="RepeatedOptionError.cs" />
+    <Compile Include="SequenceOutOfRangeError.cs" />
+    <Compile Include="SetValueExceptionError.cs" />
+    <Compile Include="Text\AssemblyLicenseAttribute.cs" />
+    <Compile Include="Text\AssemblyUsageAttribute.cs" />
+    <Compile Include="Text\ComparableOption.cs" />
+    <Compile Include="Text\CopyrightInfo.cs" />
+    <Compile Include="Text\Example.cs" />
+    <Compile Include="Text\ExampleExtensions.cs" />
+    <Compile Include="Text\HeadingInfo.cs" />
+    <Compile Include="Text\HelpText.cs" />
+    <Compile Include="Text\MultilineTextAttribute.cs" />
+    <Compile Include="Text\SentenceBuilder.cs" />
+    <Compile Include="Text\TextWrapper.cs" />
+    <Compile Include="Text\UsageAttribute.cs" />
+    <Compile Include="TokenError.cs" />
+    <Compile Include="TypeInfo.cs" />
+    <Compile Include="UnknownOptionError.cs" />
+    <Compile Include="UnParserExtensions.cs" />
+    <Compile Include="UnParserSettings.cs" />
+    <Compile Include="ValueAttribute.cs" />
+    <Compile Include="VerbAttribute.cs" />
+    <Compile Include="VersionRequestedError.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

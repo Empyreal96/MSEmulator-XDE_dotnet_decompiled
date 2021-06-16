@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3">
+  <assemblyIdentity version="1.1.6.0" processorArchitecture="amd64" name="Microsoft.Emulator.XDEManager" type="win32" />
+  <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
+    <application>
+      <!-- A list of all Windows versions that this application is designed to work with. 
+      Windows will automatically select the most compatible environment.-->
+      <!--This Id value indicates the application supports Windows Vista/Server 2008 functionality -->
+      <!--<supportedOS Id="{e2011457-1546-43c5-a5fe-008deee3d3f0}"/>-->
+      <!--This Id value indicates the application supports Windows 7/Server 2008 R2 functionality-->
+      <!--<supportedOS Id="{35138b9a-5d96-4fbd-8e2d-a2440225f93a}"/>-->
+      <!--This Id value indicates the application supports Windows 8/Server 2012 functionality-->
+      <!--<supportedOS Id="{4a2f28e3-53b9-4441-ba9c-d69d4a4a6e38}"/>-->
+      <!-- This Id value indicates the application supports Windows Blue/Server 2012 R2 functionality-->
+      <!--<supportedOS Id="{1f676c76-80e1-4239-95bb-83d0f6d0da78}"/>-->
+      <!-- Windows 10 -->
+      <supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />
+      <!-- This tag is necessary for XAML to load in the process.  It sets the compat quirk level for non-packaged apps -->
+      <maxversiontested Id="10.0.18226.0" />
+    </application>
+  </compatibility>
+  <dependency>
+    <dependentAssembly asmv2:dependencyType="preRequisite">
+      <assemblyIdentity type="win32" name="Microsoft.Windows.Common-Controls" version="6.0.0.0" processorArchitecture="amd64" publicKeyToken="6595b64144ccf1df" language="*" />
+    </dependentAssembly>
+  </dependency>
+  <asmv3:application>
+    <asmv3:windowsSettings>
+      <!-- The combination of below two tags have the following effect : 
+           1) Per-Monitor for >= Windows 10 Anniversary Update
+           2) System < Windows 10 Anniversary Update -->
+      <dpiAwareness xmlns="http://schemas.microsoft.com/SMI/2016/WindowsSettings">PerMonitorV2</dpiAwareness>
+      <dpiAware xmlns="http://schemas.microsoft.com/SMI/2005/WindowsSettings">true</dpiAware>
+    </asmv3:windowsSettings>
+  </asmv3:application>
+  <trustInfo xmlns="urn:schemas-microsoft-com:asm.v2">
+    <security>
+      <applicationRequestMinimum>
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+        <PermissionSet ID="Custom" SameSite="site" Unrestricted="true" />
+      </applicationRequestMinimum>
+    </security>
+  </trustInfo>
+</assembly>
